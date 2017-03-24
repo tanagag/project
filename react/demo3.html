@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>demo3</title>
+    <script src="build/react.js"></script>
+    <style>
+      .red{color:#fff;padding:20px 50px;background:#999;border-radius:10px;}
+    </style>
+  </head>
+  <body>
+    <!--真实的dom容器-->
+    <div id="content"></div>
+    <script>
+        //创建组件的方法
+        var tel = React.createClass({
+          render:function(){
+            var e = React.createElement(
+              "div",
+              {className:"red"},
+              "hello react!"
+              ); 
+            return e;
+          }
+        });
+
+        var dom = React.createElement(tel);
+        React.render(dom,document.querySelector("#content"));
+    </script>
+  </body>
+</html>

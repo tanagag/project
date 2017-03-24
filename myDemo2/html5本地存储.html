@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"  name="viewport" />
+<title>本地存储</title>
+</head>
+<style>
+  *{padding:0;margin:0;}
+  html,body{height:100%;font-size:5vw;}
+  .content{height:100px;overflow:hidden;}
+  .a{height:50vh;background:red;width:40vw;margin-left:10px;}
+</style>
+<body>
+<span id="count"></span>
+</body>
+</html>
+<script type="text/javascript">
+	var storage = window.localStorage;
+	if (!storage.getItem("pageLoadCount")) {
+		storage.setItem("pageLoadCount",0);
+	}
+	storage.pageLoadCount = parseInt(storage.getItem("pageLoadCount")) + 1;//必须格式转换
+	document.getElementById("count").innerHTML = storage.pageLoadCount;
+</script>
+

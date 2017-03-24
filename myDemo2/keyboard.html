@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>欢迎页面</title>
+<script src="js/jquery-1.8.2.js" type="text/javascript"></script>
+<script src="js/numkeyboard.js" type="text/javascript"></script>
+<style type="text/css">
+	*{padding:0;margin:0}
+</style>
+</head>
+<body>
+<ul>
+　　<li><input type="text" placeholder="手机号码后四位" id="numkeyboard1" class="numkeyboard" /></li>
+　　<li><input type="text"  placeholder="开箱密码"  id="numkeyboard2"  class="numkeyboard"/></li>
+　　<button type="submit"   class="numkeyboard" value="querun">确&nbsp;&nbsp;认</button>        
+</ul>
+</body>
+</html>
+<script type="text/javascript">
+
+$(function(){
+	$(".numkeyboard").numkeyboard({
+    keyboardRadix:500,//键盘大小基数
+    mainbackground:'#C8BFE7', //主背景色
+    menubackground:'#4A81B0', //头背景色
+    exitbackground:'#4376A0', //关闭按钮背景色
+    buttonbackground:'#ff730e', //键盘背景色
+    clickeve:true//是否绑定元素click事件
+});
+});
+
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+	<form id= "uploadForm">    
+	  <input type="text" value="111" name="userid">
+      <input type="file" name="images"/> 
+</form>
+	<a href="javascript:void(0)">上传</a>
+</body>
+</html>
+<script>
+$(function(){
+	$("a").click(function(event) {
+		/* Act on the event */
+		var formData = new FormData($( "#uploadForm" )[0]);  
+     	$.ajax({  
+	          url: 'http://192.168.2.111:8578/mobile/publishNewForum.json',  
+	          type: 'POST',  
+	          data: formData,  
+	          async: false,  
+	          cache: false,  
+	          contentType: false,  
+	          processData: false,  
+	          success: function (data) {
+	          	  alert(1);  
+	              console.log(data);
+	          },  
+	          error: function (data) { 
+	              alert(2); 
+	              console.log(data);
+	          }  
+        });  
+	});
+});
+</script>
+
+
+
+

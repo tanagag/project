@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<head>
+<style> 
+.box
+{
+
+display:-moz-box; /* Firefox */
+display:-webkit-box; /* Safari and Chrome */
+display:box;
+display: -ms-flexbox; 
+
+   
+width:100%;
+height:500px;
+border:1px solid black;
+
+
+}
+
+#flex1
+{
+width:0%;
+-moz-box-flex:1; /* Firefox */
+-webkit-box-flex:1; /* Safari and Chrome */
+-ms-flex: 1; /*兼容ie10以上*/
+box-flex:1;
+ 
+background:red;
+
+display:-webkit-box;/*如想文本上下左右居中,必须加上这句话*/
+display: -ms-flexbox; 
+
+-webkit-box-align:center;/*上下居中*/
+-webkit-box-pack:center;/*左右居中*/
+-ms-flex-align:center;/* IE 10 上下居中*/
+-ms-flex-pack:center;/*IE10 左右居中*/
+}
+
+#flex2
+{
+width:0%;
+-moz-box-flex:2; /* Firefox */
+-webkit-box-flex:2; /* Safari and Chrome */
+-ms-flex:2; /*兼容ie10以上*/
+box-flex:2;
+background:green;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+    <div id="flex1">
+    	<div><!--这个div要加上，他默认是box-flex:1-->
+            <p>aaaaa</p>
+            <p>bbbbb</p>
+        </div>
+    </div>
+    <div id="flex2">W3School</div>
+</div>
+
+<p><b>注释：</b>IE 不支持 box-flex 属性。</p>
+
+</body>
+</html>

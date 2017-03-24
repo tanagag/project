@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>canvas drawImage</title>
+
+<style type="text/css">
+	*{padding:0;margin:0;}
+	section{max-width:640px;margin:0 auto}
+	canvas{background:#eee;width:100%;}
+</style>
+</head>
+
+<body>	
+    <section>
+    	<div class="wrap"></div>
+        内容...
+    </section>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script>
+	$(function(){
+		//这种方法适合用在手机端固定宽高的图片，canvas调用设备的GPU加载图片，而不是浏览器渲染(效率高，但是占内存);
+		var str = '';
+		for(var i=0;i<2;i++){
+			var imgSrc = 'images/'+i+'.png';
+			str += '<div><canvas id="myCanvas'+i+'" ></canvas></div>';
+			var obj = new Image();
+			obj.index = i;
+			obj.onload=function(){	
+				var canvas = $("#myCanvas"+this.index)[0];
+				canvas.width = this.width;
+				canvas.height = this.height;
+				var cvs = canvas.getContext("2d");
+				cvs.drawImage(this,0,0);//三种参数	
+			}
+			//http://jo2.org/html5-canvas-drawimage/
+			obj.src=imgSrc;
+		}
+		$(".wrap").html(str);
+	});
+
+</script>

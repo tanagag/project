@@ -1,0 +1,77 @@
+﻿
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>仿液态特效</title>
+        <style>
+*{
+    	padding: 0;
+    	margin: 0;
+}
+body {
+  background:#000;
+}
+div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 200px;
+  margin: auto;
+}
+span {
+  background: #000;
+  display:block;
+  width: 400px;
+  height: 200px;
+  -webkit-filter: blur(10px) contrast(45);
+          filter: blur(10px) contrast(45);
+          transition: all 2s ease-in-out;
+}
+
+a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  -webkit-transition: all 2000ms ease-in-out;
+          transition: all 2000ms ease-in-out;
+  color:#000;
+  text-decoration:none;
+  background:#fff;
+}
+
+
+span:hover a:first-child {
+	width: 50px;
+	height: 50px;
+  -webkit-transform: translateX(105px);
+      -ms-transform: translateX(105px);
+          transform: translateX(105px);
+}
+span:hover a:last-child {
+	width: 50px;
+	height: 50px;
+  -webkit-transform: translateX(-85px);
+      -ms-transform: translateX(-85px);
+          transform: translateX(-85px);
+}
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>
+        <a href="#" target="_blank"></a>
+        <a href="#" target="_blank"></a>
+        <a href="#" target="_blank"></a>
+      </span>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<title>倒计时</title>
+</head>
+<style>
+  *{padding:0;margin:0;}
+ .f-flAll{height:35px;overflow:hidden;background:#f90;}
+ .f-fls{position:relative;}
+ .f-fl{height:35px; line-height:35px;}
+</style>
+<body>
+<div class="f-flAll">
+  <div class="f-fls">
+    <div class="f-fl">用户1&nbsp;ETZ****237&nbsp;已成功投资<span class="color">1,000</span>元</div>
+    <div class="f-fl">用户2&nbsp;ETZ****237&nbsp;已成功投资<span class="color">1,000</span>元</div>
+    <div class="f-fl">用户3&nbsp;ETZ****237&nbsp;已成功投资<span class="color">1,000</span>元</div>
+  </div>
+ </div>
+ <script type="text/javascript">
+  $(function() {
+    var num=0;
+    var speed=500;
+    $(".f-flAll .f-fls .f-fl:first").clone().appendTo($(".f-flAll .f-fls"));
+    var time=setInterval(autoPlay, 1000);
+
+    function autoPlay(){
+      num++;
+      if(num>$(".f-flAll .f-fls .f-fl").length-1){
+        num=1;
+        $(".f-flAll .f-fls").css("top",0);
+      }
+
+      $(".f-flAll .f-fls").stop().animate({"top":-num*$(".f-flAll").height()},speed);
+    }
+  });
+ </script>
+</body>
+</html>

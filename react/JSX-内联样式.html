@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>JSX2</title>
+  <script src="build/react.min.js"></script>
+  <!--引入JSX转换库-->
+  <script src="build/JSXTransformer.js"></script>
+  <script type="text/javascript" src="build/jquery-1.8.2.js"></script>
+  </head>
+  <body>
+    <!--真实的dom容器-->
+    <div id="content"></div>
+  </body>
+</html>
+<script type="text/jsx">
+  var Dom = React.createClass({
+    render:function(){
+      var background = {
+        "active":"red"
+      }
+      var style = {
+        width : this.props.width,
+        height : this.props.height,
+        border:this.props.border,
+        display:this.props.display,
+        background:background[this.props.active]
+      }
+      var e = <p style={style} className="abc">{this.props.children}</p>;
+      return e;
+    }
+  });
+  React.render(
+    <div className="con">
+      <Dom border="1px solid #f60" width="200" height="20" display="block" active = "active">我是1</Dom>
+      <Dom border="1px solid #000" width="400" height="40" display="block">我是2</Dom>
+      <Dom border="1px solid #f0f" width="600" height="60" display="block">我是3</Dom>
+    </div>,
+    document.querySelector("#content"));
+
+ $(function(){
+  $(".con").append($(".abc").clone());
+  $(".abc").click(function(){
+    alert($(this).html());
+  });
+ });
+</script>
+

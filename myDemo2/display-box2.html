@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<head>
+<style> 
+.wrap{
+ width:600px;
+ height:200px;
+ display:-moz-box;
+ display:-webkit-box;
+ display:box;
+ -moz-box-orient:vertical;
+ -webkit-box-orient:vertical;
+ box-orient:vertical;//水平排列
+}
+.sectionOne{
+ background:orange;
+ -moz-box-flex:1;
+ -webkit-box-flex:1;
+ box-flex:1;
+}
+.sectionTwo{
+ background:purple;
+ -moz-box-flex:2;
+ -webkit-box-flex:2;
+ box-flex:2;
+}
+.sectionThree{
+ height:100px;
+ background:green;
+}
+</style>
+</head>
+<body>
+
+<article class="wrap">
+    <section class="sectionOne">01</section>
+    <section class="sectionTwo">02</section>
+    <section class="sectionThree">03</section>
+</article>
+</body>
+</html>

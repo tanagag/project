@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>clip</title>
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<style type="text/css">
+	#con{
+		width:200px; 
+		height:200px;
+		margin:50px auto;
+		position:relative;left:0;top:0;
+		border:1px solid #ccc;
+		border-radius:100%;
+		overflow:hidden;
+		background:#f60
+	}
+	.clip{
+		position:absolute;
+		left:0;top:0;
+		width:200px;
+		height:200px;
+		background:#eee;
+		border-radius:100%;
+		z-index:2
+	}
+	.left{clip:rect(0 100px 200px 0);}
+	.right{clip:rect(0 200px 200px 100px);}
+	
+	.temp{
+		clip:rect(0 200px 200px 100px);
+		position:absolute;
+		left:0;top:0;width:200px;
+		height:200px;
+		background:#f60;
+		border-radius:100%;
+		background:#f60;
+		z-index:3;
+		display:none
+	}
+	.percent{
+		position:absolute;
+		width:160px; 
+		height:160px;
+		top:50%;left:50%;
+		-webkit-transform:translate(-50%,-50%); 
+		line-height:160px;
+		font-size:32px;
+		color:#fff;
+		border-radius:100%; 
+		background:#ccc;z-index:999;
+		text-align:center;
+	}
+	.inp{
+		width:300px;
+		margin:50px auto;
+		font-size:14px;
+	    font-family:Arial, Helvetica, sans-serif,'微软雅黑'
+	}
+	.inp input[type=text]{
+		width:100px;
+		padding:5px;
+	    text-align:center;
+	    border:1px solid #aaa;
+	    border-radius:5px;
+	}
+	.inp span{
+		font-size:12px;
+		color:#f60;
+	}
+	.count{
+		border:none;
+		background:#666;
+		color:#fff;
+		padding:10px 20px;
+		border-radius:5px;
+		cursor:pointer;}
+</style>
+</head>
+
+<body>
+	<div id="con">
+    	<div class="clip left"></div>
+        <div class="clip right"></div>
+        <div class="temp"></div>
+        <div class="percent"><span>0</span>%</div>
+    </div>
+    <div class="inp">
+    	数量：<input type="text" class="num" value="20" /> <span> 请输入小于总量的数字</span><br/><br/>
+        总量：<input type="text" class="total" value="100" style="border:none;" readonly="readonly" /><br/><br/>
+        <input type="button" class="count" value="计算" /> 
+    </div>
+</body>
+</html>
+<script>
+	$(function(){
+		$(".count").click(function(){
+			/*初始化*/
+			init();
+			var num = $(".num").val();
+			var total = $(".total").val();
+			var percent = (num/total);
+			$(".percent span").html((percent*100).toFixed(0));
+			var deg = 360*percent;
+			/*计算*/
+			count(deg)
+		});
+		
+		function init(){
+			$(".left,.right").css('webkitTransform','rotate(0deg)');
+			$(".temp").css("display","none");
+		}
+		function count(deg){
+			if(deg <= 180){
+				$(".right").css('webkitTransform','rotate('+deg+'deg)');	
+			}else{
+				$(".right").css('webkitTransform','rotate('+deg+'deg)');	
+				$(".left").css('webkitTransform','rotate('+(deg-180)+'deg)');	
+				$(".temp").css("display","block");
+				
+			}
+		}
+	});
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html onselectstart="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>单击和双击</title>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js" /></script>
+</head>
+
+<body>
+	<label><input type="radio" name="sex" /><img src="images/3.jpg" disabled></label>
+	<label><input type="radio" name="sex"><img src="images/4.jpg" disabled /></label>
+	<span>按钮</span>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		var clr = null;
+		$("span").click(function(){
+			clearTimeout(clr);
+			clr = setTimeout(fn, 300);
+			function fn(){
+				alert("单击");
+			}
+		});
+		$("span").dblclick(function(){
+			clearTimeout(clr);
+			alert("双击");
+		});
+		
+	});
+</script>
+

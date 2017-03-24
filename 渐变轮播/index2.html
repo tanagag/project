@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>第34章 项目1-博客前端：下拉菜单</title>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<style type="text/css">
+	*{padding:0;margin:0;}
+	ul,li{list-style:none}
+	#main{width:900px; margin:0 auto;}
+	#banner{width:900px;height:150px;position:relative;}
+	#banner img{width:100%;height:150px;position:absolute;left:0;top:0;opacity:0;z-index:1;}
+	ul{width:100%;height:25px; line-height:25px; text-align:center;background:rgba(0,0,0,.5);}
+	ul li{float:left;margin:0 5px;text-align:center; cursor:pointer;}
+	ul .active{color:#f60;}
+</style>
+</head>
+<body>
+
+<div id="main">
+	<div id="banner">
+		<img src="images/banner1.jpg" alt="轮播器第一张" />
+		<img src="images/banner2.jpg" alt="轮播器第二张" />
+		<img src="images/banner3.jpg" alt="轮播器第三张" />
+	</div>
+    <ul>
+			<li class="active">●</li>
+			<li>●</li>
+			<li>●</li>
+		</ul>
+</div>
+</body>
+</html>
+<script>
+	/*$(function(){
+		var index = 1;
+		//初始化
+		$("ul li").eq(0).addClass("active");
+		$("#banner img").eq(0).css("opacity","1");
+		//定时器
+		var clr = setInterval(function(){
+			index = index > $("#banner img").length-1 ? 0:index;
+			banner($("ul li").eq(index),index==0?$("ul li").size()-1:index-1);
+			index++;
+		},1000);
+		
+		//鼠标悬浮效果
+		$("ul li").hover(function(){
+			clearInterval(clr);
+			if($(this).hasClass("active")==false){
+				banner($(this),index==0?$("ul li").size()-1:index-1);
+			}
+		},function(){
+			index = $(this).index()+1;
+			clr = setInterval(function(){
+				index = index > $("#banner img").length-1 ? 0:index;
+				banner($("ul li").eq(index),index==0?$("ul li").size()-1:index-1);
+				index++;
+			},1000);
+		});
+		
+		function  banner(obj,prev){
+			$("ul li").removeClass("active");
+			obj.addClass("active");
+			//$("#banner img").css("zIndex","1").animate({"opacity":"0"},400);
+			$("#banner img").eq(prev).animate({"opacity":"0"},400);
+			$("#banner img").eq(obj.index()).css("zIndex","2").animate({"opacity":"1"},400);
+		}
+	});*/
+</script>
+<script type="text/javascript">
+	$(function(){
+		var index = 1;
+		$("ul li").hover(function(){
+			banner($(this),$(this).index() == 0 ? $("ul li").length-1 : index-1);
+		},function(){
+			index = $(this).index()+1;
+		});
+		function banner(obj,pre){
+			console.log($(obj).index()+":"+pre);
+			$("#banner img").eq(pre).animate({"opacity":"0"},500);
+			$("#banner img").eq(obj.index()).animate({"opacity":"1"},500);
+		}
+	});
+</script>

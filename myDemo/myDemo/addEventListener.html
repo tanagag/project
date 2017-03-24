@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"  name="viewport" />
+<title>无标题文档</title>
+<style type="text/css">
+	*{margin:0;padding:0}
+	.container{width:100%;height:100%}
+	.relative{position:relative;width:100%;height:150px; overflow:hidden}
+	.ul{ width:300%; height:150px; position:absolute; list-style:none;overflow:hidden}
+	.ul li{width:33.33%; height:150px; float:left;}
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#relative ul")[0].addEventListener("touchstart",touchStart,false);
+		$("#relative ul")[0].addEventListener("touchmove", touchMove, false);
+		$("#relative ul")[0].addEventListener("touchend", touchEnd, false);
+
+		var startX,moveX;
+		var temp = 0;
+		var flag = false;
+
+		function touchStart(event){
+			startX = event.touches[0].pageX;
+		}
+		function touchMove(event){
+			moveX = event.touches[0].pageX;
+			temp = moveX-startX;
+			$("#relative").animate({left: temp},0);
+		}
+		function touchEnd(event){
+			if(startX-moveX>100){
+				$("#relative").animate({left: -100},500);
+			}else if(startX-moveX<100){
+				$("#relative").animate({left: 0},500);
+			}
+			
+
+		}
+	});
+</script>
+</head>
+ <body>
+ 	<div class="container" >
+        <div class="relative" id="relative">
+        	<ul class="ul">
+            	<li style="background:#f60"></li>
+            </ul>
+        </div>
+    </div>
+ </body>
+</html>

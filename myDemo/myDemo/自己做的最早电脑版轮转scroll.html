@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>轮显</title>
+<style type="text/css">
+	*{margin:0px; padding:0px}
+	#focus{width:500px; height:380px; margin:20px; border:1px solid #ccc; overflow:hidden; position:relative; float:left}
+	#focus ul{ list-style:none; height:380px; position:absolute}
+	#focus ul li{float:left}
+	.btn{color:blue; position:absolute;bottom:5px; right:5px;}
+	.btn span{width:20px; height:15px; line-height:15px; text-align:center; border:1px solid #3FF; margin:2px; display:block; float:left}
+	.a{color:#333}
+	.on{color:#333;background:#eee; display:block; width:20px; height:15px; line-height:15px; font-weight:bold; cursor:pointer}
+	.out{color:#000; }
+</style>
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript">
+/***author:tanzheng***/
+	$(function(){
+		var sWidth=$("#focus").width();//获取焦点图的宽度
+		var len=$("#focus ul li").length;//获取焦点图的图片个数
+		var index=0;
+		$("#focus ul").css("width",(len+1)*sWidth);//动态设置ul的宽度 len+1 是因为当自动播放图片到最后一个时，为克隆的li留位置
+		var btn = "<div class='btn'>";//动态添加图片下方的按钮
+		for(var i=0; i < len; i++) {
+			btn += "<span><a class='a'>"+(i+1)+"</a></span>";
+		}
+		btn += "</div>"
+		$("#focus").append(btn);
+		//鼠标悬浮，选中对应的图片
+		$("#focus .btn span").mouseover(function(){
+			index=$(this).index();
+			showPics(index);
+		});
+		//默认选中第一个
+		$("#focus .btn span:first").mouseover();
+		
+		function showPics(index){
+			var nowLeft=-index*sWidth;
+			$("#focus ul").stop(true,false).animate({"left":nowLeft},500);
+			$("#focus .btn span a").removeClass("on").eq(index).addClass("on");	
+			
+		}
+		//鼠标滑上焦点图时停止自动播放，滑出时开始自动播放
+		$("#focus").hover(function(){
+			window.clearInterval(clearTime);
+		},function(){
+			clearTime=window.setInterval(function(){
+				if(len==index){
+					//说白了，就是最后一个离第一个焦点图的距离
+					var nowLeft=-len*sWidth;
+					//克隆第一个li放置在ul最后
+					$("#focus ul").append($("#focus ul li:first").clone());
+					//nowLeft是前四张图片的宽度，left：nowLeft，是刚好让显示第五张图片，显示完第5张焦点图后，立马left=0；（ul已经设置position），然后再移除最后一个焦点图
+					$("#focus ul").stop(true,false).animate({"left":nowLeft+"px"},500,function(){
+						$("#focus ul").css("left","0");	
+						$("#focus ul li:last").remove();
+					});
+					index=0;
+					$("#focus .btn span a").removeClass("on").eq(0).addClass("on"); //为第一个按钮添加选中的效果
+					
+				}else{
+					showPics(index);
+				}
+				index++;	
+			},1000);
+		}).trigger("mouseleave");//重点强调一下trigger:触发事件，参数名就是事件名，这里默认调用鼠标离开事件，所以才会自动播放;等同于	$("#focus").mouseleave();代替
+	
+	});
+</script>
+</head>
+
+<body >
+	<div id="focus">
+    	<ul>
+        	<li><img src="http://img3.mypsd.com.cn/20110125/Mypsd_13858_201101251734500007B.jpg" width="500" height="380" /></li>
+            <li><img src="http://img.sccnn.com/bimg/337/2449.jpg" width="500" height="380" /></li>
+        	<li><img src="http://img3.mypsd.com.cn/20110125/Mypsd_13858_201101251734500007B.jpg" width="500" height="380" /></li>
+            <li><img src="http://img.taopic.com/uploads/allimg/130402/267851-13040215542821.jpg" width="500" height="380" /></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css hack</title>
+<style type="text/css">
+.bb{
+	height:32px;
+	background-color:#f1ee18;/*所有识别*/
+	background-color:#00deff\9; /*IE6、7、8识别*/
+	+background-color:#a200ff;/*IE6、7识别*/
+	_background-color:blue;/*IE6识别*/
+}
+	.bb, x:-moz-any-link, x:default{background-color:red;} /*IE7 firefox3.5及以下 识别 */ 
+	@-moz-document url-prefix(){.bb{background-color:red;}} /* 仅firefox 识别,若兼容ff，推荐用这个 */ 
+	*+html .bb{background-color:#f60;}/* 仅IE7 识别 */
+	/*一个用于展示的class为bb的div标签*/
+	
+	.cc{width:100px; height:50px; background-color:red; background-color:orange\9\0}
+	/*"\9"    在IE6/IE7/IE8/IE9/IE10下生效    例:background:red\9*/
+	/*"\0"    在 IE8/IE9/IE10下生效*/
+	/*"\9\0"  在IE9/IE10下生效 */
+	/*  *html .class{...}  	仅IE6有效  */
+	/*	*+html .class{...} 	仅IE7有效  */
+	/*	.class{*height:500px或者+height:500px} 		IE6和IE7有效  */
+	/*	.class{_height:500px} 	仅IE6有效  */
+	
+</style>
+</head>
+
+<body>
+<div class ="bb"></div>
+<div class="cc"></div>
+</body>
+</html>

@@ -1,0 +1,527 @@
+@charset "utf-8";
+/* CSS Document */
+/*my-lover-list*/
+* {
+	box-sizing:border-box;		
+	}
+*::before,
+*::after {
+	box-sizing:border-box;
+	}	
+html {
+	font-size:-webkit-calc(1000vw / 640);
+	font-size:calc(1000vw / 640);
+	}
+body {
+	background-color:#fbf9fe;
+	color:#2d2d2d;
+	font-size:2.8em;
+	}
+.weui_dialog_confirm {
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:9999;
+	}
+.blz-para {
+	font-size:2.8rem;
+	}
+.blz-para-sm {
+	font-size:2rem;
+	color:#999;
+	line-height:1.4;
+	}			
+.color-red {
+	color:#e95050;
+	}	
+ul li {
+	list-style:none;
+	}
+ol {
+	padding:0 3rem;
+	}	
+.pece-img {
+	text-align:justify;
+	color:#cac9cb;
+	}
+.pece-img::after {
+	content:'';
+	display:inline-block;
+	width:100%;
+	height:0;
+	line-height:0;
+	}	
+.pece-img li {
+	box-sizing:border-box;
+	display:inline-block;
+	width:10.8rem;
+	font-size:1.8rem;
+	text-align:center;
+	word-spacing:0;
+	overflow:hidden;
+	}
+.pece-img span {
+	font-size:2.6rem;
+	}	
+.pece-img .img {
+	box-sizing:border-box;
+	padding-top:2.4rem;
+	margin-bottom:1.8rem;
+	width:10.8rem;
+	height:10.8rem;
+	border-radius:50%;
+	line-height:1.3;
+	color:#fff;
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAACmCAMAAAABIDpXAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAECUExURQAAADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyADSyAMqPL88AAABVdFJOUwD55Zajqt3uzC3itwYkmXrAGAm2jJcL++BW9NcxYlN4ia7YA7pYSJ6GvSnGqfNh1MN88ls9onPhaXSCewXmxP5HBwhQKjZKPkQbx2T4EX9rsOmfhNI3jtZJAAAA7UlEQVR42u3PW1MBcQCG8d1l1x4oSYlIDkUqp5xyKoWKlPD//l+ldeHOaEyYMfM8V+/db15JWtHI03u+qjX8B0416dXPNdNlFxJ29/N1puX0m2M1dZJ+jLy+GR9uab06nvfhl2M8MD/Fmv3MrMn0u999+UM4DQcLzrbyJP5d67Z8eJFZ8rBpPFxaVbHhAvG76PXRwkgYWYcui+2lxColnw0VxQ6S83VJ7CggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICCgPYV+AeCAJfy2nyboAAAAAElFTkSuQmCC) no-repeat;
+	background-size:10.8rem auto;
+	background-position:0 10.8rem;
+	background-color:#b7b7b7;
+	-webkit-transition:background-position 1.5s ease-in;
+	transition:background-position 1.5s ease-in;
+	}
+html .pece-footer {
+	position:relative;
+	text-align:left;
+	font-size:2.4rem;
+	line-height:1.4;
+	}	
+.pece-footer h2 {
+	text-align: left;
+    padding-bottom: 3rem;
+	padding-top:2rem;
+	font-size:2.4rem;
+	}	
+table {
+	position:relative;
+	width:100%;
+	margin-top:1.6rem;
+	margin-bottom:6rem;
+	text-align:center;
+	border-collapse:collapse;
+	background-color:#fff;
+	}
+table tr,
+table td,
+table th{
+	position:relative;
+	height:6rem;
+	}
+table th {
+	background-color:#eee;
+	font-weight:normal;
+	}	
+table::before {
+	content: " ";
+    position: absolute;
+    bottom: 0;
+    left:0;
+	top:0;
+	height:100%;
+    width: 1px;
+    background-color: #d9d9d9;
+	}
+table::after {
+	content:'';
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	width:100%;
+	height:1px;
+	background-color: #d9d9d9;
+	}		
+.pece-footer::after,	
+table td::before,
+table th::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left:0;
+	right:0;
+	width:100%;
+    height: 1px;
+    background-color: #d9d9d9;
+}
+table th::after,
+table td::after {
+	content:'';
+	position:absolute;
+	right:0;
+	top:0;
+	bottom:0;
+	height:100%;
+	width:1px;
+	background-color: #d9d9d9;
+	}								
+.blz-bg-trans {
+	background-color:transparent !important;
+	}	
+.blz-text-left {
+	text-align:left;
+	line-height:1.8;
+	}	
+.blz-text-center {
+	text-align:center;
+	}
+.blz-text-right {
+	text-align:right;
+	}		
+.weui_cells {
+	margin-top:0;
+	font-size:2.8rem;
+	}
+.my-lover-list h3 {
+	color:#202020;
+	}		
+.my-lover-list .weui_cells {
+	margin-top:2rem;
+	}
+.my-lover-list .weui_cells:nth-child(1){
+	margin-top:0;
+	}	
+.my-lover-list .weui_cells::after {
+	background-color:#d9d9d9;
+	z-index:10;
+	}		
+.container {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.color-grey {
+	color:#999;
+	font-size:2.8rem;
+	}
+.blz-title {
+	position:relative;
+	padding:3rem 2rem;
+	text-align:center;
+	line-height:1;
+	background-color:#fff;
+	}
+.blz-title .title {
+	font-size:8rem;
+	}	
+.blz-title p {
+	padding:1rem 0;
+	}
+.blz-personal::after{
+    content:'';
+    position: absolute;
+    left: 0;
+	right:0;
+	bottom:0;
+    width: 100%;
+    height: 1px;
+    background-color: #d9d9d9;
+	z-index:100;
+}
+.weui_cell {
+	padding:2rem 3rem;
+	}
+.weui_cell>div {
+	position:relative;
+	z-index:2;
+	}		
+.weui_cell:first-child:before {
+	display:block;
+	}
+.weui_cell:before {
+	left:0;
+	}			
+.weui_cell_hd.blz-img {
+	height: 10rem;
+    width: 12rem;
+	}
+.weui_cell_hd.blz-img img {
+	width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+	}		
+.color-grey .weui_cell_hd.blz-img {
+	background-image:url(../images/money_grey.png);
+	}		
+.blz-title a::after {
+	content: " ";
+	font-size:3.2rem;
+    display: inline-block;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    height: 1.2rem;
+    width: 1.2rem;
+    border-width: 0.4rem 0.4rem 0 0;
+    border-color: #C8C8CD;
+    border-style: solid;
+    position: relative;
+    top: -2px;
+    top: -1px;
+    margin-left: .3em;
+	}
+/*my-lover-list页面为空时*/	
+.my-lover-empty	{
+	display:none;
+	padding-top:81.6rem;
+	background-image:url(../images/my_lover_grey.png);
+	background-repeat:no-repeat;
+	background-position:center 8rem;
+	background-size:41.6rem 41.6rem;
+	text-align:center;
+	line-height:3;
+}
+/*累计消费成功*/
+.weui_icon_area .blz-text-center {
+	padding-top:2rem;
+	}	
+.blz-success>.success{
+	margin-top: 3rem;
+    border-top: 0.6rem solid #3b9ad5;
+	padding:2rem 3rem;
+	}
+.blz-success a.tel {
+	color:#2d2d2d;
+	}	
+.blz-success>.success::before,
+.blz-success>.success::after {
+	display:none;
+	}	
+.blz-title.success {
+	background-color:transparent;
+	}
+.blz-success .weui_cell {
+	padding:2rem 0;
+	}
+.blz-success .weui_cell:nth-child(3):before {
+	display:none;
+	}	
+.blz-success .blz-data {
+	padding-bottom:4rem;
+	font-size:2.6rem;
+	}		
+.blz-title a.weui_btn::after {
+	display:none;
+	}				
+	
+/*累计消费明细*/
+.blz-s .weui_cell:before {
+	display:block;
+	}
+.blz-detail>.success {
+	margin-top:0;
+	}		
+.blz-detail .blz-text-right {
+	font-size:11.6rem;
+	}
+	
+/*确定心上人*/
+.swhe-alert {
+	position:relative;
+	padding:3rem;
+	font-size:2.8rem;
+	background-color:#ffebbc;
+	text-align:center;
+	z-index:100;
+	}
+.blz-sweethert{
+	padding: 0 0 0 3rem;
+    background: #fff;
+	}
+.blz-sweethert::after,
+.blz-sweethert::before {
+	display:none;
+	}	
+.blz-sweethert .weui_cell {
+	padding: 1rem 0;
+	}
+.blz-sweethert .weui_cell.blz-warning label {
+	color:#f73326;
+	}	
+.blz-sweethert .weui_cell.blz-warning>i{
+	display:block;
+    position: absolute;
+    right: 2rem;
+    top: 2.8rem;
+	font-size: 3.2rem;
+	z-index:20;
+	}	
+p.weui_cell {
+	background-color:transparent;
+	}	
+.blz-sweethert .weui_cell.first::after {
+	content:'';
+	position:absolute;
+	right:1.6rem;
+	top:4.6rem;
+	border:0.8rem solid transparent;
+	border-top-color:#000;
+	-webkit-transform:scaleX(0.8);
+	transform:scaleX(0.8);
+	z-index:20;	
+	}			
+.blz-sweethert>div {
+	padding-bottom:2.8rem;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+	}
+.blz-sweethert label {
+	display:block;
+	height:8rem;
+	line-height:8rem;
+	width:6em;
+	padding-right:1em;
+	text-align:justify;
+	text-justify:distribute-all-lines;
+	color:#999;
+	vertical-align:middle;
+	word-spacing:0;
+	white-space:nowrap;
+	}
+.blz-sweethert label::after {
+	content:'';
+	display:inline-block;
+	width:100%;
+	font-size:0;
+	height:0;
+	overflow:hidden;
+	}	
+.blz-sweethert input,
+.blz-sweethert select {
+	height:8rem;
+	line-height:8rem;
+	-webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+	-webkit-appearance:none;
+	font-size:2.8rem;
+	vertical-align:middle;
+	background-color:#fff;
+	}		
+.blz-sweethert p.weui_cell {
+	padding-top:4rem;
+	line-height:1.8;
+	}	
+	
+/*删除功能实现*/
+.weui_cell {
+	z-index:10;
+	background-color:#fff;
+	-webkit-transition:-webkit-transform .3s cubic-bezier(0.5,0.5,0.5,0.5);
+	transition:transform .3s ease;
+	}	
+.blz-delete {
+	position:absolute;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+	display:flex;
+	
+	-webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+	
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+	
+	right:0;
+	top:2px;
+	bottom:2px;
+	width:20rem;
+	color:#fff;
+	font-size:4rem;
+	background-color:#f00;
+	z-index:8;
+}			
+/*安心logo*/
+.anxin-logo {
+	margin-top:3rem;
+	height:14rem;
+	background:url(../images/anxin_logo.png) no-repeat center top;
+	background-size:28rem 14rem;
+	}	
+	
+/*t表单验证弹窗*/
+.blz-alert{
+	display:none;
+	position:fixed;
+	width:60%;
+	min-width:36rem;
+	top:34rem;
+	left:50%;
+	padding:3rem 21rem;
+	border-radius:1.2rem;
+	color:#fff;
+	word-break:break-all;
+	text-align:center;
+	-webkit-transform:translate(-50%,0);
+	transform:translate(-50%,0);
+	background-color:rgba(0,0,0,0.6);
+	z-index:2000;
+	-webkit-transition:opacity 0.6 ease;
+	transition:opacity 0.6 ease;
+	}	
+	
+/*验证码发送*/
+.blz-check .weui_cell.second {
+	padding-top:4rem;
+	}
+.blz-check,
+.blz-check input,
+.blz-check .weui_cell {
+	background-color:transparent;
+	}
+.blz-check label {
+	width:5em;
+    white-space:normal
+	}			
+
+html .blz-chec-send {
+	position:absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	width:20rem;
+	background-color:#04be02;
+	text-align:center;
+	color:#fff;
+	}
+.blz-chec-send input {
+	height:100%;
+	border:none 0;
+	color:#fff;
+	-webkit-box-flex:initial;
+    -webkit-flex:initial;
+    -ms-flex:initial;
+    flex:initial;
+	outline:none;
+	}	
+.blz-check p {
+	padding-right:3rem;
+	line-height:10rem;
+	-webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+	}
+.blz-check .weui_cell.blz-warning>i {
+	top:4.8rem;
+}	
+.blz-chec-send.grey {
+	background-color:#a1a1a1;
+	}
+
+
+
+
+				
+		

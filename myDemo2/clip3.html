@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>clip</title>
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<style type="text/css">
+		.con{width:240px;height:240px;position:relative;}
+        .bb, .bb::before, .bb::after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .bb {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            color: #69ca62;
+            box-shadow: inset 0 0 0 1px rgba(105, 202, 98, 0.5);
+        }
+
+        .bb::before, .bb::after {
+            content: '';
+            z-index: -1;
+            margin: -10px;
+            box-shadow: inset 0 0 0 2px;
+            -ms-animation: clipMe 8s linear infinite;
+            -moz-animation-delay: -4s;
+            -webkit-animation: clipMe 8s linear infinite;
+            animation: clipMe 8s linear infinite;
+        }
+
+        .bb::before {
+        	-ms-animation-delay: -4s;
+        	-moz-animation-delay: -4s;
+        	-webkit-animation-delay: -4s;
+            animation-delay: -4s;
+        }
+         @-ms-keyframes clipMe {
+            0%, 100% {
+                clip: rect(0px, 220px, 2px, 0px);
+            }
+            25% {
+                clip: rect(0px, 2px, 220px, 0px);
+            }
+            50% {
+                clip: rect(218px, 220px, 220px, 0px);
+            }
+            75% {
+                clip: rect(0px, 220px, 220px, 218px);
+            }
+        }
+         @-moz-keyframes clipMe {
+            0%, 100% {
+                clip: rect(0px, 220px, 2px, 0px);
+            }
+            25% {
+                clip: rect(0px, 2px, 220px, 0px);
+            }
+            50% {
+                clip: rect(218px, 220px, 220px, 0px);
+            }
+            75% {
+                clip: rect(0px, 220px, 220px, 218px);
+            }
+        }
+        @-webkit-keyframes clipMe {
+            0%, 100% {
+                clip: rect(0px, 220px, 2px, 0px);
+            }
+            25% {
+                clip: rect(0px, 2px, 220px, 0px);
+            }
+            50% {
+                clip: rect(218px, 220px, 220px, 0px);
+            }
+            75% {
+                clip: rect(0px, 220px, 220px, 218px);
+            }
+        }
+          @keyframes clipMe {
+            0%, 100% {
+                clip: rect(0px, 220px, 2px, 0px);
+            }
+            25% {
+                clip: rect(0px, 2px, 220px, 0px);
+            }
+            50% {
+                clip: rect(218px, 220px, 220px, 0px);
+            }
+            75% {
+                clip: rect(0px, 220px, 220px, 218px);
+            }
+        }
+
+</style>
+</head>
+
+<body>
+	<div class="con">
+		<div class="bb"></div>
+    </div>
+
+</body>
+</html>

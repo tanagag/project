@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"  name="viewport" />
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<title>倒计时</title>
+</head>
+<style>
+  *{padding:0;margin:0;}
+  html,body{height:100%;font-size:5vw;}
+  .content{height:100px;overflow:hidden;}
+  .a{height:50vh;background:red;width:40vw;margin-left:10px;}
+</style>
+<body>
+<form name="FileUpload" id="FileUpload" method="post" enctype="multipart/form-data">
+	<input type="file" id="fileInput" />
+	<img src="" id="preview" />
+</form>
+</body>
+</html>
+<script type="text/javascript">
+
+		var arr = [1,2,3,4,4,2,5];
+		var f = $.inArray(4,arr);
+		alert(f);
+
+		var new_arr=[];
+		for(var i=0;i<arr.length;i++) {
+		　　var items=arr[i];
+		　　　if($.inArray(items,new_arr)==-1) {
+		　　　　new_arr.push(items);
+		　　}
+		}
+
+		//console.log(new_arr);
+
+		var date1 = new Date("2016-05-08T19:10:00");
+		var date2 = new Date("2016-05-09T19:10:00");
+		var dateStr = date2-date1;
+		console.log(new Date(dateStr).getDate()-1);
+
+	//预览图片逻辑
+	var fileInput = document.getElementById("fileInput");
+	fileInput.onchange=function(){
+		var _this=this;//获取上传文件的表单
+		//文件校验
+		var filesName = _this.files[0].name;
+		var result =/\.[^\.]+/.exec(filesName)[0];            
+		if( FileUpload.isImg(result) && _this.files[0].size/1024/1024 < 1){//当前用户选择的图片，符合客户端显示图片的需求 , 并且图片大小要小于1M
+			var imgObjPreview=document.getElementById("preview");//获取要预览的图片
+			if(_this.files && _this.files[0]){//说明用户选择了图片
+				imgObjPreview.src = window.URL.createObjectURL(_this.files[0]);//使用这个方法，将图片的二进制转换成地址
+			}else{
+				//IE下，使用滤镜
+				_this.select();
+				var imgSrc = document.selection.createRange().text;
+				//图片异常的捕捉，防止用户修改后缀来伪造图片
+	            try{
+	            
+	            	imgObjPreview.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+	            	imgObjPreview.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+	            }catch(e){
+	                alert("您上传的图片格式不正确，请重新选择!");
+	                return false;
+	            }
+	            document.selection.empty();
+			}
+		}else{
+			alert("请选择png格式的图片,并且图片不能小于1M");
+		}
+	}
+
+</script>
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app-5">
+	  <p>{{ message }}</p>
+	  <button v-on:click="reverseMessage">Reverse Message</button>
+	</div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js'></script>
+    <script>
+        var app5 = new Vue({
+		  el: '#app-5',
+		  data: {
+			message: 'Hello Vue.js!'
+		  },
+		  methods: {
+			reverseMessage: function () {
+				this.message = "abc";
+				//dom此时没有更新
+				this.$nextTick(function(){
+					alert('DOM更新了...');
+				})
+			}
+		  }
+		})
+    </script>
+</body>
+</html>

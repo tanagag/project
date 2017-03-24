@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,a,span,i,b,strong,em,font,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu {margin:0;padding:0;font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;}
+table {border-collapse:collapse;border-spacing:0;}
+b,i,strong,em{font-style: normal; font-weight: normal; font-size:14px;}
+caption,th {text-align:left;font-weight:normal;}
+form,img,input {border:0;}
+ul,li {list-style:none;}
+textarea {overflow:auto;resize:none;}
+label {cursor:default;}
+del,ins,u,s,a,a:hover{text-decoration:none;}
+select{height:22px;line-height:18px; padding:2px 0;}
+body,textarea,input,button,select,keygen,legend{color:#666;outline:0;font: 400 14px/20px 'microsoft yahei';}
+img {vertical-align:middle}
+.clearfix{ *zoom:1;}
+.clearfix:after{visibility: hidden;display: block;font-size: 0;content:" ";clear: both;height: 0;}
+a,a:link,a:visited{color:#666;text-decoration:none;outline:0 none}
+a:hover{text-decoration:none}
+.no-border {	border: none!important}
+.fl {float: left}
+.fr {float: right}
+.hide {display: none}
+.show {display: block}
+.block {	display: block}
+.inline-block {display: inline-block}
+.pr {position: relative}
+.txt-left {text-align: left}
+.txt-center {text-align: center}
+.txt-right {	text-align: right}
+.table{display:table;width:100%}
+.table-cell{display:table-cell}
+.ellipsis{text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+
+
+

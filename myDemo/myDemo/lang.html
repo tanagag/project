@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="js/jquery.js"></script>
+<script>
+var a = {};
+a['login']      = {c: '登录', j: '日文登录', e: 'login'};
+a['register']   = {c: '注册', j: '日文注册', e: 'register'};
+</script>
+
+</head>
+<body>
+    <p class='translate login'>llllll</p>
+    <p class='translate register'>rrrrrrrr</p>
+    <p>其他</p>
+</body>
+</html>
+
+<script>
+test();
+function test() {
+	var translate_class = '';
+	var translate_content = '';
+	var language = 'e';//@todo
+    for(var k in a) {
+    	translate_class = k;
+    	translate_content = a[k][language];
+   		$('.' + translate_class).html(translate_content);
+    }
+}
+
+</script>

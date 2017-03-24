@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>scrollTop</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<style>
+	*{margin:0;padding:0;}
+	.content{width:150px; height:150px;border:1px solid #ccc; margin:auto; overflow:hidden;overflow-y:scroll;}
+	ul{width:150px;  list-style:none;}
+	ul li{height:20px; line-height:20px}
+</style>
+<script type="text/javascript">
+$(function(){
+	$(".demo2").html($(".demo1").html());
+	console.log($(".demo1").height()+":"+$(".content").height());
+	var clr=setInterval(top,100);
+	var px=0;
+	
+	function top(){
+		px = px+10;
+		var demo1=$(".demo1");
+		var content=$(".content");
+		if(px>=demo1.height()){
+			px=0;
+		}else{
+			content.scrollTop(px);	
+		}
+	}
+	
+	$("ul").hover(function(){
+			clearInterval(clr);
+		},function(){
+			clr=setInterval(top,100);
+	});	
+});
+
+
+</script>
+</head>
+<body style="height:1800px">
+	<div class="content">
+        <div class="demo1">
+            <ul>
+                <li>中中中中中中</li>
+                <li>华华华华华华</li>
+                <li>人人人人人人</li>
+                <li>民民民民民民</li>
+                <li>共共共共共共</li>
+                <li>和和和和和和</li>
+                <li>国国国国国国</li>
+                <li>万万万万万万</li>
+                <li>岁岁岁岁岁岁</li>
+            </ul>
+        </div>
+        <div class="demo2"></div>
+    </div>
+</body>
+</html>

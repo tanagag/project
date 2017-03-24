@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>表单输入</title>
+  <script src="build/react.min.js"></script>
+  <!--引入JSX转换库-->
+  <script src="build/JSXTransformer.js"></script>
+  <style>
+      .abc{background:#ccc;border-radius:10px;}
+  </style>
+  </head>
+  <body>
+    <!--真实的dom容器-->
+    <div id="content"></div>
+  </body>
+</html>
+<script type="text/jsx">
+     var Com = React.createClass({
+      onClick:function(){
+        var v = React.findDOMNode(this.refs.a);
+        alert(v.value);
+      },
+      onMouseEnter:function(){
+        alert(1);
+      },
+      render : function(){
+        var props = {
+         className : "abc",
+         //onMouseEnter:onMouseEnter,
+         onMouseEnter:function(){
+          alert(2);
+         }
+        };
+         var e = 
+           <div {...props}>
+             <input type="checkbox" defaultChecked="checked" />篮球
+             <input type="checkbox" defaultChecked="" />足球
+             <input type="checkbox" defaultChecked="" />棒球
+              <select defaultValue="B">
+                <option value="A">a</option>
+                <option value="B">b</option>
+                <option value="C">c</option>
+              </select>
+              <input type="text" ref="a" placeholder="请输入..." defaultValue="haha" />
+              <a href="javascript:void(0)" onClick={this.onClick}>按钮</a>
+          </div>
+         return e;
+      }
+     });
+     React.render(<Com/>,document.querySelector("#content"));
+</script>
+
+
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery.js"></script>
+</head>
+<body>
+    <p text="${A001}"></p>
+	<input type="text" value="${A002}" placeholder="${A002}" />
+	<p text="${A003}">其他</p>
+</body>
+</html>
+<script>
+
+var a = [
+	{"key":"A001","zh":"登陆","ja":"日文登陆"},
+	{"key":"A002","zh":"请输入","ja":"日文请输入"},
+	{"key":"A003","zh":"你好","ja":"日文你好"}
+];
+
+var lang = "ja";
+
+window.onload=function(){
+	trans();
+	function trans() {
+		for(var k in a) {
+			var obj = a[k];
+			var transLang = lang=="zh" ? obj.zh : obj.ja;
+			var key = obj.key;
+			//国际化文本
+			$("[text],[title]").each(function(idx,el){
+				var code = $(el).attr("text").trim();
+				var codeLength = $(el).attr("text").trim().length;
+				var title = $(el).attr("title");
+				var titleLength = $(el).attr("title").trim().length;
+
+				var code2 = code.substring(2,codeLength-1);
+				var title2 = title.substring(2,titleLength-2);
+		
+				if(code2 == key){
+					$(el).html(transLang);
+				}
+
+				if(title2 == key){
+					$(el).attr("title",transLang);
+				}
+			});
+			//国际化form内属性
+			$("input,select,textarea").each(function(idx,el){
+				var placeholder = $(el).attr("placeholder");
+				var placeholderLength = $(el).attr("placeholder").trim().length;
+				var val = $(el).val();
+				var valLength = $(el).val().trim().length;
+
+				var placeholder2 = placeholder.substring(2,placeholderLength-1);
+				var val2 = val.substring(2,valLength-1);
+				if(placeholder2 == key){
+					$(el).attr("placeholder",transLang);
+				}
+				if(val2 == key){
+					$(el).val(transLang);
+				}
+				
+			});
+		}
+	}	
+}
+alert(i18n('A001'));
+//处理js国际化
+function i18n(key){
+	for(var k in a) {
+		var obj = a[k];
+		if(obj.key==key){
+			console.log(obj.key);
+			var transLang = lang=="zh" ? obj.zh : obj.ja;
+			return transLang;
+		}
+		
+	}
+}
+
+
+</script>

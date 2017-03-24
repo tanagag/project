@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>加载更多</title>
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/jquery.superslide.js"></script>
+<style type="text/css">
+	*{padding:0;margin:0;font-size:14px; font-family:Arial,'微软雅黑', Helvetica, sans-serif}
+	ul,li{list-style:none}
+	.left-slide{overflow:hidden;position:relative;border:1px solid #E6E6E6;height:142px;width:748px;}
+	.left-slide .bd ul{overflow:hidden;zoom:1;}
+	.left-slide .bd ul li{padding:0 1px 0 2px;width:245px;height:142px;border-right:1px solid #E6E6E6;text-align:center;float:left;display:_inline;}
+	.left-slide .bd ul li.nom{border-right:1px solid #fff;}
+	.left-slide .bd ul li img{width:245px;height:140px;}
+	.left-slide .prev,.left-slide .next{width:35px;height:70px; line-height:70px;font-size:34px; text-align:center; text-decoration:none;position:absolute;top:38px;z-index:10;background:rgba(0,0,0,.5);color:#fff}
+	.left-slide .prev{ position:absolute;left:0;}
+	.left-slide .next{ position:absolute;right:0;}
+</style>
+</head>
+
+<body>
+	 <div class="left-slide">
+          <a class="prev" href="javascript:void(0)"><</a>
+          <a class="next" href="javascript:void(0)">></a>
+          <div class="bd">
+            <ul class="picList">
+              <li><a href="#" target="_blank" ><img src="http://img12.360buyimg.com/da/jfs/t1180/240/948924038/13424/94959d67/555974a3N9f53e7ec.jpg" width="245" height="140" /></a></li>
+              <li><a href="#" target="_blank" ><img src="http://img12.360buyimg.com/da/jfs/t1180/240/948924038/13424/94959d67/555974a3N9f53e7ec.jpg" width="245" height="140" /></a></li>
+              <li><a href="#" target="_blank" ><img src="http://img12.360buyimg.com/da/jfs/t1180/240/948924038/13424/94959d67/555974a3N9f53e7ec.jpg" width="245" height="140" /></a></li>
+              <li><a href="#" target="_blank" ><img src="http://img12.360buyimg.com/da/jfs/t1180/240/948924038/13424/94959d67/555974a3N9f53e7ec.jpg" width="245" height="140" /></a></li>
+              <li><a href="#" target="_blank" ><img src="http://img12.360buyimg.com/da/jfs/t1180/240/948924038/13424/94959d67/555974a3N9f53e7ec.jpg" width="245" height="140" /></a></li>
+              <li><a href="#" target="_blank" ><img src="http://img12.360buyimg.com/da/jfs/t1180/240/948924038/13424/94959d67/555974a3N9f53e7ec.jpg" width="245" height="140" /></a></li>
+              <li><a href="#" target="_blank" ><img src="http://img12.360buyimg.com/da/jfs/t1180/240/948924038/13424/94959d67/555974a3N9f53e7ec.jpg" width="245" height="140" /></a></li>
+              <li><a href="#" target="_blank" ><img src="http://img12.360buyimg.com/da/jfs/t1180/240/948924038/13424/94959d67/555974a3N9f53e7ec.jpg" width="245" height="140" /></a></li>
+            </ul>
+          </div>
+        </div>
+        <script type="text/javascript">$(".left-slide").slide({ mainCell:".bd ul",effect:"leftLoop",vis:5,scroll:3,interTime : 5000,autoPlay:true});</script>
+</body>
+</html>

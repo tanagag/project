@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css3渐变全支持</title>
+<style>
+	.box{width:300px; height:300px; border:1px solid red; margin:100px;padding:20px;
+		background:green; background-clip:content-box; /*如果是背景*/
+		/*background:url(images/abc.jpg); background-origin:content-box 如果是背景图片*/
+	}
+	/*渐变（支持ie678）*/
+	.box2{width:300px; height:200px;
+		background: -moz-linear-gradient(top,  #ffbd35 0%, #f79a00 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffbd35), color-stop(100%,#f79a00)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #ffbd35 0%,#f79a00 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #ffbd35 0%,#f79a00 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #ffbd35 0%,#f79a00 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #ffbd35 0%,#f79a00 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbd35', endColorstr='#f79a00',GradientType=0 ); /* IE6-8 */
+	}
+</style>
+</head>
+
+<body>
+<div class="box">中华人民共和国中华人民共和国中华人民共和国</div>  
+<div class="box2" ></div>
+
+</body>
+</html>

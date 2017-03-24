@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>大转盘</title>
+<meta name="keywords" content="大转盘"/>
+<meta name="description" content="大转盘"/>
+<link rel="stylesheet" href="css/global.css"/>
+<link rel="stylesheet" href="css/index.css"/>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.rotate.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+$(document).ready(function(){
+
+/*轮盘转动抽奖*/
+var clicknum = 0;
+//------------------
+$("#img5").click(function(){
+      clicknum++;
+      //if((clicknum%2))!=0){
+         var rotation2 = function (){
+         $("#img5").rotate({
+            angle:0, 
+            animateTo:360, 
+            callback: rotation2,
+            easing: function (x,t,b,c,d){        // t: current time, b: begInnIng value, c: change In value, d: duration
+               //d=1000;
+                return c*(t/d)+b;
+               }
+            });
+         }
+         rotation2();
+      //--------------------
+      // }else{         
+      //    setTimeout(function(){$("#img5").stopRotate();}, 1000);
+      //    //alert($(this).getRotateAngle())   //返回旋转对象当前的角度
+      // }    
+
+});
+/*轮盘转动抽奖*/
+
+/*var rotation2 = function (){
+   $("#img5").rotate({
+      angle:0, 
+      animateTo:360, 
+      callback: rotation2,
+      easing: function (x,t,b,c,d){        // t: current time, b: begInnIng value, c: change In value, d: duration
+          return c*(t/d)+b;
+      }
+   });
+}
+rotation2();*/
+console.log();
+
+
+
+});
+</script>
+
+
+<img  id="img5" src="images/chrome.png" width="256" height="256"/>
+
+
+
+</body>
+</html>

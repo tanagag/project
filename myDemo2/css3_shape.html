@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://plux.hlo.cc/lottery/test/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>css3</title>
+
+<style type="text/css">
+*{padding:0;margin:0}
+
+
+.shape-container {
+  -webkit-animation: five-container 2s infinite cubic-bezier(0.42, -0.5, 0.58, 1.0);
+  position: absolute;
+  border:1px solid red;
+  left: calc(50% - 4em);
+  top: calc(50% - 4em);
+}
+.shape {
+  -webkit-animation: five 2s infinite ease;
+  background: #2d97db;
+  border: 1em solid #fff;
+  width: 4em;
+  height: 4em;
+ 
+}
+@-webkit-keyframes five-container {
+  0%, 15% {
+    opacity: 0;
+    -webkit-transform: translateX(-12em);
+  }
+  15%, 25% {
+    -webkit-transform: translateX(-12em);
+    opacity: 1;
+  }
+  85%, 90% {
+    -webkit-transform: translateX(12em);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(12em);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes five {
+  0%,35%{
+    -webkit-transform: none;
+  }
+  55% {
+    -webkit-transform: skewX(20deg);
+  }
+  100% {
+    -webkit-transform: none;
+  }
+}
+
+/* General styling */
+body {
+  margin: 0;
+  padding:0;
+  background: #e9b59f;
+  color: #fff;
+}
+</style>
+</head>
+<body>
+      <div class="shape-container">
+        <div class="shape"></div>
+      </div>
+
+  <a href="http://www.w3cplus.com/css3/how-to-use-css3-calc-function.html">http://www.w3cplus.com/css3/how-to-use-css3-calc-function.html</a>
+</body>
+</html>

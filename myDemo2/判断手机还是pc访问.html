@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>判断手机还是pc</title>
+    <meta charset="utf-8">
+    <meta id="meta1" http-equiv="refresh" content="-1; url='http://www.baidu.com'">
+</head>
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<body>
+<script type="text/javascript">
+
+    browserRedirect();
+    function IsPC() {//方法一
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone","iPad", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+         if(flag){
+            console.log("PC");
+         }else{
+            console.log("手机");
+         }
+    } 
+    function browserRedirect() {//方法二
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+        var meta = $("#meta1");
+        if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
+           // window.location.href=B页面;
+           console.log("PC"); 
+            meta.attr("content","2; url='http://www.baidu.com'");
+        }else{
+           console.log("手机");
+           meta.attr("content","2; url='http://m.baidu.com'");
+        }
+    }
+</script>
+</body>
+</html>

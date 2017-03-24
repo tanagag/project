@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IE6完美解决fixed方法</title>
+<style type="text/css">
+ .fixed{ 
+         position:fixed; /*对于火狐等其他浏览器需要设置的*/ 
+         top:200px;  /*同上*/ 
+         width:30px; 
+         height:30px; 
+		 background:red;
+         cursor:pointer; 
+ }  
+ .ie{   
+        _position: absolute;  
+        _clear: both;   
+        _top:expression(eval(document.compatMode &&   
+                document.compatMode=='CSS1Compat') ?   
+                documentElement.scrollTop   
+                +(documentElement.clientHeight-this.clientHeight) - 1   
+                : document.body.scrollTop   
+                +(document.body.clientHeight-this.clientHeight) - 1); 
+ }
+</style>
+</head>
+
+<body style="height:1800px">
+	<div  class="fixed ie"> </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+
+<script src="res/jquery-1.7.2.min.js" type="text/javascript"></script>
+
+	$(function(){
+		var arr = {
+			0:["aa","aa","aa","aa","aa","aa","aa","aa","aa","aa"],
+			1:["bb","bb","bb","bb","bb","bb","bb","bb","bb","bb"],
+			2:["cc","cc","cc","cc","cc","cc","cc","cc","cc","cc"],
+			4:["dd","dd","dd","dd","dd","dd","dd","dd","dd","dd"],
+			4:["ee","ee","ee","ee","ee","ee","ee","ee","ee","ee"],
+		};
+	});
+</script>
+</head>
+
+<body>
+    
+	<script type="text/javascript">
+       var data2 = [
+						["1","1"],
+						["2","2"],
+						["3","3"],
+						["4","4"],
+						["5","5"],
+						["6","6"],
+						["7","7"],
+						["8","8"],
+						["9","9"],
+						["10","10"],
+						["11","11"],
+						["12","12"],
+						["13","13"],
+						["14","14"],
+						["15","15"],
+						["16","16"],
+						["17","17"],
+						["18","18"],
+						["19","19"],
+						["20","20"],
+						["21","21"]
+					];
+					
+					var arrList = [];
+					var j = 0;
+					for(var i = 0; i < 5; i++){
+						arrList[i]=(data2.slice(j,j+5));
+						j+=5;
+					}
+
+					/*Array.prototype.each_slice = function(step, callback) {
+					  var i, len, pos, ref, ref1, ref2, results, slice;
+					  pos = 0;
+					  ref = this;
+					  slice = Array.prototype.slice;
+					  len = ref.length;
+					  results = [];
+					  for (pos = i = 0, ref1 = len, ref2 = step; ref2 > 0 ? i <= ref1 : i >= ref1; pos = i += ref2) {
+					    results.push(callback.call(ref, slice.call(ref, pos, pos + step)));
+					  }
+					  return results;
+					};
+					
+					 data2.each_slice(5, function(x) { console.log(x)}) 
+					*/
+					
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>pccb</title>
+<link rel="stylesheet" href="css/global.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<style type="text/css">
+  .section img.active{opacity:0.5;}
+</style>
+</head>
+<body>
+   <img src="images/top.jpg" class="top">
+   <section class="section">
+       <div class="line1 clearfix">
+           <img src="images/img1.png" class="img img1">
+           <img src="images/img2.png" class="img img2">
+           <img src="images/img3.png" class="img img3">
+           <img src="images/img4.png" class="img img4">
+       </div>
+       <div class="line2 clearfix">
+           <div>
+               <img src="images/img5.png" class="img img12">
+               <img src="images/img7.png" class="img img11" rel="ok">
+           </div>
+           <div>
+              <a href="javascript:void(0)"><img src="images/btn.png" width="136"><br>消耗20元储蓄罐</a>
+           </div>
+           <div>
+               <img src="images/img6.png" class="img img5">
+               <img src="images/img8.png" class="img img6">
+           </div>
+       </div>
+        <div class="line1 clearfix">
+           <img src="images/img9.png" class="img img10">
+           <img src="images/img10.png" class="img img9">
+           <img src="images/img11.png" class="img img8">
+           <img src="images/img12.png" class="img img7">
+       </div>
+   </section>
+   <div class="content">
+        <div class="wrap1">
+            <p><b>获奖榜单：</b>Pc*******28获得20元去哪儿网卡</p>
+            <p><b>获奖榜单：</b>Pc*******28获得20元去哪儿网卡</p>
+            <p><b>获奖榜单：</b>Pc*******28获得20元去哪儿网卡</p>
+            <p><b>获奖榜单：</b>Pc*******28获得20元去哪儿网卡</p>
+            <p><b>获奖榜单：</b>Pc*******28获得20元去哪儿网卡</p>
+            <p><b>获奖榜单：</b>Pc*******28获得20元去哪儿网卡</p>
+        </div>
+    </div>
+    <div class="recode">
+        <dl>
+            <dt>账户还有<span>60</span>元储蓄罐</dt>   
+            <dd>iPhone6s<span>1 部</span></dd>
+            <dd>20元去哪儿卡<span>2 张</span></dd>
+            <dd>鼻毛修剪器<span>1 个</span></dd>
+            <dd>500积分<span>3 份</span></dd>
+        </dl>
+    </div>
+    <div class="rule">
+        <p>1.活动期间，消耗20元储蓄罐即可获得一次转盘抽奖机会；</p>
+        <p>2.抽奖百分百中奖；</p>
+        <p>3.积分奖励将自动发放至用户账户，用户可至账户中心查看；</p>
+        <p>4.实物奖品将于活动结束之后10个工作日内发放，请用户及时联系客服报送中奖信息；</p>
+        <p>5.本次活动最终解释权归普资金融信息服务股份有限公司所有。</p>
+    </div>
+</body>
+</html>
+<script>
+    $(function(){
+        //转盘
+       var idx = 0;
+        var loop = 0;
+        var ok = "ok";
+        var size = $(".section .img").length;
+        var total = size*3;
+        run(total,size,ok);
+        function run(total,size){
+          var clr1 = setInterval(function(){
+            idx ++;
+            console.log(idx+":"+size);
+            if(idx > size){
+              idx = 1;
+            }
+            $(".section .img").removeClass('active');
+            $(".section .img"+idx).addClass('active');
+            loop ++;
+            if(loop >= total){
+              clearInterval(clr1);
+              var idx2 = 0;
+              var clr2 = setInterval(function(){
+                idx2 ++;
+                var rel = $(".section .img"+idx2).attr("rel");
+                if(rel == ok){
+                  clearInterval(clr2);
+                }
+                $(".section .img").removeClass('active');
+                $(".section .img"+idx2).addClass('active');
+               },250);
+            }
+          }, 50);
+        }
+
+
+        var speed = 1000;
+        var num = 0;
+        var wrapH = $(".wrap1").height();
+        var h = $(".wrap1 p").innerHeight();
+        var size = $(".wrap1 p").size();
+        if(size>1){
+            $(".content").append($(".wrap1").clone());
+            var clr = setInterval(autoPlay,speed);
+        }
+        function autoPlay(){
+            if(num<size){
+                num++;
+                $(".content").animate({"scrollTop":num*h},500);
+            }else{
+                num=0;
+                $(".content").scrollTop(0)
+            }   
+        }
+        $(".wrap1").hover(function(){
+            clearInterval(clr)
+        },function(){
+            clr = setInterval(autoPlay,speed);
+        });
+    }); 
+</script>
+
+
+
+

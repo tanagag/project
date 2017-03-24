@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="gb2312">
+        <title>CSS3每日一练之动画属性-Animations | 前端开发网(W3Cfuns.com)！</title>
+	<style type="text/css">
+            *{margin:0; padding:0;}
+            body{font-size:14px; color:#333; font-family:"Microsoft Yahei";}
+            #box
+            {
+                    margin:0 auto;
+                    width:200px;
+                    height:200px;
+                    line-height:200px;
+                    color:#fff;
+                    text-align:center;
+                    font-size:14px;
+                    background:#f00;
+            }
+            
+            @-webkit-keyframes w3cfunsColors
+           {
+                    0%{background:#f00;}
+                    25%{background:#f0f;}
+                    50%{background:#00f;}
+                    75%{background:#0f0;}
+                    100%{background:#ccc;}
+            }
+            
+            #box:hover
+            {
+					/*鼠标悬浮执行动画*/
+                    -webkit-animation:w3cfunsColors 6s linear;
+					
+					/*	
+						-webkit-animation:w3cfunsColors 6s linear alternate infinite; 下面的5个的简写
+					*/
+					/*
+						-webkit-animation-direction:alternate;
+						-webkit-animation-duration:0.2s;
+						-webkit-animation-iteration-count:infinite;
+						-webkit-animation-name:w3cfunsColors;
+						-webkit-animation-timing-function:linear;
+					*/
+					/*这个和100%的动画完成后的背景保持一致，否则变化*/
+                    background:#ccc;
+            }
+    </style>
+    </head>
+    
+    <body>
+            <div id="box">前端开发网(W3Cfuns.com)！</div>
+    </body>
+</html>

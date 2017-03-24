@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>外边距合并</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+</head>
+<style>
+    *{ margin: 0px; padding: 0px;}
+    p{background:green;margin:10px 0 10px 0;overflow: hidden;padding:10px 0;border:1px solid blue;}
+    ul li:not(:last-child){border-bottom:1px solid blue;}
+    .border{width:0;height:0;border-style:solid;border-width:100px;border-color:green green #fff #fff; box-shadow:5px 0 5px #000;margin:100px auto;}
+
+	.wrap{background:#EEE; overflow:hidden}
+	.wrap .one{width:200px;height:200px;background:#ccc;float:left;}
+	.wrap .two{overflow:hidden;}
+	.wrap .left{width:20%;float:left;background:#f60}
+	.wrap .right{width:80%;float:right}
+	input[type="reset"]::-moz-focus-inner,input[type="button"]::-moz-focus-inner,input[type="submit"]::-moz-focus-inner,input[type="file"] > input[type="button"]::-moz-focus-inner{ border:none;padding:0; }
+	input[type=button],button{border:none;height:18px;line-height:18px;background:blue;color:#fff;font-size:12px}
+</style>
+
+<body>
+<input type="button" value="我要上传" />
+<button>我要上传</button>
+<div class="wrap">
+	<div class="one"></div>
+	<div class="two">
+		<div class="left">左边</div><div class="right">我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容</div></div>
+</div>
+<div class="border"></div>
+	<input type="text" id="abc">
+	<br>
+    <input onkeyup="this.value=this.value.replace(/\D/g,'')"onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+ 	<ul id="ul">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+    </ul>
+    <div style="border:1px solid red;padding:1px;overflow:hidden" class="div">
+        <p>中</p>
+        <p>中</p>
+        <p>中</p>
+        <p>中</p>
+        <p>中</p>
+    </div>
+    <div><span style="display:inline-block;background:red;width:120px;height:80px;line-height:80px;margin:0 10px">阿布</span>放大</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		var t = $("#ul li").each(function(index, el) {
+			//alert($(this).offset().top);		
+		});
+		
+		$(document).on("input","#abc",function(){
+			alert($(this).val());
+		});
+	});
+</script>

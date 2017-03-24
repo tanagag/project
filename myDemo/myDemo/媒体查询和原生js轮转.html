@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>abc</title>
+<link rel="shortcut icon" href="images/1.jpg" /> 
+<script type="text/javascript" src="js/jquery-1.8.2.js"/></script>
+<style type="text/css">
+	*{
+		padding:0px;
+		margin:0px;
+		font-size:12px;
+		font-family:"宋体";
+	}
+	div{
+		background-color:#999999;
+		width:800px;
+		height:600px;
+		margin:0px auto;
+		margin-top:40px;
+	}
+	div ul{
+		width:800px;
+		height:40px;
+		line-height:40px;
+		list-style:none;
+	}
+	div ul li{
+		width:160px;
+		height:40px;
+		line-height:40px;
+		background-color:#333333;
+		float:left;
+		text-align:center;
+	}
+	div	a{
+		text-decoration:none;
+		display:block;
+	}
+	a:hover{
+		background-color:#99CCFF;
+		display:block;
+		color:#FFFFFF;
+	}
+	p{ 
+		width:800px;
+	    height:200px; 
+		overflow:hidden;
+		position:relative;
+	}
+	p img{ position:absolute;left:0;top:}
+	
+	@media(max-width: 1118px) {
+	/*add your css styles here*/
+		body{background:blue}
+	}
+	@media (min-width: 400px) and (max-width:900px){
+	/*add your css styles here*/
+		body{background:red}
+	}
+	@media(max-width: 400px) {
+	/*add your css styles here*/
+		body{background:green}	
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var img=document.getElementsByTagName("img");
+		for(var i=0;i<img.length;i++){
+			img[i].setAttribute("title","img"+i);
+		}
+		
+	}
+	function show(num){
+		/*
+		var img=document.getElementsByTagName("img");
+		for(var i=0;i<img.length;i++){
+			img[i].style.cssText="display:none";
+		}
+		img[num].style.cssText="display:block";
+		*/
+		var img=document.getElementsByTagName("img");
+		for(var i=0;i<img.length;i++){
+			img[i].style.opacity=0;
+		}
+		img[num].style.opacity=1;
+	}
+	
+</script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li><a onclick="show(0)" href="javascript:void()">aaa</a></li>
+			<li><a onclick="show(1)" href="javascript:void()">bbb</a></li>
+			<li><a onclick="show(2)" href="javascript:void()">ccc</a></li>
+			<li><a onclick="show(3)" href="javascript:void()">ddd</a></li>
+			<li><a onclick="show(4)" href="javascript:void()">eee</a></li>
+		</ul>
+		<p>
+			<img src="images/1.jpg"   width="800" height="200"/>
+			<img src="images/2.jpg"   width="800" height="200"/>
+			<img src="images/3.jpg"   width="800" height="200"/>
+			<img src="images/4.jpg"   width="800" height="200"/>
+			<img src="images/5.jpg"   width="800" height="200"/>
+		</p>
+	</div>
+</body>
+</html>

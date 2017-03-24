@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<style type="text/css">
+.miniPanel
+{
+    border:solid 1px #FEC8C8; 
+}
+
+.miniPanelHead
+{
+    color:#333;
+    font-weight:bold;
+    background-image:url(../Img/Sys/miniPanelBg.png);
+    background-repeat: repeat-x; 
+    height:30px;
+    line-height:30px;
+    padding-left:10px;
+    padding-right:10px;
+    border-bottom:solid 1px #FEC8C8;
+}
+
+.miniPanelHead a { color:blue; font-weight:bold;}
+
+.miniPanelBody
+{
+    line-height:25px;
+    padding:10px;
+}
+
+</style>
+<script type="text/javascript">
+	
+$(document).ready(
+function () {
+    IniQQ();
+});
+
+
+function FloatT(pObjName, pText, pstmnLEFT, pstmnGAP1, pstmnGAP2, pstmnBASE, pstmnActivateSpeed, pstmnScrollSpeed) {
+    var FloatMenu;
+    var stmnLEFT = pstmnLEFT;
+    var stmnGAP1 = pstmnGAP1;
+    var stmnGAP2 = pstmnGAP2;
+    var stmnBASE = pstmnBASE;
+    var stmnActivateSpeed = pstmnActivateSpeed;
+    var stmnScrollSpeed = pstmnScrollSpeed;
+
+    this.FloatRun = function (pObjName) {
+        var newDiv = document.createElement("div");
+        newDiv.id = pObjName;
+        newDiv.innerHTML = pText;
+        newDiv.style.position = "absolute";
+        document.body.appendChild(newDiv);
+        FloatMenu = document.getElementById(pObjName);
+        FloatMenu.style.display == "";
+        FloatMenu.style.top = document.documentElement.scrollTop + stmnBASE + "px";
+
+        FloatMenu.style.left = stmnLEFT + "px";
+        RefreshStaticMenu();
+    }
+
+    RefreshStaticMenu = function () {
+        var stmnStartPoint, stmnEndPoint, stmnRefreshTimer;
+
+        stmnStartPoint = parseInt(FloatMenu.style.top, 10);
+        stmnEndPoint = document.documentElement.scrollTop + stmnGAP2;
+        if (stmnEndPoint < stmnGAP1) stmnEndPoint = stmnGAP1;
+
+        if (stmnStartPoint != stmnEndPoint) {
+            stmnScrollAmount = Math.ceil(Math.abs(stmnEndPoint - stmnStartPoint) / 15);
+            FloatMenu.style.top = parseInt(FloatMenu.style.top, 10) + ((stmnEndPoint < stmnStartPoint) ? -stmnScrollAmount : stmnScrollAmount) + "px";
+            stmnRefreshTimer = stmnScrollSpeed;
+        }
+        else {
+            stmnRefreshTimer = stmnActivateSpeed;
+        }
+        setTimeout("RefreshStaticMenu();", stmnRefreshTimer);
+    }
+}
+
+function IniQQ() {
+    var str = $("#divQQ").html();
+    var objFT = new FloatT("FloatMenu1", str, 10, 300, 300, 300, 80, 10);
+    objFT.FloatRun();
+}
+</script>
+</head>
+
+<body style="height:1800px;">
+	<div id="divQQ" style=" display:none;">
+
+      <div class="miniPanel" style="height:228px;">
+                    <div class="miniPanelHead" style=" text-align:center;">客服</div>
+                    <div class="miniPanelBody">
+
+                       <div style=" width:92px; text-align:left; padding-left:8px;">
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=970823038&site=qq&menu=yes">
+                        <img border="0" src="http://wpa.qq.com/pa?p=2:970823038:51" alt="咨询客服" title="咨询客服"/></a>
+                        <br />
+                        <br />
+                        电话：<br />
+                        131-2240-0387
+                        <br /><br />
+                        QQ：<br />
+                        970823038
+                       </div>
+
+                    </div>
+                    
+                </div>
+
+    </div>
+</body>
+</html>

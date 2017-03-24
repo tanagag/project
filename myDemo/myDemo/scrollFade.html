@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="js/jquery-1.8.2.js"></script>
+<style>
+	*{margin:0;padding:0}
+	.content{ position:relative;width:200px; height:180px;margin:auto}
+	ul{ list-style:none; width:200px; height:180px; overflow:hidden; border:1px solid #ccc; margin:auto;position:relative;}
+	ul li{width:200px; height:180px; text-align:center;font-size:24px;color:#fff;position:absolute;top:0;left:0}
+	.page {width:200px; height:30px; line-height:30px; margin:auto; position:absolute;bottom:0; right:0; text-align:right;}
+	.page a{margin-left:20px; border:1px solid #ccc}
+</style>
+<script>
+	$(function(){
+		var i=0;
+		var str='';
+		var clr=window.setInterval(a,1000);
+		var size=$("ul li").length;
+		/*动态添加页码*/
+		for(var j=0;j<size;j++){
+			str+='<a href="javascript:void(0)">'+(j+1)+'</a>';
+		}
+		
+		$(".page").html(str);
+		$(".page a").hover(function(){
+			clearInterval(clr);	
+			var idx=$(this).index();
+			/*设置字体*/
+			$(".page a").css("color","");
+			$(this).css({"color":"red"});
+
+			$("ul li").stop().css("opacity",0);
+			$("ul li").eq(idx).stop().animate({opacity:10},1000);	
+			i=idx;//这一步，指鼠标移开后，接着idx的位置轮显
+		},function(){
+			clr=window.setInterval(a,1000);
+		});
+		
+		function a(){
+			i++;
+			if(i==size){
+				i=0;	
+			}
+			/*设置字体*/
+			$(".page a").css("color","");
+			$(".page a").eq(i).css({"color":"red"});
+			
+			$("ul li").stop().css("opacity",0);
+			$("ul li").eq(i).stop().animate({opacity:10},1000);	
+		}
+	});
+</script>
+</head>
+
+<body>
+	<div class="content">
+        <ul>
+            <li><img src="images/3.jpg" width="200" height="180"></li>
+            <li><img src="images/4.jpg" width="200" height="180"></li>
+            <li><img src="images/5.jpg" width="200" height="180"></li>
+            <li><img src="images/7.jpg" width="200" height="180"></li>
+        </ul>
+        <p class="page"></p>
+    </div>
+</body>
+</html>

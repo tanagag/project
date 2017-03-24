@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<script src="http://www.ycku.com/wp-content/themes/prowerV5/js/jquery-1.10.1.min.js"></script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!-- basic styles -->
+</head>
+<body data-spy="scroll" data-target="#nav-sidebar">
+  <div class="table-responsive">
+             <div id="div"><input type="file"  onchange="Preview(this)" /><img src="" width="100" height="100"  /></div>
+             <script type="text/javascript">
+                    function Preview(e) {  
+                        var ext =$(e).val().split(".")[1].toUpperCase();
+                        if ( ext != "PNG" &&  ext != "JPG" && ext != "JPEG") {
+                            alert("图片限于png，jpeg，jpg格式！");
+                            return false;
+                        }else{
+                             var url= window.URL.createObjectURL($(e)[0].files[0]);
+							 var mb = ($(e)[0].files[0].size/1024)/1024;
+							if(mb>= 10){
+								alert('文件大小大于10M');
+								return;
+							}
+                             $(e).next().attr("src",url); 
+                        }
+                    }
+            </script>
+              <style type="text/css">
+                  #div{width:100px; height:100px; border:1px solid #ccc;position:relative;top:0;left:0}
+				          #div input{position:absolute;top:0;right:0;width:100px;height:100px; display:inline-block;opacity:0}
+              </style>
+            </div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>我的心上人</title>
+<meta name="viewport" content="user-scalable=no">
+<link rel="stylesheet" href="css/weui.min.css">
+<link rel="stylesheet" href="css/my-style.css">
+</head>
+
+<body>
+<div class="container my-lover-list">
+
+    <div class="weui_cells weui_cells_access blz-delete-box">
+        <a class="weui_cell" href="javascript:alert('oh no 被点透了')">
+            <div class="weui_cell_hd blz-img"><img src="images/my_lover_grey.png" alt="lover"></div>
+            <div class="weui_cell_bd weui_cell_primary">
+            	<h3 class="title">范冰冰</h3>
+                <p class="summary color-red">未确认返还金额</p>
+            </div>
+            <div class="weui_cell_ft"></div>
+        </a>
+        <span class="blz-delete" data-blz-delete=".weui_cells">删除</span>
+    </div>
+    
+    <div class="weui_cells weui_cells_access blz-delete-box">
+        <a class="weui_cell" href="javascript:alert('oh no 被点透了')">
+            <div class="weui_cell_hd blz-img"><img src="images/my_lover_grey.png" alt="lover"></div>
+            <div class="weui_cell_bd weui_cell_primary">
+            	<h3 class="title">张柏芝</h3>
+                <p class="summary color-red">未确认返还金额</p>
+            </div>
+            <div class="weui_cell_ft"></div>
+        </a>
+        <span class="blz-delete" data-blz-delete=".weui_cells">删除</span>
+    </div>
+    
+    <div class="weui_cells weui_cells_access blz-delete-box">
+        <a class="weui_cell" href="javascript:alert('oh no 被点透了')">
+            <div class="weui_cell_hd blz-img"><img src="images/my_lover_grey.png" alt="lover"></div>
+            <div class="weui_cell_bd weui_cell_primary">
+            	<h3 class="title">范冰冰</h3>
+                <p class="summary color-red">未确认返还金额</p>
+            </div>
+            <div class="weui_cell_ft"></div>
+        </a>
+        <span class="blz-delete" data-blz-delete=".weui_cells">删除</span>
+    </div>
+    
+    <div class="weui_cells weui_cells_access blz-delete-box">
+        <a class="weui_cell" href="javascript:alert('oh no 被点透了')">
+            <div class="weui_cell_hd blz-img"><img src="images/my_lover_grey.png" alt="lover"></div>
+            <div class="weui_cell_bd weui_cell_primary">
+            	<h3 class="title">张柏芝</h3>
+                <p class="summary color-red">未确认返还金额</p>
+            </div>
+            <div class="weui_cell_ft"></div>
+        </a>
+        <span class="blz-delete" data-blz-delete=".weui_cells">删除</span>
+    </div>
+
+	<div class="weui_cells weui_cells_access blz-delete-box">
+        <a class="weui_cell" href="javascript:alert('oh no 被点透了')">
+            <div class="weui_cell_hd blz-img"><img src="images/my_lover_grey.png" alt="lover"></div>
+            <div class="weui_cell_bd weui_cell_primary">
+            	<h3 class="title">范冰冰</h3>
+                <p class="summary color-red">未确认返还金额</p>
+            </div>
+            <div class="weui_cell_ft"></div>
+        </a>
+        <span class="blz-delete" data-blz-delete=".weui_cells">删除</span>
+    </div>
+    
+    <div class="weui_cells weui_cells_access blz-delete-box">
+        <a class="weui_cell" href="javascript:alert('oh no 被点透了')">
+            <div class="weui_cell_hd blz-img"><img src="images/my_lover_grey.png" alt="lover"></div>
+            <div class="weui_cell_bd weui_cell_primary">
+            	<h3 class="title">张柏芝</h3>
+                <p class="summary color-red">未确认返还金额</p>
+            </div>
+            <div class="weui_cell_ft"></div>
+        </a>
+        <span class="blz-delete" data-blz-delete=".weui_cells">删除</span>
+    </div>
+
+
+    
+</div>
+
+<!--弹窗标题--> 
+<div class="weui_dialog_confirm" style="display:none" data-blz-dismiss=".weui_dialog_confirm">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd">
+          <strong class="weui_dialog_title"></strong>
+        </div>
+        <div class="weui_dialog_bd">你确定要删除心上人范冰冰吗？</div>
+        <div class="weui_dialog_ft">
+            <a href="javascript:;" class="weui_btn_dialog default" data-blz-dismiss=".weui_dialog_confirm" data-blz-del="0">取消</a>
+            <a href="javascript:;" class="weui_btn_dialog primary" data-blz-dismiss=".weui_dialog_confirm" data-blz-del="1">确定</a>
+        </div>
+    </div>
+</div>
+<script src="js/zepto-1.1.6.js"></script>
+<script src="js/blz-swipe.js"></script>
+<script>
+
+/*例子：滑动删除*/
++function($,document){
+	'use strict';
+	var hack=blz.checkBrowerKernel();
+	var o={
+		initialPosition:0,
+		displacement:$('.blz-delete').width(),
+		maxDistance:$('.blz-delete').width(),
+		swipeRight:false,
+		slideElement:'.weui_cells>a',
+		prevElement:null,
+		touchStartCallback:resets,
+		noDistance:true
+	}
+	var $Delem=null;
+	//复位
+	function resets(event){
+		if($(event.target).data('blz-delete')){return false};
+		var target=$('.my-lover-list').data('blz-swipe').data;
+		if(target.prevElement!=null&&target.prevElement!==$(event.target).closest('.weui_cells>a')){
+			target.prevElement.css(hack+'transform','translateX(0)');
+			target.prevElement=null;
+		}
+	}
+	
+	//删除元素
+	$('.my-lover-list').blzSlide(o);
+	$(document).on('tap.blz.delete','[data-blz-delete]',function(){
+		$Delem=$(this).closest($(this).data('blz-delete'));
+		$('.weui_dialog_confirm').show();
+	});
+	$(document).on('tap.blz.del','[data-blz-del="1"]',function(){
+		if($Delem){$Delem.hide(300,function(){$Delem.remove();});}
+	});
+	$(document).on('tap.blz.dismiss','[data-blz-dismiss]',function(){
+		$(this).closest($(this).data('blz-dismiss')).hide();
+	});
+}(Zepto,document);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

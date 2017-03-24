@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var clr;
+		$("#box").hover(function(){
+			clr=window.setInterval(dou,10);
+		},function(){
+			clearInterval(clr);
+			$("#box").css({top:"5px",left:"5px"});
+		});
+		function dou(){
+			var rand=Math.floor(Math.random()*10)+"px";
+			var rand2=Math.floor(Math.random()*10)+"px";
+			$("#box").css({top:rand,left:rand2});
+		}
+	});
+</script>
+</head>
+
+<body>
+    <div style="width:150px; height:150px; margin:auto;border:1px solid #ccc;position:relative">
+    	<div id="box" style="position:absolute;top:5px;left:5px; width:140px; height:140px; background:#f60"></div>
+    </div>
+</body>
+</html>

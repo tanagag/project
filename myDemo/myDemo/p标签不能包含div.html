@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DTD中声明p标签中不能包含div</title>
+<style>
+	*{margin:0;padding:0;}
+	.con{height:35px; line-height:35px;border:1px solid red;width:500px;margin:0 auto;}
+	.con div{background:green;color:red;height:35px;}
+</style>
+</head>
+<body>
+   <p class="con">
+   		<span>aaa</span>
+   		<div>bbb</div>
+   </p>
+</body>
+</html>
+<!--源代码中解析为下面这样；因为DTD中声明HTML中P标签内不可包含DIV标签
+<body>
+   <p class="con">
+   		<span>aaa</span>
+   		</p><div>bbb</div>
+   <p></p>
+
+
+</body>
+-->

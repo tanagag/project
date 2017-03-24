@@ -1,0 +1,244 @@
+							-------纯属于个人总结(待续)-----
+		
+1. 获取浏览器滚走的距离scrollTop的值，IE和火狐支持document.documentElement.scrollTop(标准模式)，而chrome则只支持document.body.scrollTop（混杂模式）。比如用法：var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+   所以var sTop=document.documentElement.scrollTop||document.body.scrollTop;
+   获取浏览器窗口高度很宽度：document.documentElement.clientHeight(标准模式) ,document.body.clientHeight（混杂模式）
+2. animation和transition的区别
+   animation属于动画，行为可以循环。transition属于过渡，不可以循环
+   鼠标悬浮时调用animation，但鼠标移开时，会马上恢复初始状态。而transition鼠标移开时，是和鼠标移入时一样有渐进消失效果
+3. $(window).scroll(function(){}),$(document).scrollTop();这样写的兼容性好，第一个是窗口的滚动条移动时(事件)，第二个滚动条距离文档顶部的距离(值)
+4. if (window.attachEvent) {
+         obj.attachEvent("onclick", function() {alert(even.innerHTML) });//ie
+   }else {
+         obj.addEventListener("click", function() { alert(even.innerHTML) }, false); //火狐
+   }
+5. 这是专门针对ie的hack写法
+	-1- @-moz-document url-prefix() {
+	  .div1 {
+		 color: red;
+	  }
+	}火狐的兼容写法
+	-2- @media \0screen{/*或者.div2 {color: red\0}*/
+		.div2  {color: blue;}
+	}IE8的兼容写法
+	-3- :root .div3 {color: green\9;}只IE9的兼容写法
+	-4- .div4 {color:yellow\9;}IE9以下的兼容写法
+	-5- :root .div5 {color: red;}}IE9+的兼容写法
+
+	-6- *html .class{...}  	仅IE6有效
+	-7- *+html .class{...} 	仅IE7有效
+	-8- .class{*height:500px或者+height:500px} 		IE6和IE7有效
+	-9- .class{_height:500px} 	仅IE6有效
+6. 手机开发中 左右两个块级元素，基本不用float，而用父元素 display:-webkit-box;为前提， -webkit-box-orient: horizontal;控制水平方向 ，  子元素用 -webkit-box-flex: 1，控制比例（这个盒子模型配合很好用），如果想让子元素上下居中则-webkit-box-align:center;display: -webkit-box（在一次转化成-web-box一次）
+7. 当div宽度为100% ，加边款时，为了不出现滚动条，则-webkit-box-sizing:border-box;
+8.<script type="text/javascript">
+	var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+      
+	window.addEventListener(evt, function() {
+    		alert("屏幕旋转");
+	}, false);
+   </script>
+9.$('.container').each(function(i){    
+     if($(this).attr('name')=="continue"){    
+          return ;//实现continue功能    
+     }else if($(this).attr('name')=="break"){    
+          return false;//实现break功能    
+     }    
+});
+10.site-nav{*zoom:1}.site-nav:after{content:"";display:table;clear:both} //清楚浮动的方法
+11.php配置
+DocumentRoot  "D:\WWW"
+<Directory />
+    Options +Indexes +FollowSymLinks +ExecCGI
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+    Require all granted
+</Directory>
+
+NameVirtualHost 127.0.0.1
+
+<VirtualHost 127.0.0.1>
+	ServerName  m.shanghaiwow.cn
+	DocumentRoot d:\WWW\m.shanghaiwow.cn
+	<Directory "d:\WWW\m.shanghaiwow.cn">
+	Options  FollowSymLinks
+	AllowOverride all
+	Order allow,deny
+	Allow from all
+	</Directory>
+</VirtualHost>
+12. #leftNav::-webkit-scrollbar{display: none;}/*去除滚动条*/
+13.background:#fff;-webkit-appearance:none;appearance:none;border-radius:0 处理select在手机上的背景和清楚iPhone按钮圆角
+14.手机上下拉滚动条时卡顿、慢 div{-webkit-overflow-scrolling:touch;over-scrolling:touch}
+15.长时间按住页面出现存储或者拷贝图像，可以通过这个方法禁止 img｛-webkit-touch-callout:none｝
+16.移动端禁止用户选中内容
+ .user-select-none {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all （移动端不需要） */
+  -ms-user-select: none;      /* IE 10+ */      
+}
+17. 
+ 　<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />优先使用最新版本 IE 和 Chrome
+   <meta http-equiv="Refresh" content="2;URL=http://www.baidu.com" /> 2秒跳到指定网址
+   ＜meta http-equiv=”expires” content=”Fri, 12 Jan 2001 18:18:18 GMT”＞可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。
+   ＜meta http-equiv=”Pragma” content=”no-cache”＞ 禁止浏览器从本地计算机的缓存中访问页面内容。
+
+18.  （1）开启电话功能：
+ 　　<a href="tel:123456">123456</a> 
+
+　　（2）开启短信功能：
+
+ 　　<a href="sms:123456">123456</a> 
+19.background-attachment:fixed;控制背景不滚动
+20.-webkit-font-smoothing:antialiased;字体平滑
+21.js判断当前的手机系统类型
+<script language="javascript">
+   window.onload = function () {
+	alert("1");
+	var u = navigator.userAgent;
+	if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
+		alert("安卓手机");
+	// window.location.href = "mobile/index.html";
+	} else if (u.indexOf('iPhone') > -1) {//苹果手机
+	// window.location.href = "mobile/index.html";
+		alert("苹果手机");
+	} else if (u.indexOf('Windows Phone') > -1) {//winphone手机
+		alert("winphone手机");
+	// window.location.href = "mobile/index.html";
+	}
+   }
+</script>
+22.如果用到zepto.js的swipeLeft和swipeUp等事件需要加上这句代码
+document.addEventListener('touchmove', function (event) {
+		event.preventDefault();
+	}, false);
+
+23.     input[type=text]:valid{background:red;/*有效，即当填写的内容符合要求的时候触发。*/}
+	input[type=text]:invalid{background:blue;/*无效，即当填写的内容不符合要求的时候触发。*/}
+
+24.图片上下居中的办法之一： 容器设置宽高  然后居中行高   图片设置vertial-align:middle
+25.确保input输入数字<input onkeyup="this.value=this.value.replace(/\D/g,'')"onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+26.$(document).on("mousewheel DOMMouseScroll", function (e) {
+    
+    var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
+                (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
+
+    if (delta > 0) {
+        // 向上滚
+       
+    } else if (delta < 0) {
+        // 向下滚
+    }
+});
+27.$("abc").attr("ondragstart" , "return false"); 页面禁止图片拖动
+	<html onselectstart="return false"> 禁止浏览器复制
+
+http://www.w3cplus.com/css3/how-to-use-css3-calc-function.html  -webkit-calc计算，好像安卓4.3以下不兼容
+28. display:inline-block IE6-7的兼容性：行内标签但是可以设置宽度和高度，可以margin-top；块级标签在IE6-7中仍然换行，行内标签同样不换行，行内和块级都保留各自换不换行的属性
+29. //相当于ellipsis的升级版，可以选择几行实现省略号...4端代码缺一不可
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+30.    ul li:not(:last-child){border-bottom:1px solid red;}最后一个li没有边框
+31. 手机移动端1px像素边框,因为1px=2dp（物理像素）
+	ul li{height:3.5rem;line-height:3.5rem;position:relative;}
+	ul li:not(:last-child):before{position:absolute;left:0;bottom:0px;content:"";width:100%;height:1px;border-bottom:1px solid red; -webkit-transform: scaleY(0.5);}
+	/*ul li:not(:last-child):before{position:absolute;left:0;bottom:1px;content:"";width:100%;height:1px;border-bottom:1px solid red; -webkit-transform: scaleY(0.5);}*/
+
+32.<meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1" />在360或其他双核浏览器下在兼容模式用chrome内核渲染的方法
+33.vw和vh，1vw=1%的屏幕的宽度，1vh=1%的屏幕高度
+34.jquery 自带的方法$.when
+35.HTML中P标签内不可包含DIV标签
+36.http://www.tuicool.com/articles/Inyueyi  fixed在（不依赖第三方库的情况下）ios中呼唤起软键盘导致fixed失效的解决方法
+37.document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false); 对应解除阻止 document.addEventListener('touchmove', function(e){window.event.returnValue = true;}, false);
+38.  复制功能
+    <script type="text/javascript"> 
+       function copyUrl2() 
+       { 
+          var Url2=document.getElementById("biao1"); 
+          Url2.select(); // 选择对象 
+          document.execCommand("Copy"); // 执行浏览器复制命令 
+          alert("已复制好，可贴粘。"); 
+        } 
+    </script> 
+    <textarea cols="20" rows="10" id="biao1">用户定义的代码区域</textarea> 
+    <input type="button" onClick="copyUrl2()" value="点击复制代码" />
+39.http://docs.mobiscroll.com/2-13-2/calendar 手机日历插件官网
+http://download.mobiscroll.com/trialactivated#/datetime/calendar/select/jquery
+
+40.	if (window.DeviceMotionEvent) { //模拟手机禁止浏览器后退，默认跳过去重新跳回，如（日新机票下单）
+	    window.addEventListener("devicemotion", function() {
+	    	window.history.go(1);
+	    }, false);
+	}
+41.      <input type="text" placeholder="请输入..."  onkeyup="dothis(this);" onpaste="dothis(this)" onblur="dothis(this)" oncontextmenu="dothis(this)">
+
+42.从list取出每N条保存到数组，方法一	Array.prototype.each_slice = function(step, callback) {
+					  var i, len, pos, ref, ref1, ref2, results, slice;
+					  pos = 0;
+					  ref = this;
+					  slice = Array.prototype.slice;
+					  len = ref.length;
+					  results = [];
+					  for (pos = i = 0, ref1 = len, ref2 = step; ref2 > 0 ? i <= ref1 : i >= ref1; pos = i += ref2) {
+					    results.push(callback.call(ref, slice.call(ref, pos, pos + step)));
+					  }
+					  return results;
+					};
+					
+					 data2.each_slice(5, function(x) { console.log(x)}) 
+
+43.方法二：				var j = 0;
+					for(var i = 0; i < 5; i++){
+						alert(j);
+						arrList[i]=(data2.slice(j,j+5));
+						j+=5;
+					}
+
+
+43,JavaScript里的循环方法： forEach（短板：不能中断循环(使用break语句或使用return语句），
+		            for-in(for-in循环实际是为循环对象：如json)，
+			    for-of(JavaScript6里引入了一种新的循环方法，它就是for-of循环，它既比传统的for循环简洁，同时弥补了forEach和for-in循环的短板。)
+44. css order 属性，左右排序
+45 display:flex;align-items:center;上下居中  http://www.runoob.com/cssref/css3-pr-order.html
+46,去除数组重复数据
+var arr1 =[1,2,2,2,3,3,3,4,5,6], 
+    arr2 = []; 
+for(var i = 0,len = arr1.length; i< len; i++){ 
+    if(arr2.indexOf(arr1[i]) < 0){ 
+        arr2.push(arr1[i]); 
+        } 
+    } 
+document.write(arr2); // 1,2,3,4,5,6
+47,解决火狐浏览器button文本上下不居中
+input[type="reset"]::-moz-focus-inner,input[type="button"]::-moz-focus-inner,input[type="submit"]::-moz-focus-inner,input[type="file"] > input[type="button"]::-moz-focus-inner{ border:none;padding:0; }
+48
+网页可见区域宽： document.body.clientWidth; 
+网页可见区域高： document.body.clientHeight; 
+网页可见区域宽： document.body.offsetWidth (包括边线和滚动条的宽); 
+网页可见区域高： document.body.offsetHeight (包括边线的宽); 
+网页正文全文宽： document.body.scrollWidth; 
+网页正文全文高： document.body.scrollHeight; 
+网页被卷去的高(ff)：document.body.scrollTop; 
+网页被卷去的高(ie): document.documentElement.scrollTop; 
+网页被卷去的左：document.body.scrollLeft; 
+网页正文部分上：window.screenTop; 
+网页正文部分左：window.screenLeft; 
+某个元素的宽度：obj.offsetWidth;
+某个元素的高度：obj.offsetHeight;
+某个元素的上边界到body最顶部的距离：obj.offsetTop;（在元素的包含元素不含滚动条的情况下）
+某个元素的左边界到body最左边的距离：obj.offsetLeft;（在元素的包含元素不含滚动条的情况下）
+返回当前元素的上边界到它的包含元素的上边界的偏移量：obj.offsetTop（在元素的包含元素含滚动条的情况下）
+返回当前元素的左边界到它的包含元素的左边界的偏移量：obj.offsetLeft（在元素的包含元素含滚动条的情况下）
+
+
+
+
+2016年5月10日  总共12w（今天我即将发放，没有算入）
+ 	
+	
+
+

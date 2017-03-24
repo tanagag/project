@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>JSX2</title>
+  <script src="build/react.min.js"></script>
+  <!--引入JSX转换库-->
+  <script src="build/JSXTransformer.js"></script>
+    <style>
+      .red{color:#fff;padding:20px 50px;background:#999;border-radius:10px;}
+    </style>
+  </head>
+  <body>
+    <!--真实的dom容器-->
+    <div id="content"></div>
+  </body>
+</html>
+<script type="text/jsx">
+     var CommentList = React.createClass({
+      render:function(){
+        //JSX 外层必须有div等父容器包裹
+        var e = 
+        <div className="commentList">
+          <Comment author="zhangsan" times="2015-12-01">我是评论一</Comment>
+          <Comment author="lisi" times="2015-12-02">我是评论二</Comment>
+        </div>
+        return e;
+      }
+     });
+     var Comment = React.createClass({
+      render:function(){
+        //JSX 外层必须有div等父容器包裹
+        var e = 
+        <div>
+          <dl>
+            <dt>{this.props.author}:{this.props.times}</dt>
+            <dd>{this.props.children}</dd>
+          </dl>
+        </div>
+        return e;
+      }
+     });
+     //var dom = React.createElement(tel);
+     React.render(<CommentList/>,document.querySelector("#content"));
+</script>
+

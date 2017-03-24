@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>css3 clip-path测试by zwb</title>
+  <style>
+	*{
+  margin:0;
+  padding:0;
+}
+li{
+  list-style:none;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+img{
+  float:left;
+  padding:10px;
+  background:#c1cd89;
+  border:10px solid #fcdb9a;
+  margin:10px;
+}
+li:nth-child(1) img{
+  shape-outside: inset(10% round 10% 40% 10% 40%);
+  -webkit-clip-path: inset(10% round 10% 40% 10% 40%);
+}
+li:nth-child(2) img{
+  shape-outside:ellipse();
+  -webkit-clip-path: ellipse();
+}
+li:nth-child(3) img{
+  shape-outside: circle();
+  -webkit-clip-path: circle();
+}
+li:nth-child(4) img{
+  shape-outside:polygon(nonzero,50% 0, 100% 100%, 0 100%);
+  -webkit-clip-path:polygon(nonzero,50% 0, 100% 100%, 0 100%);
+}
+li:nth-child(5) img{
+  shape-outside:margin-box;
+  -webkit-clip-path:margin-box;
+}
+li:nth-child(6) img{
+  shape-outside:border-box;
+  -webkit-clip-path:border-box;
+}
+li:nth-child(7) img{
+  shape-outside:padding-box;
+  -webkit-clip-path:padding-box;
+}
+li:nth-child(8) img{
+  shape-outside:content-box;
+  -webkit-clip-path:content-box;
+}
+li:nth-child(9) img{
+  -webkit-clip-path:rectangle();
+}
+li:nth-child(10) img{
+  -webkit-clip-path:inset-rectangle();
+}
+li:nth-child(11) img{
+  -webkit-clip-path:fill;
+}
+li:nth-child(12) img{
+  -webkit-clip-path:stroke;
+}
+li:nth-child(13) img{
+  -webkit-clip-path:view-box;
+}
+li:nth-child(14) img{
+  shape-outside:url('http://openclipart.org/image/800px/svg_to_png/3201/nlyl_blue_circle.png');
+  -webkit-clip-path:url('http://openclipart.org/image/800px/svg_to_png/3201/nlyl_blue_circle.png');
+}
+  </style>
+</head>
+<body>
+
+  <ul>
+    <li>
+      <h2>inset内嵌</h2>
+      <img src="http://www.htmleaf.com/pins/1412/201502082237/img/flowers.jpg">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+    <li>
+      <h2>ellipse椭圆</h2>
+      <img src="http://www.htmleaf.com/pins/1412/201502082237/img/flowers.jpg">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+    <li>
+      <h2>circle圆</h2>
+      <img src="http://www.htmleaf.com/pins/1412/201502082237/img/flowers.jpg">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+    <li>
+      <h2>polygon多边形</h2>
+      <img src="http://www.htmleaf.com/pins/1412/201502082237/img/flowers.jpg">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+    <li>
+      <h2>margin-box</h2>
+      <img src="http://www.htmleaf.com/pins/1412/201502082237/img/flowers.jpg">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+    <li>
+      <h2>border-box</h2>
+      <img src="http://www.htmleaf.com/pins/1412/201502082237/img/flowers.jpg">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+    <li>
+      <h2>padding-box</h2>
+      <img src="http://www.htmleaf.com/pins/1412/201502082237/img/flowers.jpg">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+    <li>
+      <h2>content-box</h2>
+      <img src="http://www.htmleaf.com/pins/1412/201502082237/img/flowers.jpg">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+    <li>
+      <h2>rectangle()</h2>
+      <img src="http://www.htmleaf.com/pins/1412/201502082237/img/flowers.jpg">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+    <li>
+      <h2>inset-rectangle()</h2>
+      <img src="http://www.htmleaf.com/pins/1412/201502082237/img/flowers.jpg">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+    <li>
+      <h2>fill</h2>
+      <img src="http://www.htmleaf.com/pins/1412/201502082237/img/flowers.jpg">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+    <li>
+      <h2>stroke</h2>
+      <img src="http://www.htmleaf.com/pins/1412/201502082237/img/flowers.jpg">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+    <li>
+      <h2>view-box</h2>
+      <img src="http://www.htmleaf.com/pins/1412/201502082237/img/flowers.jpg">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+    <li>
+      <h2>url('#clip')</h2>
+      <img src="http://openclipart.org/image/800px/svg_to_png/3201/nlyl_blue_circle.png" width="100" height="100">
+      <p>一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字一段很长很长的文字</p>
+    </li>
+  </ul>
+
+</body>
+</html>

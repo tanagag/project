@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery.js"></script>
+
+</head>
+<body>
+    <div id="show_page"></div>
+</body>
+</html>
+<script>
+var total_page = 100;//设定总页数初始值
+var now_page = 1;//初始化当前页码
+
+jump_page(now_page);//初始化第一页数据
+//显示分页页码元素
+function show_page(page_no) {
+    var show_content = '';//显示内容
+    var left_bar = '';//左侧内容
+    var middle_bar = '';//中间内容
+    var right_bar = '';//右侧内容
+    var count_left = 0;//左侧计数用
+    var count_right = 0;//右侧计数用
+    var choosed_page = page_no;//当前选中的页码
+    var is_first = page_no == 1 ? true : false;
+    var left_right_count = 10;//剩余右边的数量
+
+//    if (page_no - 6 > 0) left_bar += '<input type="button" value="<<" onClick="jump_page(' + 1 + ')"/>';
+    if (page_no > 1) left_bar += '<input type="button" value="<<" onClick="jump_page(' + 1 + ')"/>';
+    if (page_no - 6 > 0) {
+    	var pre_10 = page_no - 10;
+    	if (pre_10 < 0) pre_10 = 1;
+    	left_bar += '<input type="button" value="<" onClick="jump_page(' + pre_10 + ')"/>';
+    }
+    for (var i = page_no - 5; i < page_no; i++) {
+    	if (count_left > 4) break;
+    	if (i < 1) continue;
+    	left_bar += '<input type="button" value="' + i + '" onClick="jump_page(' + i + ')"/>';
+    	count_left++;
+    }
+    
+    middle_bar = '<input class="select" type="button" value="' + page_no + '" onClick="jump_page(' + page_no + ')" disabled="true"/>';
+    var show_max_page_no = 0;
+    var break_count = choosed_page > 5 ? 3 : 9 - choosed_page;//初始化中断计数值
+    for (var i = page_no + 1; i <= total_page; i++) {
+//    	if (choosed_page == 1) break_count = 8;
+    	if (count_right > break_count) break;
+    	right_bar += '<input type="button" value="' + i + '" onClick="jump_page(' + i + ')"/>';
+    	show_max_page_no = i;
+    	count_right++;
+    }
+    if (show_max_page_no != 0 && show_max_page_no < total_page) {
+    	var next_10 = page_no + 10;
+	    right_bar += '<input type="button" value=">" onClick="jump_page(' + next_10 + ')"/>';
+    }
+    
+//    if (show_max_page_no != 0 && show_max_page_no < total_page) {
+    if (choosed_page < total_page) {	
+    	right_bar += '<input type="button" value=">>" onClick="jump_page(' + total_page + ')"/>';
+    }
+    
+    show_content = left_bar + middle_bar + right_bar;
+    
+    $('#show_page').html(show_content);
+    $('#show_page').show();
+}
+
+//跳转页码
+function jump_page(page_num) {
+    var url = 'http://192.168.2.21/frontapi/user/invest_info';//@TODO,URL地址
+    var uid = '1';//用户ID,@TODO
+    var token = '151b8ab33d817dea241baeac38e0094e';//@TODO,用户TOKEN，此处有问题，待定
+    var page_size = 3;//@TODO,每页记录数
+    var fund_type = 'R';//@TODO数据类型
+    
+    var query_period = '';//查询时间段
+    $.post(url, {user_id: uid, page_size: page_size, page_num: page_num, fund_type: fund_type}, function (response) {
+    	now_page = response.page_num;
+    	var page_total_num = Number(response.page_total_num);
+    	total_page = parseInt(page_total_num / page_size + 1);
+    	show_page(page_num);
+    });
+}
+</script>

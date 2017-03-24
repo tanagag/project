@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<title>拖拽</title>
+<style type="text/css">
+	*{margin:0;padding:0;}
+	#wrap{width:500px;height:350px;background:#fff;border:1px solid #bbb; position:absolute;}
+	.title{height:45px;line-height:45px;background:#ccc; cursor:move;}
+</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<p class="title" id="drag"></p>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		autoCenter("#wrap");
+		var pageX = 0;
+		var pageY = 0;
+		var flag = false;
+		/*
+		$("#drag")[0].addEventListener("mousedown", function(e){
+			down(e);
+		});
+		document.onmousemove=function(e){
+			move(e);
+		}
+		document.onmouseup=function(e){
+			flag = false;
+		}
+		*/
+
+
+		$(document).on('mousedown', '#drag', down);
+		$(document).bind("mousemove",move);
+		$(document).bind("mouseup",up);
+
+		//
+		function down(e){
+			var e = e||window.event;
+			pageX = e.pageX - $("#wrap").offset().left;
+			pageY = e.pageY - $("#wrap").offset().top;
+			flag = true;
+		}
+		//
+		function move(e){
+			var e = e||window.event;
+			if(flag){
+				var moveX = e.pageX - pageX;
+				var moveY = e.pageY - pageY;
+				
+				var winW = $(window).width();
+				var winH = $(window).height();
+				var w = $("#wrap").outerWidth();
+				var h = $("#wrap").outerHeight();
+				//边界限定
+				moveX = moveX <= 0 ? 0:moveX > winW-w ? winW-w:moveX;
+				moveY = moveY <= 0 ? 0:moveY > winH-h ? winH-h:moveY;
+
+				$("#wrap").css({"left":moveX,"top":moveY});
+			}	
+		}
+		//
+		function up(){
+			flag = false;
+		}
+		function autoCenter(id){
+			var obj = $(id);
+			var winW = $(window).width();
+			var winH = $(window).height();
+			var left = (winW - obj.width())/2;
+			var top = (winH - obj.height())/2;
+			obj.css({"left":left,"top":top});
+		}
+	});
+	
+</script>

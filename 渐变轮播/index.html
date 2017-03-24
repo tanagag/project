@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>第34章 项目1-博客前端：下拉菜单</title>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<style type="text/css">
+	*{padding:0;margin:0;}
+	ul,li{list-style:none}
+	#main{width:900px; margin:0 auto}
+	#banner{width:900px;height:150px;position:relative;}
+	#banner img{width:100%;height:150px;position:absolute;left:0;top:0;opacity:0;}
+	ul{width:100%;height:25px; line-height:25px; text-align:center;background:rgba(0,0,0,.5);}
+	ul li{float:left;margin:0 5px;text-align:center; cursor:pointer}
+	ul .active{color:#f60;}
+</style>
+</head>
+<body>
+
+<div id="main">
+	<div id="banner">
+		<img src="images/banner1.jpg" alt="轮播器第一张" />
+		<img src="images/banner2.jpg" alt="轮播器第二张" />
+		<img src="images/banner3.jpg" alt="轮播器第三张" />
+	</div>
+    	<ul>
+			<li class="active">●</li>
+			<li>●</li>
+			<li>●</li>
+		</ul>
+</div>
+</body>
+</html>
+<script>
+	$(function(){
+		var index = 1;
+		//初始化
+		$("ul li").eq(0).addClass("active");
+		$("#banner img").eq(0).css("opacity","1");
+		//定时器
+		var clr = setInterval(banner_fn,3000);
+		
+		//鼠标悬浮效果
+		$("ul li").hover(function(){
+			clearInterval(clr);
+			if($(this).hasClass("active")==false){
+				banner($(this),index==0?$("ul li").size()-1:index-1);
+			}
+		},function(){
+			index = $(this).index()+1;
+			clr = setInterval(banner_fn,3000);
+		});
+		//定时器直接调用此函数
+		function banner_fn(){
+			index = index > $("#banner img").length-1 ? 0:index;
+			banner($("ul li").eq(index),index==0?$("ul li").size()-1:index-1);
+			index++;	
+		}
+		function  banner(obj,prev){
+			$("ul li").removeClass("active");
+			obj.addClass("active");
+			$("#banner img").eq(prev).stop().animate({"opacity":"0"},800);
+			$("#banner img").eq(obj.index()).stop().animate({"opacity":"1"},800);
+		}
+	});
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+/*! normalize.css 2011-11-04T15:38 UTC - http://github.com/necolas/normalize.css */
+.result-animations{
+	background:red;
+	border-radius:50px;
+	width:50px;
+	height:50px;
+	position:absolute;bottom:0;left:45%;
+	
+	-webkit-animation-name:bounceball;
+	-webkit-animation-duration:1s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-direction:alternate;
+	-webkit-animation-play-state:running;
+	-webkit-animation-delay:0s;
+	-webkit-animation-timing-function:ease;
+	/*-webkit-animation-fill-mode:none;*/
+}
+	
+@-webkit-keyframes bounceball{
+	from{bottom:0;opacity:1;background:red}
+	50%{background:blue;opacity:0.5}
+	to{bottom:60px;opacity:0.5;background:green}
+}
+
+.btn-animations{
+	background:#abcdea;
+	border-radius:5px;
+	display:block;
+	text-align:center;
+	width:100px;
+	height:50px;
+	line-height:50px;
+	text-decoration:none;
+	-webkit-box-shadow:0 0 3px 10px #f60;
+	
+	-webkit-animation-name:btn;/*动画的名称（和keyframes对应）*/
+	-webkit-animation-duration:0.8s;/*动画的执行频率*/
+	-webkit-animation-iteration-count:infinite;/*动画的循环次数，infinte是无限次*/
+	-webkit-animation-direction:alternate;/*animation-direction是用来指定元素动画播放的方向，其只有两个值，默认值为normal，如果设置为normal时，动画的每次循环都是向前播放；另一个值是alternate，他的作用是，动画播放在第偶数次向前播放，第奇数次向反方向播放。*/
+	-webkit-animation-play-state:running;/*animation-play-state主要是用来控制元素动画的播放状态。其主要有两个值，running和paused其中running为默认值。*/
+	-webkit-animation-delay:0s;/*动画的延迟时间*/
+	-webkit-animation-timing-function:ease;/*动画的柔和度*/
+	/*-webkit-animation-fill-mode:none;*/
+}
+	
+@-webkit-keyframes btn{
+	from{box-shadow:0 0 3px 0px #f90;}
+	to{box-shadow:0 0 3px 5px #f60;}
+}
+</style>
+</head>
+
+<body>
+<div>
+	<div class="result-animations"></div>
+    <div><a class="btn-animations" href="#">按 钮</a></div>
+</div
+></body>
+</html>

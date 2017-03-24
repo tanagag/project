@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="res/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="res/jquery-1.10.1.min.js" type="text/javascript"></script>
+    <script src="res/jqPaginator.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+        <ul class="pagination" id="pagination"></ul>
+		<ul class="pagination" id="pagination2"></ul>
+        <input type="hidden" id="PageCount" runat="server" value="21"  />
+        <input type="hidden" id="PageSize" runat="server" value="5" />
+        <input type="hidden" id="countindex" runat="server" value="0"/>
+        <!--设置最多显示的页码数 可以手动设置 默认为7-->
+        <input type="hidden" id="visiblePages" runat="server" value="10" />
+
+		<div id="data2">
+			<p></p>
+		</div>
+</body>
+</html>
+<script type="text/javascript">
+		var arr = {
+			1:["1","a","a","a"],
+			2:["2","b","b","b"],
+			3:["3","c","c","c"],
+			4:["4","d","d","d"],
+			5:["5","e","e","e"],
+			6:["6","e","e","e"],
+			7:["7","e","e","e"],
+			8:["8","e","e","e"],
+			9:["9","e","e","e"],
+			10:["10","e","e","e"],
+			11:["11","e","e","e"],
+			12:["12","e","e","e"],
+			13:["13","e","e","e"],
+			14:["14","e","e","e"],
+			15:["15","e","e","e"],
+			16:["16","e","e","e"],
+			17:["17","e","e","e"],
+			18:["18","e","e","e"],
+			19:["19","e","e","e"],
+			20:["20","e","e","e"],
+			21:["21","e","e","e"]
+		};
+		
+		
+		loadpage("#pagination");
+		loadData(1);
+		function loadData(idx){
+			alert(idx);
+			var obj = arr[idx];
+			$("#data2").html(obj[0]);
+		}
+	   
+		function exeData(num) {
+			
+			loadData(num);
+			loadpage("#pagination");
+		}
+		
+		
+		
+		function loadpage(domId) {
+			var myPageCount = parseInt($("#PageCount").val());
+			var myPageSize = parseInt($("#PageSize").val());
+			var countindex = myPageCount % myPageSize > 0 ? (myPageCount / myPageSize) + 1 : (myPageCount / myPageSize);
+			$("#countindex").val(countindex);
+
+			$.jqPaginator(domId, {
+				totalPages: parseInt($("#countindex").val()),
+				visiblePages: parseInt($("#visiblePages").val()),
+				currentPage: 1,
+				first: '<li class="first"><a href="javascript:;">首页</a></li>',
+				prev: '<li class="prev"><a href="javascript:;"><i class="arrow arrow2"></i>上一页</a></li>',
+				next: '<li class="next"><a href="javascript:;">下一页<i class="arrow arrow3"></i></a></li>',
+				last: '<li class="last"><a href="javascript:;">末页</a></li>',
+				page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
+				onPageChange: function (num, type) {
+					if (type == "change") {
+						exeData(num);
+					}
+				}
+			});
+		}
+		
+		
+		
+		
+    </script>

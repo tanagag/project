@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>canvas drawImage</title>
+
+<style type="text/css">
+	*{padding:0;margin:0;}
+</style>
+</head>
+
+<body>	
+	<div><img src="" class="img1" style="width:200px;height:200px;border:1px solid #ccc" /></div>
+    <canvas id="myCanvas" >Your browser does not support the HTML5 canvas tag.</canvas>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script>
+	$(function(){
+		//这种方法加载图片是在后台加载，加载完毕后直接显示出来，可以控制宽高，适用于pc（个人感觉也可以用在移动手机）兼容低版本IE
+		//如果是用原始的img标签，大图是由上而下慢慢显示
+		var obj1 = new Image();
+		$(obj1).bind("load",function(){
+			$(".img1").attr("src",obj1.src);
+		});
+		obj1.src="http://a.hiphotos.baidu.com/zhidao/pic/item/500fd9f9d72a60591524ca362a34349b033bbae1.jpg";
+		//这种方法适合用在手机端固定宽高的图片，canvas调用设备的GPU加载图片，而不是浏览器渲染(效率高，但是占内存)
+		var obj2 = new Image();
+		obj2.onload=function(){
+			var canvas = document.getElementById("myCanvas");
+			canvas.width = $(window).width();
+			canvas.height = $(window).height();
+			var cvs=canvas.getContext("2d");
+			cvs.drawImage(obj2,0,0,$(window).width(),$(window).height());//三种参数
+			//http://jo2.org/html5-canvas-drawimage/
+		}
+		obj2.src="http://pic2.desk.chinaz.com/file/201212/6/yidaizongshi6.jpg";
+		
+	});
+
+</script>

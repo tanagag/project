@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0;}
+html{font-size:20px;}
+input{outline:none}
+img{ border:none;}
+li{ list-style:none;}
+a{ text-decoration:none;}
+body{min-width:320px; font-family:Microsoft Yahei;background:#fff;}
+body{background:#29486d;}
+.clear{clear:both}

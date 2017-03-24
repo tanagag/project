@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>js简易滚动条</title>
+    <script type="text/javascript" src="js/jsScroll.js"></script>
+    <style type="text/css">
+    .divScrollBar{background-color:#ddd;position:absolute;opacity:0.5; filter:Alpha(opacity=50);}
+    .divScrollBar:hover{opacity:1; filter:Alpha(opacity=100);}
+    .divScrollBar div{background-color:#aaa; position:absolute; left:0px; top:0px;}
+	
+	.scrollBarIndex{border-color:#CCC;border-width:1px;border-style:solid;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;}
+    </style>
+</head>
+<body>
+<div id="div2" style="width:500px;; overflow:hidden; height:300px; border:solid 0px gray; padding:10px; line-height:1.5; margin-top:10px;">
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+AAAAAAAAAAAAA<br />
+</div>
+<script type="text/javascript">
+jsScroll(document.getElementById('div2'));
+</script>
+</body>
+</html>

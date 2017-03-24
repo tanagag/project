@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>demo1</title>
+    <script src="build/react.js"></script>
+    <style>
+      p{font:italic bold 50px verdana;}
+    </style>
+  </head>
+  <body>
+    <!--真实的dom容器-->
+    <div id="content"></div>
+    <script>
+      //创建虚拟dom元素p
+      var el = React.createElement("p",null,"hello react!");
+      //将虚拟dom上的p元素渲染到真实的dom上的#content容器上
+      React.render(el,document.querySelector("#content"));
+    </script>
+  </body>
+</html>

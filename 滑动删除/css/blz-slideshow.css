@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	box-sizing:border-box;		
+	}
+*::before,
+*::after {
+	box-sizing:border-box;
+	}	
+html {
+	font-size:-webkit-calc(1000vw / 640);
+	font-size:calc(1000vw / 640);
+	}
+body {
+	margin:0;
+	padding:0;	
+}	
+.blz-slideshow {
+	position:relative;
+	padding-bottom:56.25%;
+	background-color:#666;
+	overflow:hidden;
+}
+.blz-slideshow-nav {
+	position:absolute;
+	text-align:center;
+	z-index:3;
+}
+.blz-slideshow-tab {
+	height:0;
+}
+.blz-slideshow-tab button {
+	position:absolute;
+	top:50%;
+	left:0;
+	margin-top:-3rem;
+	padding:1rem 2rem;
+	border:none 0;
+	border-radius:0.4rem;
+	background-color:rgba(0,0,0,0.6);
+	text-indent:-2rem;
+	color:#fff;
+	font-size:4rem;
+	line-height:1;
+	z-index:3;
+}
+.blz-slideshow-tab button.next {
+	left: initial;
+    right: 0;
+	-webkit-transform:rotate(180deg);
+	transform:rotate(180deg);
+}
+.blz-slideshow-nav {
+	left:0;
+	bottom:1rem;
+	width:100%;
+}
+.blz-slideshow-nav li {
+	position:relative;
+	display:inline-block;
+	width:2rem;
+	height:2rem;
+	margin:0 1rem;
+	border-radius:50%;
+	list-style:none;
+	vertical-align:middle;
+	background-color:rgba(167,167,167,1.00);
+}
+.blz-slideshow-nav li.active {
+	background-color:#38AFD9;
+}
+.blz-slideshow-nav a {
+	position:absolute;
+}
+.blz-slideshow-container {
+	position:absolute;
+	height:100%;
+	width:100%;
+	margin:0 auto;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+	font-size:3rem;
+	-webkit-transition:-webkit-transform .3s cubic-bezier(0.5,0.5,0.5,0.5);
+	transition:transform .3s cubic-bezier(0.5,0.5,0.5,0.5);
+}
+.blz-slideshow-container>section {
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+	
+	-webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    flex-shrink: 0;
+	
+	-webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+	
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+	
+	width:100%;
+	height:100%;
+	background:url(../images/dog.jpg) no-repeat;
+	background-size:cover;
+}		

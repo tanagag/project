@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js" /></script>
+</head>
+<body>
+</body>
+</html>
+<script>
+	$(function(){
+		if( $.browser.msie){
+			switch( $.browser.version){
+				case 6.0:
+					alert("IE6");
+					break;
+				case "7.0":
+					alert("IE7");
+					break;
+				case "8.0":
+					alert("IE8");
+					break;
+				default:
+					break;
+			}
+		}
+		/*
+		if( $.browser.msie && ( $.browser.version == '6.0' || $.browser.version == '7.0' ) ){
+			alert("IE6  and  IE7！");
+		}
+		if( $.browser.msie && ( $.browser.version == '8.0' ) ){
+			alert("IE8");
+		}*/
+	});
+</script>

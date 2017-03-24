@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>JQurey.LazyLoad.js插件使用说明-http://www.jb51.net</title>
+<style type="text/css">
+* { font-size:12px; }
+</style>
+<script type="text/javascript" src="js/lazyload/jquery.js"></script>
+<script type="text/javascript" src="js/lazyload/jquery.lazyload.js"></script>
+</head>
+
+<body>
+<p>1、将文件解压，将Js文件夹所有文件上传至网站根目录，目录形式为：<br />
+http://www.jb51.net/Js/lazyload/grey.gif<br />
+http://www.jb51.net/Js/lazyload/jquery.js<br />
+http://www.jb51.net/Js/lazyload/jquery.lazyload.js
+</p>
+
+2、调用方法：<br />
+在需要用到特效的页面上，加上以下代码<br />
+&lt;script type="text/javascript" src="/Js/lazyload/jquery.js"&gt;&lt;/script&gt;<br />
+&lt;script type="text/javascript" src="/Js/lazyload/jquery.lazyload.js"&gt;&lt;/script&gt;
+
+<p>3、如果上传路径改变，或者加载时图片打叉，说明图片路径不正确，查找jquery.lazyload.js中的placeholder:，将后面的图片地址换成绝对地址即可！</p>
+<script type="text/javascript">
+	$(function(){
+		$("img.lazy").lazyload();  
+	});
+</script>
+
+<p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p><p><img src="images/3.jpg" width="232" height="150" /></p>
+</body>
+</html>

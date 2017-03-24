@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script type="text/javascript" src="../myDemo/myDemo/js/jquery-1.8.2.js"></script>
+<style type="text/css">
+	*{padding:0;margin:0;font-size:14px; }
+    body{/*-webkit-perspective: 800;*/}
+    .box{width:200px;height:200px;margin:150px auto;position:relative;
+        -webkit-transform-style: preserve-3d;
+        /*-webkit-perspective: 800;*/
+        -webkit-transform:perspective(800px) rotateX(45deg) rotateY(45deg) translateZ(-100px);
+        -webkit-transform-origin:bottom;
+    }
+    .box div{position:absolute;left:0;top:0;width:200px;height:200px;color:#000;-webkit-backface-visibility: hidden;}
+    .box div:nth-child(1){background:red;opacity:0.5;} 
+    .box div:nth-child(2){-webkit-transform: translateZ(200px);background:#abcdef;opacity:0.5;} 
+    .box div:nth-child(3){-webkit-transform-origin:left;transform: rotateY(-90deg);background:#f60;opacity:0.5;} 
+    .box div:nth-child(4){-webkit-transform-origin:right;transform: rotateY(90deg);background:#f90;opacity:0.5;} 
+    .box div:nth-child(5){-webkit-transform-origin:top;transform: rotateX(90deg);background:green;opacity:0.5;} 
+    .box div:nth-child(6){-webkit-transform-origin:bottom;transform: rotateX(-90deg);background:blue;opacity:0.5;} 
+</style>
+</head>
+
+<body>
+    <div class="box">
+        <div>前</div>
+        <div>后</div>
+        <div>左</div>
+        <div>右</div>
+        <div>上</div>
+        <div>下</div>
+    </div>
+</body>
+</html>

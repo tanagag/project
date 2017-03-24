@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+body { background:#ccc;}
+#scroll_box { width:1000px; margin:100px auto; overflow:hidden;}
+#scroll { width:3px; height:288px; background:#9ccef1; position:relative; cursor:pointer; float:left;}
+#scroll_controler { width:3px; height:60px; background:#0a6bb2; position:absolute;}
+#scorll_passage { position:absolute;}
+#scroll_contain { float:left; width:176px; height:288px; background:#fff; position:relative; overflow:hidden;}
+.no_select { -moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;-khtml-user-select: none;user-select: none;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>自定义滚动条</title>
+<script>
+
+//事件绑定
+function myAddEvent(obj, sEvent, fn)
+{
+	if(obj.attachEvent)
+	{
+		obj.attachEvent('on'+sEvent, fn);
+	}
+	else
+	{
+		obj.addEventListener(sEvent, fn, false);
+	}
+}
+
+//用id获取元素
+function getById(id){
+	return document.getElementById(id);
+};
+
+//自定义滚动条
+function definedScroll(oScroll,oController,oContain,oPassage){
+	
+	function onMouseWheel(ev){
+		var oEvent = ev || event;
+		var oB = true;
+		
+		oB = oEvent.wheelDelta?oEvent.wheelDelta<0:oEvent.detail>0;
+		
+		if(oB){
+			setTop(oController.offsetTop+10);
+		}
+		else{
+			setTop(oController.offsetTop-10)
+		}
+		
+		if(oEvent.preventDefault)
+		{
+			oEvent.preventDefault();
+		}
+		
+		return false;
+	};
+	
+	myAddEvent(oScroll,'mousewheel',onMouseWheel);
+	myAddEvent(oScroll,'DOMMouseScroll',onMouseWheel);
+	myAddEvent(oContain,'mousewheel',onMouseWheel);
+	myAddEvent(oContain,'DOMMouseScroll',onMouseWheel);
+	
+	oController.onmousedown = function(ev){
+		var oEvent = ev || event;
+		var disY = oEvent.clientY - oController.offsetTop;
+		
+		document.onmousemove = function(ev){
+			var oEvent = ev || event;
+			var t = oEvent.clientY - disY;
+			
+			setTop(t);
+		};
+		
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+		};
+	};
+
+	function setTop(iTop){
+		if(iTop<0){
+			iTop = 0;
+		}
+		else if(iTop>oScroll.offsetHeight - oController.offsetHeight){
+			iTop = oScroll.offsetHeight - oController.offsetHeight;
+		}
+		
+		oController.style.top = iTop + "px";
+		var scale = iTop/(oPassage.offsetHeight-oContain.offsetHeight);
+		
+		oPassage.style.top = -(oPassage.offsetHeight-oContain.offsetHeight)*scale + "px";
+	}
+	
+};
+
+window.onload = function(ev){
+	var oScroll = getById("scroll");
+	var oController = getById("scroll_controler");
+	var oContain = getById("scroll_contain");
+	var oPassage = getById("scorll_passage");
+	
+	definedScroll(oScroll,oController,oContain,oPassage);
+};
+</script>
+</head>
+
+<body  class="no_select" unselectable="none" onselectstart="return false">
+<div id="scroll_box">
+    <div id="scroll_contain">
+    	<div id="scorll_passage">
+        	<p>加油加油加油加油！！！</p>
+            <p>加油加油加油加油！！！</p>
+            <p>加油加油加油加油！！！</p>
+            <p>加油加油加油加油！！！</p>
+            <p>加油加油加油加油！！！</p>
+            <p>加油加油加油加油！！！</p>
+            <p>加油加油加油加油！！！</p>
+            <p>加油加油加油加油！！！</p>
+            <p>加油加油加油加油！！！</p>
+            <p>加油加油加油加油！！！</p>
+            <p>加油加油加油加油！！！</p>
+            <p>加油加油加油加油！！！</p>
+            <p>加油加油加油加油！！！</p>
+        </div>
+    </div>
+    <div id="scroll">
+        <div id="scroll_controler">
+        </div>
+    </div>
+</div>
+</body>
+</html>

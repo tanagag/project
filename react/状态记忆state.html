@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>状态记忆state</title>
+  <script src="build/react.min.js"></script>
+  <!--引入JSX转换库-->
+  <script src="build/JSXTransformer.js"></script>
+
+  </head>
+  <body>
+    <!--真实的dom容器-->
+    <div id="content"></div>
+  </body>
+</html>
+<script type="text/jsx">
+     var Com = React.createClass({
+      getInitialState : function(){
+        return {on : false , count : 0};
+      },
+      onClick : function(){
+        this.state.count++;
+        if(this.state.count<5){
+          this.setState({on:!this.state.on});
+        }else{
+          alert("不要一直点击好不好，已经超过5次了");
+        }
+      },
+      render : function(){
+        var img = this.state.on ? "images/switch-off.png" : "images/switch-on.png";
+        return <img src = {img} style={{width:"150px"}} onClick={this.onClick} />;
+      }
+     });
+     React.render(<Com/>,document.querySelector("#content"));
+</script>
+
+
+

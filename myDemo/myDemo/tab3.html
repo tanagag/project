@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3清新Tab菜单</title>
+<style>
+*{padding:0;margin:0;font-size:18px}
+.tab{width:50%;margin:auto;border:1px solid green}
+.tabs{list-style:none;overflow:auto}
+.tabs li{float:left;height:35px;line-height:35px;width:80px;text-align:center;color:#fff;border:1px solid #ccc}
+.tabs_item{display:none;}
+.tabs_item:first-child{display:block}
+.current{color:#fff;background:#87d3b7;}
+</style>
+</head>
+<body>
+<div class="tab">
+	<ul class="tabs">
+    	<li><a href="javascript:void(0)">Tab 01</a></li>
+        <li><a href="javascript:void(0)">Tab 02</a></li>
+        <li><a href="javascript:void(0)">Tab 03</a></li>
+    </ul>
+    <div class="tab_content">
+    	<div class="tabs_item">
+        	<h4>Tab 01</h4>
+            <p>AAAAAAAAAAAAAAAAAAAAA</p>
+        </div>
+        <div class="tabs_item">
+        	<h4>Tab 02</h4>
+            <p>BBBBBBBBBBBBBBBBBBBBB</p>
+        </div>
+        <div class="tabs_item">
+        	<h4>Tab 03</h4>
+            <p>CCCCCCCCCCCCCCCCCCC</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="js/jquery-1.8.2.js"></script>
+<script>
+$(document).ready(function() { 
+
+	(function ($) { 
+		$(".tabs li").first().addClass("current");
+		$(".tabs li").click(function(){
+			var idx=$(this).index();
+			$(".tabs_item").not(":eq("+idx+")").slideUp();
+			$(".tabs_item").eq(idx).slideDown();
+		});
+	})(jQuery);
+});
+</script>

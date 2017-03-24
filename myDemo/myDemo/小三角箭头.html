@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>小三角箭头</title>
+    <style>
+        .content {
+			
+            width: 100px;
+            height: 100px;
+            padding: 0;
+            background: #f60;
+            position:relative;
+			margin:100px;
+        }
+        .content:after {
+            display: block;/*很重要，不然会有多余的px,且top left等也不能对齐*/
+            content: "";
+            width: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            position:absolute;
+            bottom: 100%;/*top: -20px;*/
+            left: 40px;
+            border: 10px solid transparent;
+            border-bottom: 10px solid #f90;
+        }
+		
+		
+		#talkbubble {
+			 width: 120px;
+			 height: 80px;
+			 margin:100px;
+			 background: #39c;
+			 position: relative; 
+			 -moz-border-radius:10px;
+			 -webkit-border-radius: 10px;
+			 border-radius: 10px 
+		}
+		#talkbubble:before { 
+			content: ""; 
+			position: absolute; 
+			right:100%;/*left:-13px*/
+			top: 27px;  
+			width: 0; 
+			height: 0; 
+			border-top: 13px solid transparent;
+			border-right: 13px solid #f60;
+			border-bottom: 13px solid transparent;
+		}
+		#s{
+			width:0;
+			height:0;
+			border:50px solid transparent;
+			border-top:0;
+			border-bottom:50px solid red;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="content"></div>
+	<div id="talkbubble" title="对话框"></div>
+	<div id="s"></div>
+</body>
+
+</html>

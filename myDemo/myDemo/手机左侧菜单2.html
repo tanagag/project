@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<style type="text/css">
+*{padding:0;margin:0}
+#header_nav{
+	height: 54px;
+	line-height:54px;
+	text-indent:10px;
+	background-color: #b4222d;
+}
+
+#side {
+	position: fixed;
+	top:0;
+	left:0;
+	font-size: 16px;
+	width: 250px;
+	z-index: 2;
+	margin-left: -250px;
+}
+#side_nav{
+	width:250px;
+	overflow-y:auto;
+}
+
+section{background:#ccc;/*min-width:320px;可以不用在这里设定，通过js判断手机屏幕大小*/}
+</style>
+</head>
+<body>
+<div style="overflow: hidden;width: 100%;">
+  <aside id="side">
+    <nav id="side_nav">
+      <ul>
+       			<li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+                <li>首页</li>
+      </ul>
+    </nav>
+  </aside>
+  <div id="wrap">
+    <header id="header_nav">
+      	 <a href="javascript:toggleMenu()"  title="菜单">菜单</a>
+    </header>
+    <section>
+    	张卫东任我国驻冰岛共和国特命全权大使宁夏彭阳致7死灭门案罪犯今日被执行死刑河南南乐回应仓颉陵书法墙被尘封：部分非真迹专家称官员财产内部申报应公开教育部通报4起高校贪腐案:浙大原教授贪945万国考上海近8成职位零报名 拟招录人数创新高二手沪牌活牌日涨千元 打车软件被纳入交通委管理局地大闸蟹因反腐价格降四成 官员消费几乎为零
+    </section>
+  </div>
+</div>
+ <script>	
+		var tag=false;
+		//用于显示隐藏菜单
+		function toggleMenu() {
+			if(!tag) {
+				$('#side').animate({'margin-left':'0'});
+				$('#wrap').animate({'margin-left':'250px'});
+				tag=true;
+			} else {
+				$('#side').animate({'margin-left':'-250px'});
+				$('#wrap').animate({'margin-left':'0'});
+				tag=false;
+			}
+		}
+		//
+		function resizeMenu()
+		{
+			$("#side_nav").css('height', (parseInt(document.documentElement.clientHeight)) + 'px');
+			$("section").css("width",(parseInt(document.documentElement.clientWidth)) + 'px');
+		}
+		//当手机横竖屏时，触发resize调用resizeMenu方法重置屏幕宽和高
+		if (document.all) {//IE
+			window.attachEvent('onresize', function(){
+				resizeMenu();
+			});
+		} else {//非IE
+			window.addEventListener('resize', function(){
+				resizeMenu();
+			}, false);
+		}
+		//先调用一下，给section赋对应手机屏幕大小的宽度宽度
+		resizeMenu();
+	</script> 
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"  name="viewport" />
+<title>The Kitchen Salvatore Cuomo - Shanghai WOW!</title>
+<script src="js/jquery-1.8.2.js" type="text/javascript"></script>
+</head>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0
+}
+.tips {
+	width: 320px;
+	margin: 0 auto;
+	height: 175px;
+	overflow: hidden;
+}
+.tips .relative {
+	position: relative;
+}
+.tips .pictureList {
+	width: 320px;
+	height: 175px;
+	overflow: hidden;
+}
+.tips .pictureList li {
+	float: left;
+}
+.tips .pictureList li img {
+	width: 320px;
+	height: 175px;
+}
+</style>
+<body>
+<div class="tips" >
+  <div class="relative">
+    <div class="pictureList" id="pictureList" >
+      <ul style="width:960px;">
+        <li>
+          <p><img src="http://image.shanghaiwow.com:1234/uploads/appimage/193x153/20110829_123204ip1.jpg" style="width:320px; height:175px"/></p>
+        </li>
+        <li>
+          <p><img src="http://image.shanghaiwow.com:1234/uploads/appimage/193x153/20130131_1200292.jpg" style="width:320px; height:175px"/></p>
+        </li>
+        <li>
+          <p><img src="http://image.shanghaiwow.com:1234/uploads/appimage/193x153/20130131_1200373.jpg" style="width:320px;height:175px"/></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script language="javascript">
+(function(){
+	var startX, startY, longX, longY;// 滑动 右负左正
+	var scrollLeftVal = 0;
+	var scrollLeftValTemp = 0;
+	var oneWidth = 320;
+	//假定接受手指触摸事件的Dom对象id是"touchBox"
+	document.getElementById("pictureList").addEventListener("touchstart", touchStart, false);
+	document.getElementById("pictureList").addEventListener("touchmove", touchMove, false);
+	document.getElementById("pictureList").addEventListener("touchend", touchEnd, false);
+
+	function touchStart(event){
+		var touch = event.touches[0];
+		startX = touch.pageX;
+		startY = touch.pageY;
+	}
+
+	function touchMove(event){
+		event.preventDefault();
+		var touch = event.touches[0];
+		longX = (touch.pageX - startX);
+		longY = (touch.pageY - startY);
+		$("#pictureList").attr('scrollLeft', scrollLeftVal - longX);
+		scrollLeftValTemp = scrollLeftVal - longX;
+	}
+
+	function touchEnd(event){
+		scrollLeftVal2 = scrollLeftVal;
+		scrollLeftVal = scrollLeftValTemp >= 0 ? scrollLeftValTemp : 0;
+		listWidth = ($("#pictureList ul").css("width").replace("px", "")) * 1  - oneWidth;
+		scrollLeftVal = scrollLeftValTemp <= listWidth ? scrollLeftVal : listWidth;
+		
+		var modNum = scrollLeftVal % oneWidth;
+		
+		if (modNum !=0 ) {
+			if (scrollLeftVal > scrollLeftVal2) {
+				$("#pictureList").animate({scrollLeft: scrollLeftVal + (oneWidth - modNum)}, 500);
+				scrollLeftVal = scrollLeftVal + (oneWidth - modNum);
+			} else {
+				$("#pictureList").animate({scrollLeft: scrollLeftVal - ( modNum)}, 500);
+				scrollLeftVal = scrollLeftVal - (modNum);
+			}
+		}
+	}
+})();
+</script>

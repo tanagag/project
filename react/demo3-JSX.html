@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>JSX</title>
+  <script src="build/react.min.js"></script>
+  <!--引入JSX转换库-->
+  <script src="build/JSXTransformer.js"></script>
+    <style>
+      .red{color:#fff;padding:20px 50px;background:#999;border-radius:10px;}
+    </style>
+  </head>
+  <body>
+    <!--真实的dom容器-->
+    <div id="content"></div>
+  </body>
+</html>
+<script type="text/jsx">
+     var Tel = React.createClass({
+      render:function(){
+        //JSX 外层必须有div等父容器包裹
+        var e = 
+        <div>
+          <div className="red">我是谭政...</div>
+          <div>我是一名前端程序员</div>
+        </div>
+        return e;
+      }
+     });
+     var Tel2 = React.createClass({
+      render:function(){
+        //JSX 外层必须有div等父容器包裹
+        var e = 
+        <div>
+          <div>组件属性</div>
+          <Tel/>
+        </div>
+        return e;
+      }
+     });
+     //var dom = React.createElement(tel);
+     React.render(<Tel2/>,document.querySelector("#content"));
+</script>
+
