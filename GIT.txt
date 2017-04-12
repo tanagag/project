@@ -1,0 +1,42 @@
+徐超
+
+git clone "address"  从master克隆项目       master
+
+git branch tanzheng
+
+
+
+git add *
+
+git commit -m '注释'
+
+git push origin tanzheng  //上传到线上master分支 
+
+
+
+
+
+做完 -》 上传git分支 -》申请发布测试服务器(直接让测试拉代码） -》测试完成 -》 发邮件申请发布UAT(也可以先将主分支合并进次分支)（邮件注明分支号） -》 产品或者测试通过 -》 合并主分支 -》 发邮件申请发布生产环境（邮件注明版本号）
+
+
+
+
+
+
+
+
+梁庆
+git clone 
+
+git add *
+
+git commit -m ''
+
+git push origin(远程仓库) 仓库名
+
+
+git fetch origin (远程仓库名):（新的本地分知名）
+
+切换到正在开发的分支
+
+git merge （新的分支名） 合并到正在开发分支中来

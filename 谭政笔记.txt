@@ -235,8 +235,7 @@ input[type="reset"]::-moz-focus-inner,input[type="button"]::-moz-focus-inner,inp
 返回当前元素的左边界到它的包含元素的左边界的偏移量：obj.offsetLeft（在元素的包含元素含滚动条的情况下）
 
 
-
-
+公积金：154523926205
 2016年5月10日  总共12w（今天我即将发放，没有算入）
  	
 	
