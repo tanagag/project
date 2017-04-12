@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>短信倒计时</title>
+<script src="https://code.jquery.com/jquery-1.11.3.js"/></script>
+<style>
+*{padding:0;margin:0;}
+a{text-decoration:none}
+.send{display:inline-block;width:90px;font-size:12px;text-align:center;background:#FEAC46;box-shadow:0 2px #B1752F;height:27px; line-height: 27px;color:#fff;margin-left:10px;border-radius:3px;}
+.resend{background:#D7D6D4;box-shadow: 0 2px #979190}
+</style>
+</head>
+<body>
+    <input type="text" placeholder="请输入手机号码">
+	<a href="javascript:void(0)" class="send" rel="0" onclick="send(this)">获取验证码</a>
+</body>
+</html>
+<script type="text/javascript">
+    function send(obj){
+       var rel = obj.getAttribute("rel");
+       var time = 30;
+       var obj = $(obj);
+       if(rel==0){
+		   obj.attr("rel","1");
+           var clr = setInterval(function(){
+                time--;
+                if(time>0){
+					 if(time==29){
+						 //这里先执行短信发送的代码
+						alert("发送短信成功");
+					 }
+					 obj.html(time+"秒后重新发送").addClass('resend').attr("rel",1);
+                }else{
+				
+					 obj.html("重新获取").removeClass("resend").addClass('send').attr("rel",0);
+					 clearInterval(clr);
+				}
+            }, 1000);
+       }else{
+		  obj.attr("rel","1");
+	  }
+    }
+</script>
+
+
+
+
+
+
+
