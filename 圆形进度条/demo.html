@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>圆形进度条</title>
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript">
+window.onload = function(){
+	var obj = $(".box").each(function(index, el) {
+		var that = $(this);
+		loadImg(that);
+	});
+	function loadImg(that){
+		var j = 0;
+		var clr = setInterval(function(){
+			var data = that.attr("rel");
+			j++;
+			if(j>data){
+				j=data;
+				clearInterval(clr);
+			}
+			var imgLeft = -(j*50+0)+'px';
+			that.css("backgroundPosition",imgLeft+'\t'+'0px');
+			that.html(j+'%');
+		}, 10);
+	}
+}
+</script>
+<style type="text/css">
+.box{
+	width:50px;
+	margin:120px auto 0 auto;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	background: url(images/progress.png);
+}
+</style>
+</head>
+<body>
+	<div class="box" rel="88">1</div>
+	<div class="box" rel="40">2</div>
+</body>
+</html>
