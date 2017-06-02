@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>getboundingclientrect与offsetTop,offsetLeft</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+</head>
+<style>
+    *{ margin: 0px; padding: 0px;}
+    .div{width:500px;height:500px;background: #ccc;margin:50px auto;}
+</style>
+
+<body>
+     <div id="ele" class="div">
+     		getBoundingClientRect()<br>
+
+    这个方法返回一个矩形对象，包含四个属性：left、top、right和bottom。分别表示元素各边与页面上边和左边的距离。<br>
+
+var box=document.getElementById('box');         // 获取元素<br>
+
+alert(box.getBoundingClientRect().top);         // 元素上边距离页面上边的距离<br>
+
+alert(box.getBoundingClientRect().right);       // 元素右边距离页面左边的距离<br>
+
+alert(box.getBoundingClientRect().bottom);      // 元素下边距离页面上边的距离<br>
+
+alert(box.getBoundingClientRect().left);        // 元素左边距离页面左边的距离<br>
+
+注意：IE、Firefox3+、Opera9.5、Chrome、Safari支持，在IE中(IE6,IE7)，默认坐标从(2,2)<br>开始计算，导致最终距离比其他浏览器多出两个像素，我们需要做个兼容。<br>
+
+document.documentElement.clientTop;  // 非IE为0，IE6,IE7为2<br>
+
+document.documentElement.clientLeft; // 非IE为0，IE6,IE7为2<br>
+	 </div>
+</body>
+</html>
+<script type="text/javascript">
+var ele = document.getElementById('ele');
+var obj = GetRect(ele);
+
+//ele.offsetTop == obj.top;但是没有ele.offsetRight和offsetButtom
+console.log(obj);
+console.log(ele.offsetTop == obj.top);
+
+function GetRect (element) {
+
+    var rect = element.getBoundingClientRect();
+
+    var top = document.documentElement.clientTop;
+
+    var left= document.documentElement.clientLeft;
+
+    return{
+
+        top    :   rect.top - top,
+
+        bottom :   rect.bottom - top,
+
+        left   :   rect.left - left,
+
+        right  :   rect.right - left
+
+    }
+}
+</script>
