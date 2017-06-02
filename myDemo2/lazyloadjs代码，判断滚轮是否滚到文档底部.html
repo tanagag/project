@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>外边距合并</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+</head>
+<style>
+    *{ margin: 0px; padding: 0px;}
+    .div{height:1200px;background: #ccc;padding:100px;}
+</style>
+
+<body>
+     <div class="div">
+     		判断滚动条到底部，需要用到DOM的三个属性值，即scrollTop、clientHeight、scrollHeight。<br>
+
+			scrollTop为滚动条在Y轴上的滚动距离。<br>
+
+			clientHeight为内容可视区域的高度。<br>
+
+			scrollHeight为内容可视区域的高度加上溢出（滚动）的距离。<br>
+
+			从这个三个属性的介绍就可以看出来，滚动条到底部的条件即为scrollTop + clientHeight == scrollHeight。<br>
+
+			废话不多少说，赶紧上代码（兼容不同的浏览器）<br>
+	 </div>
+</body>
+</html>
+<script type="text/javascript">
+//滚动条在Y轴上的滚动距离  
+ function getScrollTop(){
+　　var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+　/*　if(document.body){
+　　　　bodyScrollTop = document.body.scrollTop;
+　　}
+　　if(document.documentElement){
+　　　　documentScrollTop = document.documentElement.scrollTop;
+　　}
+　　scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;*/
+
+	scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+　　return scrollTop;
+} 
+ //文档的总高度 
+ function getScrollHeight(){
+　　var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+　/*　if(document.body){
+　　　　bodyScrollHeight = document.body.scrollHeight;
+　　}
+　　if(document.documentElement){
+　　　　documentScrollHeight = document.documentElement.scrollHeight;
+　　}
+　　scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;*/
+ 
+ 	scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
+　　return scrollHeight;
+} 
+ //浏览器视口的高度 
+ function getWindowHeight(){
+　　var windowHeight = 0;
+　/*　if(document.compatMode == "CSS1Compat"){
+　　　　windowHeight = document.documentElement.clientHeight;
+　　}else{
+　　　　windowHeight = document.body.clientHeight;
+　　}*/
+
+	windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+　　return windowHeight;
+} 
+ window.onscroll = function(){
+ 	console.log(getScrollTop())
+　　if(getScrollTop() + getWindowHeight() == getScrollHeight()){
+　　　　alert("you are in the bottom!");
+　　}
+};
+</script>
