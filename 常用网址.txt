@@ -1,117 +1,66 @@
-http://www.fancybox.net/  µÆÏäĞ§¹û
-http://www.oschina.net/   ¿ªÔ´ÖĞ¹úÉçÇø 
-http://www.5icool.org/    ¿áÕ¾´úÂë
-http://www.lanrentuku.com/js/jiaodiantu.html  ÀÁÈËÍ¼¿â
-http://www.mobanwang.com/   Ä£°åÍõ£¨ÍøÒ³Ä£°å£¬ÍøÒ³ÌØĞ§£¬Í¼±ê£¬×ÖÌå£©
-http://www.my97.net/dp/skin.asp  Ê±¼ä¿Ø¼ş    
-http://share.baidu.com/code  °Ù¶È·ÖÏí 
-http://www.itcast.cn/ ´«ÖÇ²¥¿Í
-http://www.verycd.com/topics/2843130/ ĞÖµÜÁ¬½Ì³ÌÏÂÔØ
-http://wenku.baidu.com/view/85f7e359804d2b160b4ec0e3.html  php¼¯³É»·¾³ÍÆ¼ö
-http://www.kindsoft.net/index.php  KindEditor±à¼­Æ÷
-FastStone Capture ºÃÓÃµÄ½ØÍ¼Èí¼ş£¬Îü¹Ü£¬Â¼ÊÓÆµ£¬²â¿í¸ß 
-Navicat for MySQL 11.08 Êı¾İ¿â¹ÜÀí¹¤¾ß
-http://www.ycku.com/course/ ÀîÑ×»ÖÊÓÆÁ½õ¼¯
-http://www.itcast.cn/channel/video.shtml  ´«ÖÇ²¥¿Í
-http://www.ahuing.com/divcss/89/    ÈÃie6/7ä¯ÀÀÆ÷Ê¶±ğHTML5±êÇ©
-http://www.xwcms.net/    ËØ²ÄÍø£¬jqueryºÍhtml5+css3ÌØĞ§ÑİÊ¾ºÍÏÂÔØ£¬ºÍÀÁÈËÍ¼¿â²î²»¶à£¬ºÜ²»´í£¡
+http://www.fancybox.net/  ç¯ç®±æ•ˆæœ
+http://www.oschina.net/   å¼€æºä¸­å›½ç¤¾åŒº 
+http://www.5icool.org/    é…·ç«™ä»£ç 
+http://www.lanrentuku.com/js/jiaodiantu.html  æ‡’äººå›¾åº“
+http://www.mobanwang.com/   æ¨¡æ¿ç‹ï¼ˆç½‘é¡µæ¨¡æ¿ï¼Œç½‘é¡µç‰¹æ•ˆï¼Œå›¾æ ‡ï¼Œå­—ä½“ï¼‰
+http://www.my97.net/dp/skin.asp  æ—¶é—´æ§ä»¶    
+http://share.baidu.com/code  ç™¾åº¦åˆ†äº« 
+http://www.itcast.cn/ ä¼ æ™ºæ’­å®¢
+http://www.verycd.com/topics/2843130/ å…„å¼Ÿè¿æ•™ç¨‹ä¸‹è½½
+http://wenku.baidu.com/view/85f7e359804d2b160b4ec0e3.html  phpé›†æˆç¯å¢ƒæ¨è
+http://www.kindsoft.net/index.php  KindEditorç¼–è¾‘å™¨
+FastStone Capture å¥½ç”¨çš„æˆªå›¾è½¯ä»¶ï¼Œå¸ç®¡ï¼Œå½•è§†é¢‘ï¼Œæµ‹å®½é«˜ 
+Navicat for MySQL 11.08 æ•°æ®åº“ç®¡ç†å·¥å…·
+http://www.ycku.com/course/ æç‚æ¢è§†å±é”¦é›†
+http://www.itcast.cn/channel/video.shtml  ä¼ æ™ºæ’­å®¢
+http://www.xwcms.net/    ç´ æç½‘ï¼Œjqueryå’Œhtml5+css3ç‰¹æ•ˆæ¼”ç¤ºå’Œä¸‹è½½ï¼Œå’Œæ‡’äººå›¾åº“å·®ä¸å¤šï¼Œå¾ˆä¸é”™ï¼
 http://www.bootcss.com/    bootStrap
-http://www.pfeng.org/archives/537   GitHubÍĞ¹ÜBootStrap×ÊÔ´»ã×Ü£¨³ÖĞø¸üĞÂÖĞ¡­£©
-http://www.xprogrammer.com/812.html jquery ²å¼ş¿ª·¢
-http://www.jeasyui.com/      http://www.zi-han.net/case/easyui/       easyUIÑ§Ï°
-http://www.flash8.net/    ÉÁ°É×ÖÌåÏÂÔØ
-http://www.icodein.com/codein/rarticle_134.html  marginµÄ¸ºÖµ
-http://fgm.cc/learn/    Ğ§¹û
-http://www.admin10000.com/document/2282.html  jqueryÉÏ´«²å¼ş
-http://v3.bootcss.com/
-http://www.baidu.com/  ºÍ www.highcharts.com  Í¼±êcharts
-http://www.sucaiweb.com/
-http://css3clickchart.com/#keyframe-animations
-http://www.w3cfuns.com/topic-64.html  Ç°¶Ë½Ì³Ì
+http://www.xprogrammer.com/812.html jquery æ’ä»¶å¼€å‘
+http://fgm.cc/learn/ Â   ä¸€äº›æ•™ç¨‹æ•ˆæœ
+http://www.baidu.com/  å’Œ www.highcharts.com  å›¾æ ‡charts
+http://css3clickchart.com/#keyframe-animations Â  css3çš„å±æ€§æ•ˆæœå’Œä»£ç 
+http://www.w3cfuns.com/topic-64.html  å‰ç«¯æ•™ç¨‹
 http://www.w3cplus.com
-http://wx.bzrw.net/ Î¢ĞÅÔÚÏß±à¼­-Î¢ĞÅ¹«ÖÚÆ½Ì¨±à¼­Æ÷
-http://ued.ctrip.com/blog/wp-content/webkitcss/index.html  css3µÄÊôĞÔ
-http://echarts.baidu.com/doc/example.html ºÍ http://www.hcharts.cn/  Á½ÖÖchartsÍ¼±í
-https://tinypng.com/ png ×ª»»ÎªµÍÕ¼ÄÚ´æ
+http://wx.bzrw.net/ å¾®ä¿¡åœ¨çº¿ç¼–è¾‘-å¾®ä¿¡å…¬ä¼—å¹³å°ç¼–è¾‘å™¨
+http://ued.ctrip.com/blog/wp-content/webkitcss/index.html  css3çš„å±æ€§
+http://echarts.baidu.com/doc/example.html å’Œ http://www.hcharts.cn/  ä¸¤ç§chartså›¾è¡¨
+https://tinypng.com/ png è½¬æ¢ä¸ºä½å å†…å­˜
 http://www.helloweba.com/css.html
-http://segmentfault.com/a/1190000002559158 javascript¾­µäÖªÊ¶µã
-http://down.admin5.com/texiao/caidan/list_591_2.html  javascriptºÍjqueryµÄÌØĞ§
-
-http://www.materialscss.com/color  ÕÅÉÙ»ªĞ´µÄÇ°¶Ë¿ò¼Ü
-http://www.html5plus.org/doc/h5p.html HTML5ÖĞ¹ú²úÒµÁªÃË
-http://test.hlo.cc/svg/ ¶şÕÜµÄÌØĞ§
-http://www.meckodo.com/ ¶şÕÜµÄÍøÕ¾ http://div.io/#/welcome
-https://github.com/MeCKodo/eTouch/tree/master/¶şÕÜµÄÍøÕ¾
-http://www.xuansesm.com/index.html ·ç
-http://www.shmaiji.com/?#home
-http://www.zzfriend.com/xiazai/youxi/ html5ÓÎÏ·Ä£°å£¬Èç£ºĞØ¿ÚËé´óÊ¯
-http://www.cnblogs.com/PeunZhang/p/3407453.html#meta_1  ÒÆ¶¯web×ÊÔ´ÕûÀí
-http://m.sui.taobao.org/components/#picker  ·çµÄ×ÊÔ´
-http://lea.verou.me/css3patterns ÎÆÀíÍøÕ¾
-http://www.dowebok.com/demo/186/index3.html ºÃ¶«Î÷
-http://www.ih5.cn/ ·É·ÉºÃ¶«Î÷
-http://www.maiziedu.com/course/web/513-6974/ Âó×ÓÑ§Ôº  ÒÆ¶¯¶Ë½Ì³Ì
-http://www.swiper.com.cn/   swiper.js¿ÉÒÔÓÃÓÚpcºÍÊÖ»úµÄslide»¬¶¯ºÍÎ¢³¡¾°ÖÆ×÷£¬·Ç³£¸øÁ¦
-http://www.kancloud.cn/jsfront/month/82809  ÕÜÕÜµÄÍÆ¼öÍøÕ¾
-http://www.html-js.com/article/JavaScript-learning-notes%203234  ·çÍÆ¼öÍøÕ¾
-http://www.jq22.com/ jquery ²å¼ş¿â
-http://618cj.com   ÊÖ»ú¶Ë²å¼şÍø
-
-
-
-
-½Ü¿Ë66335966 2015/9/30 14:17:02
-JSÖĞ¼¶Ç°¶Ë¿ª·¢ 348090425 ´ğ°¸£º854485£¬
-¼ÓÈëÖ®ºóÍËÏÖÔÚËùÔÚÈº¡£
-ÈëÈºÖ®ºó×ö¸öÈË½éÉÜ£¬°üÀ¨£º²©¿Í£¬×÷Æ·¡£Ã»ÓĞµÄ¼òµ¥½éÉÜ×Ô¼º£¬Ç°¶Ë´ÓÒµ¼¸Äê£¬ÊìÏ¤ÄÇ¸öÁìÓòµÈµÈ
-
-http://home.m.jd.com/myJd/home.action?sid=78df90911cb6ca30fb666c1fb6c84361 ¾©¶«
-http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html Î¢ĞÅJSSDK
-http://docs.mobiscroll.com/2-13-2/calendar ÊÖ»úÈÕÀú²å¼ş¹ÙÍø
+http://test.hlo.cc/svg/ äºŒå“²çš„ç‰¹æ•ˆ
+http://www.meckodo.com/ äºŒå“²çš„ç½‘ç«™ http://div.io/#/welcome
+https://github.com/MeCKodo/eTouch/tree/master/äºŒå“²çš„ç½‘ç«™
+http://www.shmaiji.com/?#home Â ä¸Šæµ·éº¦å­£ç½‘ç»œ
+http://www.cnblogs.com/PeunZhang/p/3407453.html#meta_1  ç§»åŠ¨webèµ„æºæ•´ç†
+http://lea.verou.me/css3patterns çº¹ç†ç½‘ç«™
+http://www.dowebok.com/demo/186/index3.html ç¯ç®±æ•ˆæœ
+http://www.ih5.cn/ é£é£å¥½ä¸œè¥¿
+http://www.swiper.com.cn/   swiper.jså¯ä»¥ç”¨äºpcå’Œæ‰‹æœºçš„slideæ»‘åŠ¨å’Œå¾®åœºæ™¯åˆ¶ä½œï¼Œéå¸¸ç»™åŠ›
+http://www.kancloud.cn/jsfront/month/82809  å“²å“²çš„æ¨èç½‘ç«™
+http://www.html-js.com/article/JavaScript-learning-notes%203234  é£æ¨èç½‘ç«™
+http://www.jq22.com/ jquery æ’ä»¶åº“
+http://618cj.com   æ‰‹æœºç«¯æ’ä»¶ç½‘
+http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html å¾®ä¿¡JSSDK
+http://docs.mobiscroll.com/2-13-2/calendar æ‰‹æœºæ—¥å†æ’ä»¶å®˜ç½‘
 http://download.mobiscroll.com/trialactivated#/datetime/calendar/select/jquery
-http://m.qinxue.com/pingmiansheji/    ÊÖ»ú¶ËÇÚÑ§Íø
+http://www.cnblogs.com/samwu/archive/2013/06/06/3121649.html Â zeptoçš„ä¸€äº›äº‹é¡¹
+1575262649
+http://588ku.com/ Â  åƒåº“ç½‘ å…è´¹pngå›¾ç‰‡èƒŒæ™¯ç´ æ
 
-http://588ku.com/
-http://www.zhangxinxu.com/wordpress/2010/10/%E6%88%91%E6%89%80%E7%9F%A5%E9%81%93%E7%9A%84%E5%87%A0%E7%A7%8Ddisplaytable-cell%E7%9A%84%E5%BA%94%E7%94%A8/ table-cellµÄÓÃ·¨
+http://tushuo.baidu.com/?qq-pf-to=pcqq.group Â è€å¤ªå¤ªæ¨èçš„è‡ªå®šä¹‰åˆ¶ä½œå›¾è¡¨
+http://blog.csdn.net/zhaohaixin0418/article/category/6829521 Â  è€å¤ªå¤ªçš„åšå®¢
+https://segmentfault.com/q/1010000005169531?_ea=806312  vue-cliå¼•å…¥ç¬¬ä¸‰æ–¹æ’ä»¶å…¥jQueryçš„webpacké…ç½®
+http://www.xiaoxiaohan.com/js/30.html Â è§è§å¯’çš„åšå®¢
+http://www.cnblogs.com/kidney/p/6052935.html?utm_source=gold_browser_extension Â vuejsåŒå‘ç»‘å®šåŸç†
+
 
 ==================================================================
 
-ip£º42.120.6.146£¬ftpÕËºÅÃÜÂë£ºmoralentuser     12345qwert
 
 
-ËÕÖİ´óµÀ351ºÅ  15ºÅ´°¿Ú
-Íú¶ÕÂ·168ºÅ    15ºÅ´°¿Ú
-http://www.12306.cn/mormhweb/kyfw/question/201112/t20111220_2023.html  12306
-
-0516-86168939 ÍâÆÅµÄºÅÂë
-http://r.ele.me/wz-hsdmsgc //¶©²Íµç»°
-
-http://plux.hlo.cc/lottery/test/index.html
-http://my.qzone.qq.com/app/100659650.html?detail=1294211669&app_custom=&via=qz.appassit.storyfeed&appid=100659650&new_qz_inviteuin=&app_isfirst=1 Ğ¦»°ÍøÖ·
-
-http://www.zhihu.com/question/21764066/answer/19244044
-http://www.vcooline.com/questions
-http://blacknegative.com/#!/news/
-http://www.asitanosikaku.jp/
-
-http://pkt.zoosnet.net/LR/Chatpre.aspx?id=PKT38211702&cid=1420538436217652149077&lng=cn&sid=1420538436217652149077&p=http%3A//wei.xkweichang.com/zt/yyjj/&rf1=http%3A//www.baidu&rf2=.com/s%3Fwd%3D%25E4%25B8%258A%25E6%25B5%25B7%25E6%2596%25B0%25E7%25A7%2591%25E5%258C%25BB%25E9%2599%25A2%26rsv_spt%3D1%26issp%3D1%26f%3D8%26rsv_bp%3D0%26rsv_idx%3D2%26ie%3Dutf-8%26tn%3Dbaiduhome_pg%26rsv_enter%3D1%26rsv_sug3%3D27%26rsv_sug4%3D521%26rsv_sug1%3D8%26rsv_pq%3Dde330eef00007c0d%26rsv_t%3D6b97VBatlFmhFK8uaR5gBD6BW6FfmXIc0fzxtqX0wrLrybi%252FdSqtCd0d6P%252FJ9sa%252FvFk5%26rsv_sug2%3D0%26inputT%3D11406&d=1420538902968
 
 
-http://www.cnblogs.com/samwu/archive/2013/06/06/3121649.html
-1575262649
 
 
-www.vcooline.com
-www.webenx.com
-
-
-http://sh.ganji.com/fang3/1602519141x.htm
-.http://sh.ganji.com/fang3/1987868561x.htm
-http://sh.ganji.com/fang3/1994451539x.htm
-http://sh.ganji.com/fang3/2000226032x.htm
-http://sh.ganji.com/fang3/1664366326x.htm
-
-
-2016Äê5ÔÂ10ÈÕ  ×Ü¹²12w£¨½ñÌìÎÒ¼´½«·¢¹¤×Ê£¬Ã»ÓĞËãÈë£©
+2016å¹´5æœˆ10æ—¥  æ€»å…±12wï¼ˆä»Šå¤©æˆ‘å³å°†å‘å·¥èµ„ï¼Œæ²¡æœ‰ç®—å…¥ï¼‰
 
 

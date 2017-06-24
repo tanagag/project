@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>webP</title>
+</head>
+<body>
+	<img data-src="images/banner2.jpg" class="webp" />
+</body>
+</html>
+
+
+<script type="text/javascript">
+//判断浏览器是否支持webp	
+var isSupportWebp = !![].map && document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0;
+
+
+var imgs = getClass("img","webp");
+
+
+for(var i=0;i<imgs.length;i++)
+{
+	var src = imgs[i].getAttribute('data-src');
+	if(isSupportWebp)//如果浏览器支持webp格式
+	{
+		var tempAttr = src.split(".")
+		imgs[i].setAttribute("src",tempAttr[0]+".webp")
+	}else
+	{
+		imgs[i].setAttribute("src",src)
+	}
+}
+
+//获取类名的标签数组
+function getClass(tagName,className) //获得标签名为tagName,类名className的元素
+{
+    if(document.getElementsByClassName) //支持这个函数
+    {   
+    	return document.getElementsByClassName(className);
+    }
+    else
+    {    
+    	var tags=document.getElementsByTagName(tagName);//获取标签
+        var tagArr=[];//用于返回类名为className的元素
+        for(var i=0;i < tags.length; i++)
+        {
+            if(tags[i].class == className)
+            {
+                tagArr[tagArr.length] = tags[i];//保存满足条件的元素
+            }
+        }
+        return tagArr;
+    }
+}
+
+
+</script>

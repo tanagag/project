@@ -1,52 +1,52 @@
-							-------´¿ÊôÓÚ¸öÈË×Ü½á(´ıĞø)-----
+							-------çº¯å±äºä¸ªäººæ€»ç»“(å¾…ç»­)-----
 		
-1. »ñÈ¡ä¯ÀÀÆ÷¹ö×ßµÄ¾àÀëscrollTopµÄÖµ£¬IEºÍ»ğºüÖ§³Ödocument.documentElement.scrollTop(±ê×¼Ä£Ê½)£¬¶øchromeÔòÖ»Ö§³Ödocument.body.scrollTop£¨»ìÔÓÄ£Ê½£©¡£±ÈÈçÓÃ·¨£ºvar scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-   ËùÒÔvar sTop=document.documentElement.scrollTop||document.body.scrollTop;
-   »ñÈ¡ä¯ÀÀÆ÷´°¿Ú¸ß¶ÈºÜ¿í¶È£ºdocument.documentElement.clientHeight(±ê×¼Ä£Ê½) ,document.body.clientHeight£¨»ìÔÓÄ£Ê½£©
-2. animationºÍtransitionµÄÇø±ğ
-   animationÊôÓÚ¶¯»­£¬ĞĞÎª¿ÉÒÔÑ­»·¡£transitionÊôÓÚ¹ı¶É£¬²»¿ÉÒÔÑ­»·
-   Êó±êĞü¸¡Ê±µ÷ÓÃanimation£¬µ«Êó±êÒÆ¿ªÊ±£¬»áÂíÉÏ»Ö¸´³õÊ¼×´Ì¬¡£¶øtransitionÊó±êÒÆ¿ªÊ±£¬ÊÇºÍÊó±êÒÆÈëÊ±Ò»ÑùÓĞ½¥½øÏûÊ§Ğ§¹û
-3. $(window).scroll(function(){}),$(document).scrollTop();ÕâÑùĞ´µÄ¼æÈİĞÔºÃ£¬µÚÒ»¸öÊÇ´°¿ÚµÄ¹ö¶¯ÌõÒÆ¶¯Ê±(ÊÂ¼ş)£¬µÚ¶ş¸ö¹ö¶¯Ìõ¾àÀëÎÄµµ¶¥²¿µÄ¾àÀë(Öµ)
+1. è·å–æµè§ˆå™¨æ»šèµ°çš„è·ç¦»scrollTopçš„å€¼ï¼ŒIEå’Œç«ç‹æ”¯æŒdocument.documentElement.scrollTop(æ ‡å‡†æ¨¡å¼)ï¼Œè€Œchromeåˆ™åªæ”¯æŒdocument.body.scrollTopï¼ˆæ··æ‚æ¨¡å¼ï¼‰ã€‚æ¯”å¦‚ç”¨æ³•ï¼švar scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+   æ‰€ä»¥var sTop=document.documentElement.scrollTop||document.body.scrollTop;
+   è·å–æµè§ˆå™¨çª—å£é«˜åº¦å¾ˆå®½åº¦ï¼šdocument.documentElement.clientHeight(æ ‡å‡†æ¨¡å¼) ,document.body.clientHeightï¼ˆæ··æ‚æ¨¡å¼ï¼‰
+2. animationå’Œtransitionçš„åŒºåˆ«
+   animationå±äºåŠ¨ç”»ï¼Œè¡Œä¸ºå¯ä»¥å¾ªç¯ã€‚transitionå±äºè¿‡æ¸¡ï¼Œä¸å¯ä»¥å¾ªç¯
+   é¼ æ ‡æ‚¬æµ®æ—¶è°ƒç”¨animationï¼Œä½†é¼ æ ‡ç§»å¼€æ—¶ï¼Œä¼šé©¬ä¸Šæ¢å¤åˆå§‹çŠ¶æ€ã€‚è€Œtransitioné¼ æ ‡ç§»å¼€æ—¶ï¼Œæ˜¯å’Œé¼ æ ‡ç§»å…¥æ—¶ä¸€æ ·æœ‰æ¸è¿›æ¶ˆå¤±æ•ˆæœ
+3. $(window).scroll(function(){}),$(document).scrollTop();è¿™æ ·å†™çš„å…¼å®¹æ€§å¥½ï¼Œç¬¬ä¸€ä¸ªæ˜¯çª—å£çš„æ»šåŠ¨æ¡ç§»åŠ¨æ—¶(äº‹ä»¶)ï¼Œç¬¬äºŒä¸ªæ»šåŠ¨æ¡è·ç¦»æ–‡æ¡£é¡¶éƒ¨çš„è·ç¦»(å€¼)
 4. if (window.attachEvent) {
          obj.attachEvent("onclick", function() {alert(even.innerHTML) });//ie
    }else {
-         obj.addEventListener("click", function() { alert(even.innerHTML) }, false); //»ğºü
+         obj.addEventListener("click", function() { alert(even.innerHTML) }, false); //ç«ç‹
    }
-5. ÕâÊÇ×¨ÃÅÕë¶ÔieµÄhackĞ´·¨
+5. è¿™æ˜¯ä¸“é—¨é’ˆå¯¹ieçš„hackå†™æ³•
 	-1- @-moz-document url-prefix() {
 	  .div1 {
 		 color: red;
 	  }
-	}»ğºüµÄ¼æÈİĞ´·¨
-	-2- @media \0screen{/*»òÕß.div2 {color: red\0}*/
+	}ç«ç‹çš„å…¼å®¹å†™æ³•
+	-2- @media \0screen{/*æˆ–è€….div2 {color: red\0}*/
 		.div2  {color: blue;}
-	}IE8µÄ¼æÈİĞ´·¨
-	-3- :root .div3 {color: green\9;}Ö»IE9µÄ¼æÈİĞ´·¨
-	-4- .div4 {color:yellow\9;}IE9ÒÔÏÂµÄ¼æÈİĞ´·¨
-	-5- :root .div5 {color: red;}}IE9+µÄ¼æÈİĞ´·¨
+	}IE8çš„å…¼å®¹å†™æ³•
+	-3- :root .div3 {color: green\9;}åªIE9çš„å…¼å®¹å†™æ³•
+	-4- .div4 {color:yellow\9;}IE9ä»¥ä¸‹çš„å…¼å®¹å†™æ³•
+	-5- :root .div5 {color: red;}}IE9+çš„å…¼å®¹å†™æ³•
 
-	-6- *html .class{...}  	½öIE6ÓĞĞ§
-	-7- *+html .class{...} 	½öIE7ÓĞĞ§
-	-8- .class{*height:500px»òÕß+height:500px} 		IE6ºÍIE7ÓĞĞ§
-	-9- .class{_height:500px} 	½öIE6ÓĞĞ§
-6. ÊÖ»ú¿ª·¢ÖĞ ×óÓÒÁ½¸ö¿é¼¶ÔªËØ£¬»ù±¾²»ÓÃfloat£¬¶øÓÃ¸¸ÔªËØ display:-webkit-box;ÎªÇ°Ìá£¬ -webkit-box-orient: horizontal;¿ØÖÆË®Æ½·½Ïò £¬  ×ÓÔªËØÓÃ -webkit-box-flex: 1£¬¿ØÖÆ±ÈÀı£¨Õâ¸öºĞ×ÓÄ£ĞÍÅäºÏºÜºÃÓÃ£©£¬Èç¹ûÏëÈÃ×ÓÔªËØÉÏÏÂ¾ÓÖĞÔò-webkit-box-align:center;display: -webkit-box£¨ÔÚÒ»´Î×ª»¯³É-web-boxÒ»´Î£©
-7. µ±div¿í¶ÈÎª100% £¬¼Ó±ß¿îÊ±£¬ÎªÁË²»³öÏÖ¹ö¶¯Ìõ£¬Ôò-webkit-box-sizing:border-box;
+	-6- *html .class{...}  	ä»…IE6æœ‰æ•ˆ
+	-7- *+html .class{...} 	ä»…IE7æœ‰æ•ˆ
+	-8- .class{*height:500pxæˆ–è€…+height:500px} 		IE6å’ŒIE7æœ‰æ•ˆ
+	-9- .class{_height:500px} 	ä»…IE6æœ‰æ•ˆ
+6. æ‰‹æœºå¼€å‘ä¸­ å·¦å³ä¸¤ä¸ªå—çº§å…ƒç´ ï¼ŒåŸºæœ¬ä¸ç”¨floatï¼Œè€Œç”¨çˆ¶å…ƒç´  display:-webkit-box;ä¸ºå‰æï¼Œ -webkit-box-orient: horizontal;æ§åˆ¶æ°´å¹³æ–¹å‘ ï¼Œ  å­å…ƒç´ ç”¨ -webkit-box-flex: 1ï¼Œæ§åˆ¶æ¯”ä¾‹ï¼ˆè¿™ä¸ªç›’å­æ¨¡å‹é…åˆå¾ˆå¥½ç”¨ï¼‰ï¼Œå¦‚æœæƒ³è®©å­å…ƒç´ ä¸Šä¸‹å±…ä¸­åˆ™-webkit-box-align:center;display: -webkit-boxï¼ˆåœ¨ä¸€æ¬¡è½¬åŒ–æˆ-web-boxä¸€æ¬¡ï¼‰
+7. å½“divå®½åº¦ä¸º100% ï¼ŒåŠ è¾¹æ¬¾æ—¶ï¼Œä¸ºäº†ä¸å‡ºç°æ»šåŠ¨æ¡ï¼Œåˆ™-webkit-box-sizing:border-box;
 8.<script type="text/javascript">
 	var evt = "onorientationchange" in window ? "orientationchange" : "resize";
       
 	window.addEventListener(evt, function() {
-    		alert("ÆÁÄ»Ğı×ª");
+    		alert("å±å¹•æ—‹è½¬");
 	}, false);
    </script>
 9.$('.container').each(function(i){    
      if($(this).attr('name')=="continue"){    
-          return ;//ÊµÏÖcontinue¹¦ÄÜ    
+          return ;//å®ç°continueåŠŸèƒ½    
      }else if($(this).attr('name')=="break"){    
-          return false;//ÊµÏÖbreak¹¦ÄÜ    
+          return false;//å®ç°breakåŠŸèƒ½    
      }    
 });
-10.site-nav{*zoom:1}.site-nav:after{content:"";display:table;clear:both} //Çå³ş¸¡¶¯µÄ·½·¨
-11.phpÅäÖÃ
+10.site-nav{*zoom:1}.site-nav:after{content:"";display:table;clear:both} //æ¸…æ¥šæµ®åŠ¨çš„æ–¹æ³•
+11.phpé…ç½®
 DocumentRoot  "D:\WWW"
 <Directory />
     Options +Indexes +FollowSymLinks +ExecCGI
@@ -68,115 +68,115 @@ NameVirtualHost 127.0.0.1
 	Allow from all
 	</Directory>
 </VirtualHost>
-12. #leftNav::-webkit-scrollbar{display: none;}/*È¥³ı¹ö¶¯Ìõ*/
-13.background:#fff;-webkit-appearance:none;appearance:none;border-radius:0 ´¦ÀíselectÔÚÊÖ»úÉÏµÄ±³¾°ºÍÇå³şiPhone°´Å¥Ô²½Ç
-14.ÊÖ»úÉÏÏÂÀ­¹ö¶¯ÌõÊ±¿¨¶Ù¡¢Âı div{-webkit-overflow-scrolling:touch;over-scrolling:touch}
-15.³¤Ê±¼ä°´×¡Ò³Ãæ³öÏÖ´æ´¢»òÕß¿½±´Í¼Ïñ£¬¿ÉÒÔÍ¨¹ıÕâ¸ö·½·¨½ûÖ¹ img£û-webkit-touch-callout:none£ı
-16.ÒÆ¶¯¶Ë½ûÖ¹ÓÃ»§Ñ¡ÖĞÄÚÈİ
+12. #leftNav::-webkit-scrollbar{display: none;}/*å»é™¤æ»šåŠ¨æ¡*/
+13.background:#fff;-webkit-appearance:none;appearance:none;border-radius:0 å¤„ç†selectåœ¨æ‰‹æœºä¸Šçš„èƒŒæ™¯å’Œæ¸…æ¥šiPhoneæŒ‰é’®åœ†è§’
+14.æ‰‹æœºä¸Šä¸‹æ‹‰æ»šåŠ¨æ¡æ—¶å¡é¡¿ã€æ…¢ div{-webkit-overflow-scrolling:touch;over-scrolling:touch}
+15.é•¿æ—¶é—´æŒ‰ä½é¡µé¢å‡ºç°å­˜å‚¨æˆ–è€…æ‹·è´å›¾åƒï¼Œå¯ä»¥é€šè¿‡è¿™ä¸ªæ–¹æ³•ç¦æ­¢ imgï½›-webkit-touch-callout:noneï½
+16.ç§»åŠ¨ç«¯ç¦æ­¢ç”¨æˆ·é€‰ä¸­å†…å®¹
  .user-select-none {
   -webkit-user-select: none;  /* Chrome all / Safari all */
-  -moz-user-select: none;     /* Firefox all £¨ÒÆ¶¯¶Ë²»ĞèÒª£© */
+  -moz-user-select: none;     /* Firefox all ï¼ˆç§»åŠ¨ç«¯ä¸éœ€è¦ï¼‰ */
   -ms-user-select: none;      /* IE 10+ */      
 }
 17. 
- ¡¡<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />ÓÅÏÈÊ¹ÓÃ×îĞÂ°æ±¾ IE ºÍ Chrome
-   <meta http-equiv="Refresh" content="2;URL=http://www.baidu.com" /> 2ÃëÌøµ½Ö¸¶¨ÍøÖ·
-   £¼meta http-equiv=¡±expires¡± content=¡±Fri, 12 Jan 2001 18:18:18 GMT¡±£¾¿ÉÒÔÓÃÓÚÉè¶¨ÍøÒ³µÄµ½ÆÚÊ±¼ä¡£Ò»µ©ÍøÒ³¹ıÆÚ£¬±ØĞëµ½·şÎñÆ÷ÉÏÖØĞÂ´«Êä¡£
-   £¼meta http-equiv=¡±Pragma¡± content=¡±no-cache¡±£¾ ½ûÖ¹ä¯ÀÀÆ÷´Ó±¾µØ¼ÆËã»úµÄ»º´æÖĞ·ÃÎÊÒ³ÃæÄÚÈİ¡£
+ ã€€<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />ä¼˜å…ˆä½¿ç”¨æœ€æ–°ç‰ˆæœ¬ IE å’Œ Chrome
+   <meta http-equiv="Refresh" content="2;URL=http://www.baidu.com" /> 2ç§’è·³åˆ°æŒ‡å®šç½‘å€
+   ï¼œmeta http-equiv=â€expiresâ€ content=â€Fri, 12 Jan 2001 18:18:18 GMTâ€ï¼å¯ä»¥ç”¨äºè®¾å®šç½‘é¡µçš„åˆ°æœŸæ—¶é—´ã€‚ä¸€æ—¦ç½‘é¡µè¿‡æœŸï¼Œå¿…é¡»åˆ°æœåŠ¡å™¨ä¸Šé‡æ–°ä¼ è¾“ã€‚
+   ï¼œmeta http-equiv=â€Pragmaâ€ content=â€no-cacheâ€ï¼ ç¦æ­¢æµè§ˆå™¨ä»æœ¬åœ°è®¡ç®—æœºçš„ç¼“å­˜ä¸­è®¿é—®é¡µé¢å†…å®¹ã€‚
 
-18.  £¨1£©¿ªÆôµç»°¹¦ÄÜ£º
- ¡¡¡¡<a href="tel:123456">123456</a> 
+18.  ï¼ˆ1ï¼‰å¼€å¯ç”µè¯åŠŸèƒ½ï¼š
+ ã€€ã€€<a href="tel:123456">123456</a> 
 
-¡¡¡¡£¨2£©¿ªÆô¶ÌĞÅ¹¦ÄÜ£º
+ã€€ã€€ï¼ˆ2ï¼‰å¼€å¯çŸ­ä¿¡åŠŸèƒ½ï¼š
 
- ¡¡¡¡<a href="sms:123456">123456</a> 
-19.background-attachment:fixed;¿ØÖÆ±³¾°²»¹ö¶¯
-20.-webkit-font-smoothing:antialiased;×ÖÌåÆ½»¬
-21.jsÅĞ¶Ïµ±Ç°µÄÊÖ»úÏµÍ³ÀàĞÍ
+ ã€€ã€€<a href="sms:123456">123456</a> 
+19.background-attachment:fixed;æ§åˆ¶èƒŒæ™¯ä¸æ»šåŠ¨
+20.-webkit-font-smoothing:antialiased;å­—ä½“å¹³æ»‘
+21.jsåˆ¤æ–­å½“å‰çš„æ‰‹æœºç³»ç»Ÿç±»å‹
 <script language="javascript">
    window.onload = function () {
 	alert("1");
 	var u = navigator.userAgent;
-	if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//°²×¿ÊÖ»ú
-		alert("°²×¿ÊÖ»ú");
+	if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//å®‰å“æ‰‹æœº
+		alert("å®‰å“æ‰‹æœº");
 	// window.location.href = "mobile/index.html";
-	} else if (u.indexOf('iPhone') > -1) {//Æ»¹ûÊÖ»ú
+	} else if (u.indexOf('iPhone') > -1) {//è‹¹æœæ‰‹æœº
 	// window.location.href = "mobile/index.html";
-		alert("Æ»¹ûÊÖ»ú");
-	} else if (u.indexOf('Windows Phone') > -1) {//winphoneÊÖ»ú
-		alert("winphoneÊÖ»ú");
+		alert("è‹¹æœæ‰‹æœº");
+	} else if (u.indexOf('Windows Phone') > -1) {//winphoneæ‰‹æœº
+		alert("winphoneæ‰‹æœº");
 	// window.location.href = "mobile/index.html";
 	}
    }
 </script>
-22.Èç¹ûÓÃµ½zepto.jsµÄswipeLeftºÍswipeUpµÈÊÂ¼şĞèÒª¼ÓÉÏÕâ¾ä´úÂë
+22.å¦‚æœç”¨åˆ°zepto.jsçš„swipeLeftå’ŒswipeUpç­‰äº‹ä»¶éœ€è¦åŠ ä¸Šè¿™å¥ä»£ç 
 document.addEventListener('touchmove', function (event) {
 		event.preventDefault();
 	}, false);
 
-23.     input[type=text]:valid{background:red;/*ÓĞĞ§£¬¼´µ±ÌîĞ´µÄÄÚÈİ·ûºÏÒªÇóµÄÊ±ºò´¥·¢¡£*/}
-	input[type=text]:invalid{background:blue;/*ÎŞĞ§£¬¼´µ±ÌîĞ´µÄÄÚÈİ²»·ûºÏÒªÇóµÄÊ±ºò´¥·¢¡£*/}
+23.     input[type=text]:valid{background:red;/*æœ‰æ•ˆï¼Œå³å½“å¡«å†™çš„å†…å®¹ç¬¦åˆè¦æ±‚çš„æ—¶å€™è§¦å‘ã€‚*/}
+	input[type=text]:invalid{background:blue;/*æ— æ•ˆï¼Œå³å½“å¡«å†™çš„å†…å®¹ä¸ç¬¦åˆè¦æ±‚çš„æ—¶å€™è§¦å‘ã€‚*/}
 
-24.Í¼Æ¬ÉÏÏÂ¾ÓÖĞµÄ°ì·¨Ö®Ò»£º ÈİÆ÷ÉèÖÃ¿í¸ß  È»ºó¾ÓÖĞĞĞ¸ß   Í¼Æ¬ÉèÖÃvertial-align:middle
-25.È·±£inputÊäÈëÊı×Ö<input onkeyup="this.value=this.value.replace(/\D/g,'')"onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+24.å›¾ç‰‡ä¸Šä¸‹å±…ä¸­çš„åŠæ³•ä¹‹ä¸€ï¼š å®¹å™¨è®¾ç½®å®½é«˜  ç„¶åå±…ä¸­è¡Œé«˜   å›¾ç‰‡è®¾ç½®vertial-align:middle
+25.ç¡®ä¿inputè¾“å…¥æ•°å­—<input onkeyup="this.value=this.value.replace(/\D/g,'')"onafterpaste="this.value=this.value.replace(/\D/g,'')" />
 26.$(document).on("mousewheel DOMMouseScroll", function (e) {
     
     var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
                 (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
 
     if (delta > 0) {
-        // ÏòÉÏ¹ö
+        // å‘ä¸Šæ»š
        
     } else if (delta < 0) {
-        // ÏòÏÂ¹ö
+        // å‘ä¸‹æ»š
     }
 });
-27.$("abc").attr("ondragstart" , "return false"); Ò³Ãæ½ûÖ¹Í¼Æ¬ÍÏ¶¯
-	<html onselectstart="return false"> ½ûÖ¹ä¯ÀÀÆ÷¸´ÖÆ
+27.$("abc").attr("ondragstart" , "return false"); é¡µé¢ç¦æ­¢å›¾ç‰‡æ‹–åŠ¨
+	<html onselectstart="return false"> ç¦æ­¢æµè§ˆå™¨å¤åˆ¶
 
-http://www.w3cplus.com/css3/how-to-use-css3-calc-function.html  -webkit-calc¼ÆËã£¬ºÃÏñ°²×¿4.3ÒÔÏÂ²»¼æÈİ
-28. display:inline-block IE6-7µÄ¼æÈİĞÔ£ºĞĞÄÚ±êÇ©µ«ÊÇ¿ÉÒÔÉèÖÃ¿í¶ÈºÍ¸ß¶È£¬¿ÉÒÔmargin-top£»¿é¼¶±êÇ©ÔÚIE6-7ÖĞÈÔÈ»»»ĞĞ£¬ĞĞÄÚ±êÇ©Í¬Ñù²»»»ĞĞ£¬ĞĞÄÚºÍ¿é¼¶¶¼±£Áô¸÷×Ô»»²»»»ĞĞµÄÊôĞÔ
-29. //Ïàµ±ÓÚellipsisµÄÉı¼¶°æ£¬¿ÉÒÔÑ¡Ôñ¼¸ĞĞÊµÏÖÊ¡ÂÔºÅ...4¶Ë´úÂëÈ±Ò»²»¿É
+http://www.w3cplus.com/css3/how-to-use-css3-calc-function.html  -webkit-calcè®¡ç®—ï¼Œå¥½åƒå®‰å“4.3ä»¥ä¸‹ä¸å…¼å®¹
+28. display:inline-block IE6-7çš„å…¼å®¹æ€§ï¼šè¡Œå†…æ ‡ç­¾ä½†æ˜¯å¯ä»¥è®¾ç½®å®½åº¦å’Œé«˜åº¦ï¼Œå¯ä»¥margin-topï¼›å—çº§æ ‡ç­¾åœ¨IE6-7ä¸­ä»ç„¶æ¢è¡Œï¼Œè¡Œå†…æ ‡ç­¾åŒæ ·ä¸æ¢è¡Œï¼Œè¡Œå†…å’Œå—çº§éƒ½ä¿ç•™å„è‡ªæ¢ä¸æ¢è¡Œçš„å±æ€§
+29. //ç›¸å½“äºellipsisçš„å‡çº§ç‰ˆï¼Œå¯ä»¥é€‰æ‹©å‡ è¡Œå®ç°çœç•¥å·...4ç«¯ä»£ç ç¼ºä¸€ä¸å¯
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
-30.    ul li:not(:last-child){border-bottom:1px solid red;}×îºóÒ»¸öliÃ»ÓĞ±ß¿ò
-31. ÊÖ»úÒÆ¶¯¶Ë1pxÏñËØ±ß¿ò,ÒòÎª1px=2dp£¨ÎïÀíÏñËØ£©
+30.    ul li:not(:last-child){border-bottom:1px solid red;}æœ€åä¸€ä¸ªliæ²¡æœ‰è¾¹æ¡†
+31. æ‰‹æœºç§»åŠ¨ç«¯1pxåƒç´ è¾¹æ¡†,å› ä¸º1px=2dpï¼ˆç‰©ç†åƒç´ ï¼‰
 	ul li{height:3.5rem;line-height:3.5rem;position:relative;}
 	ul li:not(:last-child):before{position:absolute;left:0;bottom:0px;content:"";width:100%;height:1px;border-bottom:1px solid red; -webkit-transform: scaleY(0.5);}
 	/*ul li:not(:last-child):before{position:absolute;left:0;bottom:1px;content:"";width:100%;height:1px;border-bottom:1px solid red; -webkit-transform: scaleY(0.5);}*/
 
 32.<meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1" />ÔÚ360»òÆäËûË«ºËä¯ÀÀÆ÷ÏÂÔÚ¼æÈİÄ£Ê½ÓÃchromeÄÚºËäÖÈ¾µÄ·½·¨
-33.vwºÍvh£¬1vw=1%µÄÆÁÄ»µÄ¿í¶È£¬1vh=1%µÄÆÁÄ»¸ß¶È
-34.jquery ×Ô´øµÄ·½·¨$.when
-35.HTMLÖĞP±êÇ©ÄÚ²»¿É°üº¬DIV±êÇ©
-36.http://www.tuicool.com/articles/Inyueyi  fixedÔÚ£¨²»ÒÀÀµµÚÈı·½¿âµÄÇé¿öÏÂ£©iosÖĞºô»½ÆğÈí¼üÅÌµ¼ÖÂfixedÊ§Ğ§µÄ½â¾ö·½·¨
-37.document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false); ¶ÔÓ¦½â³ı×èÖ¹ document.addEventListener('touchmove', function(e){window.event.returnValue = true;}, false);
-38.  ¸´ÖÆ¹¦ÄÜ
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1" />åœ¨360æˆ–å…¶ä»–åŒæ ¸æµè§ˆå™¨ä¸‹åœ¨å…¼å®¹æ¨¡å¼ç”¨chromeå†…æ ¸æ¸²æŸ“çš„æ–¹æ³•
+33.vwå’Œvhï¼Œ1vw=1%çš„å±å¹•çš„å®½åº¦ï¼Œ1vh=1%çš„å±å¹•é«˜åº¦
+34.jquery è‡ªå¸¦çš„æ–¹æ³•$.when
+35.HTMLä¸­Pæ ‡ç­¾å†…ä¸å¯åŒ…å«DIVæ ‡ç­¾
+36.http://www.tuicool.com/articles/Inyueyi  fixedåœ¨ï¼ˆä¸ä¾èµ–ç¬¬ä¸‰æ–¹åº“çš„æƒ…å†µä¸‹ï¼‰iosä¸­å‘¼å”¤èµ·è½¯é”®ç›˜å¯¼è‡´fixedå¤±æ•ˆçš„è§£å†³æ–¹æ³•
+37.document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false); å¯¹åº”è§£é™¤é˜»æ­¢ document.addEventListener('touchmove', function(e){window.event.returnValue = true;}, false);
+38.  å¤åˆ¶åŠŸèƒ½
     <script type="text/javascript"> 
        function copyUrl2() 
        { 
           var Url2=document.getElementById("biao1"); 
-          Url2.select(); // Ñ¡Ôñ¶ÔÏó 
-          document.execCommand("Copy"); // Ö´ĞĞä¯ÀÀÆ÷¸´ÖÆÃüÁî 
-          alert("ÒÑ¸´ÖÆºÃ£¬¿ÉÌùÕ³¡£"); 
+          Url2.select(); // é€‰æ‹©å¯¹è±¡ 
+          document.execCommand("Copy"); // æ‰§è¡Œæµè§ˆå™¨å¤åˆ¶å‘½ä»¤ 
+          alert("å·²å¤åˆ¶å¥½ï¼Œå¯è´´ç²˜ã€‚"); 
         } 
     </script> 
-    <textarea cols="20" rows="10" id="biao1">ÓÃ»§¶¨ÒåµÄ´úÂëÇøÓò</textarea> 
-    <input type="button" onClick="copyUrl2()" value="µã»÷¸´ÖÆ´úÂë" />
-39.http://docs.mobiscroll.com/2-13-2/calendar ÊÖ»úÈÕÀú²å¼ş¹ÙÍø
+    <textarea cols="20" rows="10" id="biao1">ç”¨æˆ·å®šä¹‰çš„ä»£ç åŒºåŸŸ</textarea> 
+    <input type="button" onClick="copyUrl2()" value="ç‚¹å‡»å¤åˆ¶ä»£ç " />
+39.http://docs.mobiscroll.com/2-13-2/calendar æ‰‹æœºæ—¥å†æ’ä»¶å®˜ç½‘
 http://download.mobiscroll.com/trialactivated#/datetime/calendar/select/jquery
 
-40.	if (window.DeviceMotionEvent) { //Ä£ÄâÊÖ»ú½ûÖ¹ä¯ÀÀÆ÷ºóÍË£¬Ä¬ÈÏÌø¹ıÈ¥ÖØĞÂÌø»Ø£¬Èç£¨ÈÕĞÂ»úÆ±ÏÂµ¥£©
+40.	if (window.DeviceMotionEvent) { //æ¨¡æ‹Ÿæ‰‹æœºç¦æ­¢æµè§ˆå™¨åé€€ï¼Œé»˜è®¤è·³è¿‡å»é‡æ–°è·³å›ï¼Œå¦‚ï¼ˆæ—¥æ–°æœºç¥¨ä¸‹å•ï¼‰
 	    window.addEventListener("devicemotion", function() {
 	    	window.history.go(1);
 	    }, false);
 	}
-41.      <input type="text" placeholder="ÇëÊäÈë..."  onkeyup="dothis(this);" onpaste="dothis(this)" onblur="dothis(this)" oncontextmenu="dothis(this)">
+41.      <input type="text" placeholder="è¯·è¾“å…¥..."  onkeyup="dothis(this);" onpaste="dothis(this)" onblur="dothis(this)" oncontextmenu="dothis(this)">
 
-42.´ÓlistÈ¡³öÃ¿NÌõ±£´æµ½Êı×é£¬·½·¨Ò»	Array.prototype.each_slice = function(step, callback) {
+42.ä»listå–å‡ºæ¯Næ¡ä¿å­˜åˆ°æ•°ç»„ï¼Œæ–¹æ³•ä¸€	Array.prototype.each_slice = function(step, callback) {
 					  var i, len, pos, ref, ref1, ref2, results, slice;
 					  pos = 0;
 					  ref = this;
@@ -191,7 +191,7 @@ http://download.mobiscroll.com/trialactivated#/datetime/calendar/select/jquery
 					
 					 data2.each_slice(5, function(x) { console.log(x)}) 
 
-43.·½·¨¶ş£º				var j = 0;
+43.æ–¹æ³•äºŒï¼š				var j = 0;
 					for(var i = 0; i < 5; i++){
 						alert(j);
 						arrList[i]=(data2.slice(j,j+5));
@@ -199,12 +199,12 @@ http://download.mobiscroll.com/trialactivated#/datetime/calendar/select/jquery
 					}
 
 
-43,JavaScriptÀïµÄÑ­»··½·¨£º forEach£¨¶Ì°å£º²»ÄÜÖĞ¶ÏÑ­»·(Ê¹ÓÃbreakÓï¾ä»òÊ¹ÓÃreturnÓï¾ä£©£¬
-		            for-in(for-inÑ­»·Êµ¼ÊÊÇÎªÑ­»·¶ÔÏó£ºÈçjson)£¬
-			    for-of(JavaScript6ÀïÒıÈëÁËÒ»ÖÖĞÂµÄÑ­»··½·¨£¬Ëü¾ÍÊÇfor-ofÑ­»·£¬Ëü¼È±È´«Í³µÄforÑ­»·¼ò½à£¬Í¬Ê±ÃÖ²¹ÁËforEachºÍfor-inÑ­»·µÄ¶Ì°å¡£)
-44. css order ÊôĞÔ£¬×óÓÒÅÅĞò
-45 display:flex;align-items:center;ÉÏÏÂ¾ÓÖĞ  http://www.runoob.com/cssref/css3-pr-order.html
-46,È¥³ıÊı×éÖØ¸´Êı¾İ
+43,JavaScripté‡Œçš„å¾ªç¯æ–¹æ³•ï¼š forEachï¼ˆçŸ­æ¿ï¼šä¸èƒ½ä¸­æ–­å¾ªç¯(ä½¿ç”¨breakè¯­å¥æˆ–ä½¿ç”¨returnè¯­å¥ï¼‰ï¼Œ
+		            for-in(for-inå¾ªç¯å®é™…æ˜¯ä¸ºå¾ªç¯å¯¹è±¡ï¼šå¦‚json)ï¼Œ
+			    for-of(JavaScript6é‡Œå¼•å…¥äº†ä¸€ç§æ–°çš„å¾ªç¯æ–¹æ³•ï¼Œå®ƒå°±æ˜¯for-ofå¾ªç¯ï¼Œå®ƒæ—¢æ¯”ä¼ ç»Ÿçš„forå¾ªç¯ç®€æ´ï¼ŒåŒæ—¶å¼¥è¡¥äº†forEachå’Œfor-inå¾ªç¯çš„çŸ­æ¿ã€‚)
+44. css order å±æ€§ï¼Œå·¦å³æ’åº
+45 display:flex;align-items:center;ä¸Šä¸‹å±…ä¸­  http://www.runoob.com/cssref/css3-pr-order.html
+46,å»é™¤æ•°ç»„é‡å¤æ•°æ®
 var arr1 =[1,2,2,2,3,3,3,4,5,6], 
     arr2 = []; 
 for(var i = 0,len = arr1.length; i< len; i++){ 
@@ -213,30 +213,46 @@ for(var i = 0,len = arr1.length; i< len; i++){
         } 
     } 
 document.write(arr2); // 1,2,3,4,5,6
-47,½â¾ö»ğºüä¯ÀÀÆ÷buttonÎÄ±¾ÉÏÏÂ²»¾ÓÖĞ
+47,è§£å†³ç«ç‹æµè§ˆå™¨buttonæ–‡æœ¬ä¸Šä¸‹ä¸å±…ä¸­
 input[type="reset"]::-moz-focus-inner,input[type="button"]::-moz-focus-inner,input[type="submit"]::-moz-focus-inner,input[type="file"] > input[type="button"]::-moz-focus-inner{ border:none;padding:0; }
 48
-ÍøÒ³¿É¼ûÇøÓò¿í£º document.body.clientWidth; 
-ÍøÒ³¿É¼ûÇøÓò¸ß£º document.body.clientHeight; 
-ÍøÒ³¿É¼ûÇøÓò¿í£º document.body.offsetWidth (°üÀ¨±ßÏßºÍ¹ö¶¯ÌõµÄ¿í); 
-ÍøÒ³¿É¼ûÇøÓò¸ß£º document.body.offsetHeight (°üÀ¨±ßÏßµÄ¿í); 
-ÍøÒ³ÕıÎÄÈ«ÎÄ¿í£º document.body.scrollWidth; 
-ÍøÒ³ÕıÎÄÈ«ÎÄ¸ß£º document.body.scrollHeight; 
-ÍøÒ³±»¾íÈ¥µÄ¸ß(ff)£ºdocument.body.scrollTop; 
-ÍøÒ³±»¾íÈ¥µÄ¸ß(ie): document.documentElement.scrollTop; 
-ÍøÒ³±»¾íÈ¥µÄ×ó£ºdocument.body.scrollLeft; 
-ÍøÒ³ÕıÎÄ²¿·ÖÉÏ£ºwindow.screenTop; 
-ÍøÒ³ÕıÎÄ²¿·Ö×ó£ºwindow.screenLeft; 
-Ä³¸öÔªËØµÄ¿í¶È£ºobj.offsetWidth;
-Ä³¸öÔªËØµÄ¸ß¶È£ºobj.offsetHeight;
-Ä³¸öÔªËØµÄÉÏ±ß½çµ½body×î¶¥²¿µÄ¾àÀë£ºobj.offsetTop;£¨ÔÚÔªËØµÄ°üº¬ÔªËØ²»º¬¹ö¶¯ÌõµÄÇé¿öÏÂ£©
-Ä³¸öÔªËØµÄ×ó±ß½çµ½body×î×ó±ßµÄ¾àÀë£ºobj.offsetLeft;£¨ÔÚÔªËØµÄ°üº¬ÔªËØ²»º¬¹ö¶¯ÌõµÄÇé¿öÏÂ£©
-·µ»Øµ±Ç°ÔªËØµÄÉÏ±ß½çµ½ËüµÄ°üº¬ÔªËØµÄÉÏ±ß½çµÄÆ«ÒÆÁ¿£ºobj.offsetTop£¨ÔÚÔªËØµÄ°üº¬ÔªËØº¬¹ö¶¯ÌõµÄÇé¿öÏÂ£©
-·µ»Øµ±Ç°ÔªËØµÄ×ó±ß½çµ½ËüµÄ°üº¬ÔªËØµÄ×ó±ß½çµÄÆ«ÒÆÁ¿£ºobj.offsetLeft£¨ÔÚÔªËØµÄ°üº¬ÔªËØº¬¹ö¶¯ÌõµÄÇé¿öÏÂ£©
+ç½‘é¡µå¯è§åŒºåŸŸå®½ï¼š document.body.clientWidth; 
+ç½‘é¡µå¯è§åŒºåŸŸé«˜ï¼š document.body.clientHeight; 
+ç½‘é¡µå¯è§åŒºåŸŸå®½ï¼š document.body.offsetWidth (åŒ…æ‹¬è¾¹çº¿å’Œæ»šåŠ¨æ¡çš„å®½); 
+ç½‘é¡µå¯è§åŒºåŸŸé«˜ï¼š document.body.offsetHeight (åŒ…æ‹¬è¾¹çº¿çš„å®½); 
+ç½‘é¡µæ­£æ–‡å…¨æ–‡å®½ï¼š document.body.scrollWidth; 
+ç½‘é¡µæ­£æ–‡å…¨æ–‡é«˜ï¼š document.body.scrollHeight; 
+ç½‘é¡µè¢«å·å»çš„é«˜(ff)ï¼šdocument.body.scrollTop; 
+ç½‘é¡µè¢«å·å»çš„é«˜(ie): document.documentElement.scrollTop; 
+ç½‘é¡µè¢«å·å»çš„å·¦ï¼šdocument.body.scrollLeft; 
+ç½‘é¡µæ­£æ–‡éƒ¨åˆ†ä¸Šï¼šwindow.screenTop; 
+ç½‘é¡µæ­£æ–‡éƒ¨åˆ†å·¦ï¼šwindow.screenLeft; 
+æŸä¸ªå…ƒç´ çš„å®½åº¦ï¼šobj.offsetWidth;
+æŸä¸ªå…ƒç´ çš„é«˜åº¦ï¼šobj.offsetHeight;
+æŸä¸ªå…ƒç´ çš„ä¸Šè¾¹ç•Œåˆ°bodyæœ€é¡¶éƒ¨çš„è·ç¦»ï¼šobj.offsetTop;ï¼ˆåœ¨å…ƒç´ çš„åŒ…å«å…ƒç´ ä¸å«æ»šåŠ¨æ¡çš„æƒ…å†µä¸‹ï¼‰
+æŸä¸ªå…ƒç´ çš„å·¦è¾¹ç•Œåˆ°bodyæœ€å·¦è¾¹çš„è·ç¦»ï¼šobj.offsetLeft;ï¼ˆåœ¨å…ƒç´ çš„åŒ…å«å…ƒç´ ä¸å«æ»šåŠ¨æ¡çš„æƒ…å†µä¸‹ï¼‰
+è¿”å›å½“å‰å…ƒç´ çš„ä¸Šè¾¹ç•Œåˆ°å®ƒçš„åŒ…å«å…ƒç´ çš„ä¸Šè¾¹ç•Œçš„åç§»é‡ï¼šobj.offsetTopï¼ˆåœ¨å…ƒç´ çš„åŒ…å«å…ƒç´ å«æ»šåŠ¨æ¡çš„æƒ…å†µä¸‹ï¼‰
+è¿”å›å½“å‰å…ƒç´ çš„å·¦è¾¹ç•Œåˆ°å®ƒçš„åŒ…å«å…ƒç´ çš„å·¦è¾¹ç•Œçš„åç§»é‡ï¼šobj.offsetLeftï¼ˆåœ¨å…ƒç´ çš„åŒ…å«å…ƒç´ å«æ»šåŠ¨æ¡çš„æƒ…å†µä¸‹ï¼‰
 
 
-¹«»ı½ğ£º154523926205
-2016Äê5ÔÂ10ÈÕ  ×Ü¹²12w£¨½ñÌìÎÒ¼´½«·¢·Å£¬Ã»ÓĞËãÈë£©
+vuejsä¸­
+app.jsæ˜¯å…¥å£jsï¼Œvendoråˆ™æ˜¯é€šè¿‡æå–å…¬å…±æ¨¡å—æ’ä»¶æ¥æå–çš„ä»£ç å—ï¼ˆwebpackæœ¬èº«å¸¦çš„æ¨¡å—åŒ–ä»£ç éƒ¨åˆ†ï¼‰ï¼Œè€Œmanifeståˆ™æ˜¯åœ¨vendorçš„åŸºç¡€ä¸Šï¼Œå†æŠ½å–å‡ºè¦ç»å¸¸å˜åŠ¨çš„éƒ¨åˆ†ï¼Œæ¯”å¦‚å…³äºå¼‚æ­¥åŠ è½½jsæ¨¡å—éƒ¨åˆ†çš„å†…å®¹ã€‚
+ä»æˆªå›¾ä¸Šçœ‹ä¹Ÿçœ‹å‡ºï¼Œvendorçš„æ–‡ä»¶å¤§å°æœ€å¤§ï¼Œå› ä¸ºå…¶åŒ…å«äº†vueæ•´ä¸€ä¸ªæ¡†æ¶çš„ä»£ç ï¼Œä»¥åŠwebpackçš„æ¨¡å—åŒ–ä»£ç ã€‚
+è‡³äºmanifestçš„è¯ï¼Œä¸»è¦æ˜¯ä¸€äº›å¼‚æ­¥åŠ è½½çš„å®ç°æ–¹æ³•ï¼ˆé€šè¿‡å»ºç«‹scriptæ–¹å¼åŠ¨æ€å¼•å…¥jsï¼‰ï¼Œå†…å®¹ä¸ŠåŒ…å«å¼‚æ­¥jsçš„æ–‡ä»¶åå’Œè·¯å¾„ã€‚
+
+å…³äºwebpackå›¾ç‰‡è·¯å¾„é—®é¢˜ä¸ªäººæ€»ç»“ï¼š
+1ï¼Œæ”¾åœ¨assetsä¸­çš„å›¾ç‰‡è¦è¿›è¡Œç¼–è¯‘ï¼Œæœ€ç»ˆè¿˜æ˜¯ä¿å­˜åœ¨staticç›®å½•ä¸‹ï¼Œåœ¨å°äºlimitçš„æƒ…å†µä¸‹ï¼Œç¼–è¯‘æˆbase64æ ¼å¼ï¼Œå…¶ä»–ç»™imgç”Ÿæˆhashçš„åå­—ï¼ˆé˜²æ­¢ç¼“å­˜ï¼‰ï¼Œæ‰“åŒ…åæ”¾åˆ°å’Œstaticçš„æ–‡ä»¶ä¸€å¹¶å¤åˆ¶åˆ°distæ–‡ä»¶ä¸­çš„staticä¸­å»
+2ï¼Œæ”¾åœ¨staticä¸­çš„å›¾ç‰‡ä¸éœ€è¦ç¼–è¯‘ï¼ˆæ‰“åŒ…åå¼•ç”¨çš„imgåå­—ä¸å˜ï¼‰ï¼Œå±äºé™æ€æ–‡ä»¶ï¼Œå¯ä»¥ç›´æ¥å¼•ç”¨ï¼Œæ‰“åŒ…ååŸæœ‰çš„æ–‡ä»¶å’Œç”Ÿæˆçš„hashæ–‡ä»¶ä¹Ÿç›´æ¥å¤åˆ¶å¤‡ä»½åˆ°distæ–‡ä»¶çš„staticä¸­å»
+æ³¨æ„äº‹é¡¹ï¼š
+1ï¼Œstaticæ‰æ˜¯æ”¾é™æ€æ–‡ä»¶çš„åœ°æ–¹ï¼Œè€Œä¸æ˜¯assetsï¼å¦åˆ™åœ¨index.htmlä¸­å¼•å…¥jQueryè·¯å¾„å¤±è´¥ï¼Œå› ä¸ºè¿™æ˜¯webpackçš„é…ç½®ã€‚
+2ï¼Œåœ¨backgroundä¸­çš„å›¾ç‰‡æ‰“åŒ…åä¼šäº§ç”Ÿè·¯å¾„é”™è¯¯ï¼Œwebpackä¼šé»˜è®¤æ·»åŠ å­æ–‡ä»¶å¤¹css/ï¼Œæ‰€ä»¥è¿˜æ˜¯æŠŠlimitè®¾ç½®ä¸ºæœ€å¤§
+3ï¼Œå¯ä»¥ä¸ç”¨æ”¹webpacké…ç½®ä¸­çš„assetsPublicPathä¸º"./"ï¼Œç”¨é»˜è®¤é…ç½®"/"ï¼Œä¹Ÿä¸è¦ä¿®æ”¹limit(å› ä¸ºæ”¾åˆ°æœåŠ¡å™¨ä¸Šå°±å¥½äº†)
+
+
+
+
+å…¬ç§¯é‡‘ï¼š154523926205
+2016å¹´5æœˆ10æ—¥  æ€»å…±12wï¼ˆä»Šå¤©æˆ‘å³å°†å‘æ”¾ï¼Œæ²¡æœ‰ç®—å…¥ï¼‰
  	
 	
 
