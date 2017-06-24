@@ -37,7 +37,7 @@
 　　　　documentScrollTop = document.documentElement.scrollTop;
 　　}
 　　scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;*/
-
+	//chrome支持document.body.scrollTop,
 	scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
 　　return scrollTop;
 } 
@@ -68,7 +68,7 @@
 　　return windowHeight;
 } 
  window.onscroll = function(){
- 	console.log(getScrollTop())
+ 	console.log(getWindowHeight())
 　　if(getScrollTop() + getWindowHeight() == getScrollHeight()){
 　　　　alert("you are in the bottom!");
 　　}
