@@ -235,6 +235,8 @@ input[type="reset"]::-moz-focus-inner,input[type="button"]::-moz-focus-inner,inp
 返回当前元素的左边界到它的包含元素的左边界的偏移量：obj.offsetLeft（在元素的包含元素含滚动条的情况下）
 
 
+
+http://www.cnblogs.com/whkl-m/p/6627864.html webpack配置
 vuejs中
 app.js是入口js，vendor则是通过提取公共模块插件来提取的代码块（webpack本身带的模块化代码部分），而manifest则是在vendor的基础上，再抽取出要经常变动的部分，比如关于异步加载js模块部分的内容。
 从截图上看也看出，vendor的文件大小最大，因为其包含了vue整一个框架的代码，以及webpack的模块化代码。
