@@ -1,36 +1,17 @@
 ﻿@charset "utf-8";/* CSS Document*/
 /***
-	//jquery控制页面字体大小
-	$(function(){
-		var percent = $("body").width()/320*100;
-		$("html").css("fontSize",percent+"px");	
-		$(window).resize(function(){
-			setTimeout(function(){
-				var percent =  Math.floor($("body").width()/320*100);
-				$("html").css("fontSize",percent+"px");	
-			},100);
-		});
-	});
-	 //js控制页面字体大小
-    window.onload = function(){
-	rem();
-        window.onresize = function(){
-            setTimeout(function(){
-               rem();
-            },200);
-        }
+	//js控制页面字体大小
+    (function () {
 		function rem(){
-			var bodyEle = document.getElementsByTagName("body")[0];
-			var w = 0;
-			if(bodyEle.currentStyle){
-				w = parseInt(bodyEle.currentStyle.width);
-			}else{
-				w = parseInt(getComputedStyle(bodyEle,false).width);
-			}
-			var percent = parseInt(w/320*100);
-			document.getElementsByTagName("html")[0].style.cssText="font-size:"+percent+"px";
+			var dw = 750; // 保存视觉稿宽度
+			var clientWidth = document.documentElement.clientWidth > dw ? dw : document.documentElement.clientWidth;
+			document.documentElement.style.fontSize = ( clientWidth / dw ) * 100 + 'px';
 		}
-    }
+		rem();
+		window.onresize = function(){
+			rem()
+		}
+	})();
 **/
 @media screen and (min-width:640px){html{font-size:160px;height:100%}}
 @media screen and (min-width:480px) and (max-width:640px){html{font-size:140px;height:100%}}
